@@ -71,28 +71,51 @@ function Hero() {
       <div className="container-page relative grid gap-12 pt-10 pb-20 lg:grid-cols-[1.05fr_1fr] lg:pt-16 lg:pb-28">
         <div className="max-w-2xl animate-rd-fade-up">
           <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card/80 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-primary">
-            <Sparkles className="h-3.5 w-3.5" /> Consultoria contábil premium
+            <Sparkles className="h-3.5 w-3.5" /> Contabilidade estratégica para Empresas
           </div>
           <h1 className="mt-5 font-display text-4xl font-semibold tracking-tight text-foreground md:text-6xl md:leading-[1.02]">
-            Sua empresa merece uma <span className="text-gradient-brand">contabilidade estratégica</span>, não apenas operacional.
+            Sua contabilidade deve ajudar sua empresa a <span className="text-gradient-brand">crescer com segurança.</span>.
           </h1>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
-            Na RD Solutions transformamos números em decisões inteligentes. Atuamos como parceiros
-            estratégicos para empresas que desejam crescer com segurança, reduzir impostos
-            legalmente e tomar decisões financeiras mais inteligentes.
+            A RD Solutions cuida da contabilidade, do fiscal e da gestão da sua empresa com proximidade, tecnologia e visão estratégica.
+            Você ganha mais segurança para tomar decisões, reduzir riscos e identificar oportunidades de economia tributária dentro da lei.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Button asChild size="lg" className="rounded-full bg-gradient-brand text-primary-foreground hover:opacity-95">
-              <a href="#contato">Solicitar Proposta <ArrowRight className="ml-1.5 h-4 w-4" /></a>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="rounded-full">
-              <a href={site.whatsappUrl} target="_blank" rel="noreferrer">
-                <MessageCircle className="mr-1.5 h-4 w-4" /> Falar pelo WhatsApp
+            <Button
+              asChild
+              size="lg"
+              className="rounded-full bg-gradient-brand text-primary-foreground hover:opacity-95"
+            >
+              <a href="#contato">
+                Solicitar diagnóstico gratuito
+                <ArrowRight className="ml-1.5 h-4 w-4" />
               </a>
+            </Button>  
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="rounded-full"
+            >
+              <a
+                href={site.whatsappUrl}  
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <MessageCircle className="mr-1.5 h-4 w-4" />
+                Falar com um especialista  
+              </a>  
             </Button>
-            <Button asChild size="lg" variant="ghost" className="rounded-full">
-              <a href="#contato">Agendar reunião</a>
-            </Button>
+            <Button
+              asChild
+              size="lg"
+              variant="ghost"
+              className="rounded-full"
+            >
+              <a href="#servicos">
+                Conhecer nossos serviços
+              </a>
+            </Button>  
           </div>
           <dl className="mt-10 grid max-w-lg grid-cols-3 gap-6 border-t border-border pt-6">
             {[

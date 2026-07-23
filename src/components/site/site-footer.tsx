@@ -15,7 +15,7 @@ export function SiteFooter() {
             </p>
             <div className="flex gap-2">
               <a
-                href={site.instagram}
+                href={"https://www.instagram.com/rdsolutionscontabil?igsh=Znd6Zm5naTgxNnZr"}
                 target="_blank"
                 rel="noreferrer"
                 className="grid h-9 w-9 place-items-center rounded-full border border-border text-muted-foreground transition hover:border-primary/40 hover:text-primary"
@@ -62,13 +62,13 @@ export function SiteFooter() {
               Contato
             </h4>
             <ul className="mt-4 space-y-2.5 text-sm text-foreground/80">
-              <li className="flex items-start gap-2.5"><MapPin className="mt-0.5 h-4 w-4 text-primary" /> <span>{site.address}</span></li>
-              <li className="flex items-center gap-2.5"><Phone className="h-4 w-4 text-primary" /> <a href={`tel:${site.phone}`}>{site.phone}</a></li>
+              <li className="flex items-start gap-2.5"><MapPin className="mt-0.5 h-4 w-4 text-primary" /> <span>Av. Vila Ema, 3445, 1º Andar</span></li>
+              <li className="flex items-center gap-2.5"><Phone className="h-4 w-4 text-primary" /><a href={`tel:${site.phone}`}>+55 (11) 2211-4234</a></li>
               <li className="flex items-center gap-2.5"><MessageCircle className="h-4 w-4 text-primary" /> <a href={site.whatsappUrl} target="_blank" rel="noreferrer">WhatsApp direto</a></li>
-              <li className="flex items-center gap-2.5"><Mail className="h-4 w-4 text-primary" /> <a href={`mailto:${site.email}`}>{site.email}</a></li>
+              <li className="flex items-center gap-2.5"><Mail className="h-4 w-4 text-primary" /> <a href={`mailto:${site.email}`}>contato@rdsolutionscontabil.com.br</a></li>
             </ul>
             <a
-              href={site.maps}
+              href={"https://maps.app.goo.gl/iDYDfif1DvyY5Ung8"}
               target="_blank"
               rel="noreferrer"
               className="mt-4 inline-flex items-center gap-1 text-xs font-medium text-primary underline-offset-4 hover:underline"
@@ -79,7 +79,7 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-14 flex flex-col items-start justify-between gap-4 border-t border-border pt-6 text-xs text-muted-foreground md:flex-row md:items-center">
-          <p>© {new Date().getFullYear()} {site.fullName}. Todos os direitos reservados. CNPJ 00.000.000/0001-00</p>
+          <p>© {new Date().getFullYear()} {site.fullName}. Todos os direitos reservados. CNPJ 11.219.740/0001-30</p>
           <div className="flex gap-4">
             <a href="/politica-de-privacidade" className="hover:text-foreground">Política de Privacidade</a>
             <a href="/politica-de-privacidade" className="hover:text-foreground">LGPD</a>

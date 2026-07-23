@@ -293,8 +293,8 @@ function CustosContabeis() {
 /* ------------- Calculadora Fiscal ------------- */
 function CalendarioFiscal() {
   const items = [
-    { d: "07", m: "Todo mês", n: "FGTS (GRRF/GFIP)" },
-    { d: "15", m: "Todo mês", n: "IRPJ / CSLL (Presumido)" },
+    { d: "20", m: "Todo mês", n: "FGTS (GRRF/GFIP)" },
+    { d: "30", m: "Todo mês", n: "IRPJ / CSLL (Presumido)" },
     { d: "20", m: "Todo mês", n: "DAS — Simples Nacional" },
     { d: "20", m: "Todo mês", n: "INSS Empresa" },
     { d: "25", m: "Todo mês", n: "PIS / COFINS / ICMS" },

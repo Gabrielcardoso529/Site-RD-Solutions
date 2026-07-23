@@ -107,7 +107,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             "Consultoria contábil estratégica: planejamento tributário, BPO financeiro, abertura de empresas e consultoria empresarial.",
           areaServed: "BR",
           priceRange: "$$",
-          telephone: "+55 11 4000-0000",
+          telephone: "+55 11 2211-4234",
         }),
       },
     ],
