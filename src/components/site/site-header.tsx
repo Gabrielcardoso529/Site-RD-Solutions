@@ -1,90 +1,197 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ComponentProps } from "react";
 import { Link } from "@tanstack/react-router";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { ArrowRight, Menu, MessageCircle, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Logo } from "./logo";
-import { ThemeToggle } from "./theme-toggle";
 import { navLinks, site } from "@/lib/site-config";
 import { cn } from "@/lib/utils";
+import { Logo } from "./logo";
+import { ThemeToggle } from "./theme-toggle";
+import { link } from "fs";
+
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 12);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+  
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setOpen(false);
+      }
+    };
+    
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+  
   return (
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
-        scrolled ? "glass border-b border-border/60 py-2" : "bg-transparent py-4"
+        scrolled
+          ? "border-b border-border/60 bg-background/85 py-2 shadow-sm backdrop-blur-xl"
+          : "bg-transparent py-4"
       )}
     >
       <div className="container-page flex items-center justify-between gap-6">
-        <Logo />
-        <nav className="hidden items-center gap-1 lg:flex">
-          {navLinks.map((l) => (
+        <button
+          type="button"
+          aria-label="Voltar ao início da página"
+          className="shrink-0 cursor-pointer"
+          onClick={() => {
+            setOpen(false);
+
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            });
+          }}
+        >
+          <Logo />
+        </button>
+
+        <nav 
+          arial-label="Navegação principal"
+          className="hidden items-center gap-1 lg:flex"
+        >
+          {navLinks.map((link) => (
             <a
-              key={l.to}
-              href={l.to}
+              key={link.to}
+              href={link.to}
               className="rounded-full px-3.5 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
             >
-              {l.label}
-            </a>
-          ))}
-        </nav>
-        <div className="hidden items-center gap-2 lg:flex">
+              {link.label}
+            </a>  
+          ))}  
+        </nav> 
+
+        <div className="hidden items-center gap-2 lg:flex"  >
           <ThemeToggle />
-          <Button asChild variant="outline" className="rounded-full">
-            <a href={site.whatsappUrl} target="_blank" rel="noreferrer">WhatsApp</a>
-          </Button>
-          <Button asChild className="rounded-full bg-gradient-brand text-primary-foreground hover:opacity-95">
+
+          <Button
+            asChild
+            variant="outline"
+            className="rounded-full"
+          >
+            <a
+              href={site.whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <MessageCircle className="mr-1.5 h-4 w-4" />
+              Falar com um especialista
+            </a>  
+          </Button>  
+
+          <Button
+            asChild
+            className="rounded-full bg-gradient-brand text-primary-foreground hover:opacity-95"
+          >
             <a href="/#contato">
-              Solicitar proposta <ArrowRight className="ml-1.5 h-4 w-4" />
+              Diagnóstico gratuito
+              <ArrowRight className="ml-1.5 h-4 w-4" />
             </a>
-          </Button>
+          </Button>  
         </div>
+
         <div className="flex items-center gap-1 lg:hidden">
           <ThemeToggle />
-          <Button variant="ghost" size="icon" onClick={() => setOpen((v) => !v)} aria-label="Menu">
-            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </Button>
-        </div>
+
+          <Button
+            type="button"
+            variant="ghost"
+            size="icon"
+            onClick={() => setOpen((current) => !current)} 
+            aria-label={open ? "Fechar menu" : "Abrir menu"}
+            aria-expended={open}
+          >
+            {open ? (
+              <X className="h-5 w-5" />
+            ) : (
+              <Menu className="h-5 w-5" />
+            )}
+          </Button>   
+        </div> 
       </div>
+
       {open && (
-        <div className="glass container-page mt-2 flex flex-col gap-1 rounded-2xl border p-3 lg:hidden">
-          {navLinks.map((l) => (
-            <a
-              key={l.to}
-              href={l.to}
-              onClick={() => setOpen(false)}
-              className="rounded-lg px-3 py-2.5 text-sm font-medium text-foreground hover:bg-accent"
+        <div className="container-page mt-2 lg:hidden">
+          <div className="flex flex-col gap-1 rounded-2x1 border border-border/70 bg-background/95 p-3 shadow-lg backdrop-blur-xl">
+            <nav
+              aria-label="Navegação mobile"
+              className="flex flex-col gap-1"
             >
-              {l.label}
-            </a>
-          ))}
-          <div className="mt-1 grid grid-cols-2 gap-2">
-            <Button asChild variant="outline" className="rounded-full">
-              <a href={site.whatsappUrl}>WhatsApp</a>
-            </Button>
-            <Button asChild className="rounded-full bg-gradient-brand text-primary-foreground">
-              <a href="/#contato">Proposta</a>
-            </Button>
+              {navLinks.map((link) => (
+                <a 
+                  key={link.to}
+                  href={link.to}
+                  onClick={() => setOpen(false)}
+                  className="rounded-x1 px-3 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+                >
+                  {link.label}
+                </a>  
+              ))}
+            </nav> 
+
+          <div className="mt-2flex flex-col gap-2 border-t border-border/70 pt-3">
+              <Button
+                asChild
+                variant="outline"
+                className="w-full rounded-full"
+              >
+                <a 
+                  href={site.whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setOpen(false)}
+                >
+                  <MessageCircle className="mr-1.5 h-4 w-4" />
+                  Falar com especialista
+                </a>  
+              </Button>
+
+              <Button
+                asChild
+                className="w-full rounded-full bg-gradient-brand text-primary-foreground hover:opacity-95"
+              >
+                <a 
+                  href="/#contato"
+                  onClick={() => setOpen(false)}
+                >
+                  Diagnóstico gratuito
+                  <ArrowRight className="ml-1.5 h-4 w-4" />
+                </a>  
+              </Button>    
+            </div>   
           </div>
         </div>
       )}
     </header>
   );
-}
+}      
 
 export function useReserveHeader() {
   return "pt-24";
 }
 
-export function Link_(props: React.ComponentProps<typeof Link>) {
+export function Link_(props: ComponentProps<typeof Link>) {
   return <Link {...props} />;
 }
