@@ -204,26 +204,26 @@ function Sobre() {
           </div>
           <div className="glass absolute -bottom-6 -right-4 hidden max-w-[240px] rounded-2xl p-4 shadow-[var(--shadow-elevated)] md:block">
             <div className="flex items-center gap-2 text-xs font-semibold text-primary">
-              <BadgeCheck className="h-4 w-4" /> ISO-friendly, sigilo total
+              <BadgeCheck className="h-4 w-4" /> Atendimento 100% digital
             </div>
             <p className="mt-2 text-[13px] leading-snug text-muted-foreground">
-              Processos auditáveis, protocolos de segurança e ambiente 100% digital.
+              Envie documentos online, acompanhe processos em tempo real e tenha suporte sempre que precisar.
             </p>
           </div>
         </div>
         <div>
           <SectionHeader
             align="left"
-            eyebrow="Sobre a RD Solutions"
+            eyebrow="Por que escolher a RD solutions?"
             title={<>Mais que contabilidade. Uma parceira para o <span className="text-gradient-brand">crescimento do seu negócio.</span></>}
-            description="Somos uma consultoria contábil que combina especialistas experientes, tecnologia integrada e uma metodologia estratégica para transformar informações fiscais e financeiras em vantagem competitiva real."
+            description="Na RD solutions, tranformamos a contabilidade em uma ferramenta estratégica para o crescimento da sua Empresa. Cuidamos das obrigações fiscais, tributárias e contábeis com segurança, enquanto você dedica seu tempo ao que realmente importa: fazer o seu negócio crescer."
           />
           <ul className="mt-8 grid gap-4 sm:grid-cols-2">
             {[
-              { icon: Handshake, t: "Parceria estratégica", d: "Atuamos ao lado da liderança em decisões críticas do seu negócio." },
-              { icon: Cpu, t: "Tecnologia integrada", d: "Ecossistema conectado ao seu ERP, banco e sistemas de gestão." },
-              { icon: Shield, t: "Segurança e compliance", d: "Processos com controles, LGPD e sigilo absoluto." },
-              { icon: Rocket, t: "Foco em performance", d: "Redução legal de impostos e ganhos reais de margem." },
+              { icon: Handshake, t: "Atendimento próximo", d: "Você fala diretamente com especialistas que acompanham a realidade da sua Empresa." },
+              { icon: Cpu, t: "Processos digitais", d: "Mais agilidade, menos burocracia e acesso rápido às informações da sua Empresa." },
+              { icon: Shield, t: "Segurança e conformidade", d: "Sua Empresa sempre em conformidade com a legislação, reduzindo riscos e evitando problemas fiscais." },
+              { icon: Rocket, t: "Planejamento tributário", d: "Buscamos oportunidades legais para reduzir a carga tributária e melhorar os resultados do seu negócio." },
             ].map(({ icon: Icon, t, d }) => (
               <li key={t} className="card-premium card-premium-hover p-5">
                 <div className="grid h-10 w-10 place-items-center rounded-xl bg-primary/10 text-primary">
@@ -242,21 +242,21 @@ function Sobre() {
 
 /* ---------------- SERVIÇOS ---------------- */
 const servicos = [
-  { icon: Building2, t: "Abertura de Empresas", d: "Legalização completa, do CNPJ ao alvará, em processo 100% digital." },
-  { icon: Handshake, t: "Troca de Contador", d: "Transição sem dor de cabeça, com auditoria de conformidade." },
-  { icon: FileText, t: "Contabilidade Mensal", d: "Escrituração, balancetes e relatórios gerenciais estratégicos." },
-  { icon: Receipt, t: "Departamento Fiscal", d: "Apurações e obrigações acessórias com controle preventivo." },
-  { icon: Users, t: "Departamento Pessoal", d: "Folha, admissão, rescisões, eSocial e DIRF sem falhas." },
-  { icon: TrendingDown, t: "Planejamento Tributário", d: "Redução legal de impostos com análise de regime otimizada." },
-  { icon: Briefcase, t: "Consultoria Empresarial", d: "Estratégia, governança e estruturação societária." },
-  { icon: BarChart3, t: "Consultoria Financeira", d: "Fluxo de caixa, precificação e indicadores de gestão." },
-  { icon: Wallet, t: "BPO Financeiro", d: "Terceirização de contas a pagar, receber e conciliação bancária." },
-  { icon: ScrollText, t: "IR Pessoa Física", d: "Declaração completa, restituição otimizada e malha fina zero." },
-  { icon: ScrollText, t: "IR Pessoa Jurídica", d: "ECF, ECD e apurações precisas para sua empresa." },
-  { icon: Shield, t: "Regularização Fiscal", d: "Colocamos sua empresa em dia com Receita e órgãos estaduais." },
-  { icon: PiggyBank, t: "Parcelamentos Tributários", d: "Negociação e adesão aos programas de parcelamento vigentes." },
-  { icon: KeyRound, t: "Certificado Digital", d: "Emissão de e-CNPJ e e-CPF A1/A3 com atendimento presencial." },
-  { icon: Stamp, t: "Legalização Empresarial", d: "Alterações contratuais, filiais, encerramentos e licenças." },
+  { icon: Building2, t: "Abertura de Empresas", d: "Cuidamos do CNPJ, enquadramento tributário, inscrições e licenças para você começar com segurança.." },
+  { icon: Handshake, t: "Troca de Contador", d: "Fazemos uma transição organizada, analisamos pendências e mantemos a continuidade de sua operação." },
+  { icon: FileText, t: "Contabilidade Empresarial", d: "Escrituração contábil, demonstrativos e informações confiáveis para apoiar suas decisões." },
+  { icon: Receipt, t: "Departamento Fiscal", d: "Apuração de tributos, entrega de obrigações e acompanhamento preventivo da situação fiscal." },
+  { icon: Users, t: "Departamento Pessoal", d: "Admissões, folha de pagamento, férias, rescisões, eSocial e rotinas trabalhistas." },
+  { icon: TrendingDown, t: "Planejamento Tributário", d: "Analisamos regimes e operações para identificar oportunidades legais de economia tributária." },
+  { icon: Briefcase, t: "Consultoria Empresarial", d: "Apoio estratégico em estrutura societária, organização de processos e tomada de decisões." },
+  { icon: BarChart3, t: "Consultoria Financeira", d: "Organização do fluxo de caixa, precificação e indicadores para melhorar a gestão do negócio." },
+  { icon: Wallet, t: "BPO Financeiro", d: "Gestão de contas a pagar e receber, conciliações bancárias e organização da rotina financeira." },
+  { icon: ScrollText, t: "IR Pessoa Física", d: "Elaboração e revisão da declaração, análise de documentos e suporte em eventuais pendências." },
+  { icon: ScrollText, t: "Obrigações da Pessoa Jurídica", d: "Preparação e transmissão de declarações e escriturações, incluindo ECD e ECF quando aplicáveis." },
+  { icon: Shield, t: "Regularização Fiscal", d: "Identificamos pendências e conduzimos a regularização perante os orgãos competentes." },
+  { icon: PiggyBank, t: "Parcelamentos Tributários", d: "Analisamos débitos e auxiliamos na adesãp às modalidades de parcelamento disponíveis." },
+  { icon: KeyRound, t: "Certificado Digital", d: "Orientação e suporte para emissão ou renovação de certificados e-CPF e e-CNPJ." },
+  { icon: Stamp, t: "Legalização Empresarial", d: "Alterações contratuais, abertura de filiais, encerramentos, inscrições e licenças empresariais." },
 ];
 
 function Servicos() {
@@ -264,13 +264,13 @@ function Servicos() {
     <section id="servicos" className="py-24">
       <div className="container-page">
         <SectionHeader
-          eyebrow="Nossos serviços"
-          title={<>Solução completa para sua empresa <span className="text-gradient-brand">crescer com segurança</span></>}
-          description="Do CNPJ à consultoria estratégica: cobrimos todas as frentes contábeis, fiscais, trabalhistas e financeiras da sua operação."
+          eyebrow="Soluções para sua Empresa"
+          title={<>Tudo o que sua empresa precisa para operar, crescer e {""} <span className="text-gradient-brand">tomar decisões com segurança.</span></>}
+          description="Da abertura da Empresa à gestão contábil, fiscal, trabalhista e financeira, a RD Solutions oferece suporte completo para cada etapa de seu negócio."
         />
         <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {servicos.map(({ icon: Icon, t, d }) => (
-            <article key={t} className="card-premium card-premium-hover group relative overflow-hidden p-6">
+            <article key={t} className="card-premium card-premium-hover group relative flex min-h-[220px] flex-col overflow-hidden p-6">
               <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-primary/5 blur-2xl transition-all duration-500 group-hover:bg-primary/15" />
               <div className="relative flex items-start justify-between">
                 <div className="grid h-11 w-11 place-items-center rounded-xl bg-primary/10 text-primary">
@@ -283,6 +283,32 @@ function Servicos() {
             </article>
           ))}
         </div>
+
+        <div className="mt-12 flex flex-col items-center justify-between gap-6 rounded-3x1 border border-border/70 bg-muted/30 p-6 text-center sm:p-8 lg:flex-row lg:text-left">
+          <div>
+            <h3 className="font-display text-xl font-semibold text-foreground sm:text-2x1">
+              Não encontrou o serviço que procura?
+            </h3>
+            <p className="mt-2 max-w-2x1 text-sm leading-relaxed text-muted-foreground sm:text-base">
+              Fale com nossa equipe. Vamos entender a realidade da sua Empresa
+              e indicar a solução contábil mais adequada.
+            </p>
+          </div>
+
+          <Button
+            asChild
+            className="shrink-0 rounded-full bg-gradient-brand px-6 text-primary-foreground hover:opacity-95"
+          >
+            <a 
+              href={site.whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Falar com um especialista
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </a>  
+          </Button>  
+        </div>
       </div>
     </section>
   );
@@ -290,40 +316,71 @@ function Servicos() {
 
 /* ---------------- DIFERENCIAIS ---------------- */
 const diferenciais = [
-  { icon: Zap, t: "Atendimento totalmente digital", d: "Onboarding, envio de documentos e reuniões — tudo online." },
-  { icon: HeartHandshake, t: "Atendimento humanizado", d: "Você fala com pessoas, não com bots." },
-  { icon: BadgeCheck, t: "Especialistas atualizados", d: "Time em constante formação nas novas legislações." },
-  { icon: Cpu, t: "Tecnologia integrada", d: "Conectamos ao seu ERP, banco e ferramentas de gestão." },
-  { icon: TrendingDown, t: "Economia tributária", d: "Planejamento contínuo para pagar apenas o justo." },
-  { icon: BarChart3, t: "Planejamento estratégico", d: "Metas e projeções para decisões guiadas por dados." },
-  { icon: LineChart, t: "Relatórios inteligentes", d: "Dashboards claros com o que realmente importa." },
-  { icon: Clock, t: "Atendimento rápido", d: "Resposta média em até 24h úteis." },
-  { icon: Lock, t: "Sigilo absoluto", d: "Ambiente com criptografia e controles rígidos." },
-  { icon: MessageCircle, t: "Suporte via WhatsApp", d: "Canal direto para dúvidas do dia a dia." },
+  { icon: Zap, t: "Contabilidade 100% digital", d: "Envio de documentos, reuniões e acompanhamento da rotina contábil de forma prática e online." },
+  { icon: HeartHandshake, t: "Atendimento Próximo", d: "Você fala com especialistas que conhecem a realidade da sua empresa e acompanham suas necessidades." },
+  { icon: BadgeCheck, t: "Especialistas atualizados", d: "Acompanhamento constante das mudanças tributárias, fiscais, trabalhistas e societárias." },
+  { icon: Cpu, t: "Processos integrados", d: "Organização das informações contábeis em conjunto com seus sistemas, documentos e rotinas de gestão" },
+  { icon: TrendingDown, t: "Planejamento tributário contínuo", d: "Analises periódicas para identificar oportunidades legais de redução da carga tributária." },
+  { icon: BarChart3, t: "Visão estratégica do negócio", d: "Informações contábeis e financeiras organizadas para apoiar decisões mais seguras." },
+  { icon: LineChart, t: "Relatórios claros e objetivos", d: "Indicadores apresentados de forma simples para facilitar o acompanhamento dos resultados." },
+  { icon: Clock, t: "Comunicação ágil", d: "Atendimento organizado e retorno rápido para as demandas da rotina empresarial." },
+  { icon: Lock, t: "Confidencialidade das informações", d: "Tratamento responsável de documentos e dados empresariais, com foco em segurança e sigilo." },
+  { icon: MessageCircle, t: "Canal direto pelo WhatsApp", d: "Mais praticidade para tirar dúvidas e acompanhar solicitações do dia a dia." },
 ];
 
 function Diferenciais() {
   return (
     <section id="diferenciais" className="relative overflow-hidden bg-surface py-24">
-      <div className="container-page">
+      <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-primary/5 blur-3x1" />
+      <div className="container-page relative">
         <SectionHeader
-          eyebrow="Diferenciais"
-          title={<>Por que empresas escolhem a <span className="text-gradient-brand">RD Solutions</span></>}
-          description="Um modelo de atendimento pensado para quem valoriza velocidade, precisão e clareza."
+          eyebrow="Por que escolher a RD Solutions?"
+          title={<>Uma contabilidade preparada para acompanhar o{""} <span className="text-gradient-brand">crescimento da sua Empresa.</span></>}
+          description="Unimos atendimento próximo, processos digitais e visão estratégica para tornar a rotina contábil mais simples, segura e eficiente."
         />
-        <div className="mt-14 grid gap-3 sm:grid-cols-2 lg:grid-cols-2">
+
+        <div className="mt-14 grid gap-4 sm:grid-cols-2">
           {diferenciais.map(({ icon: Icon, t, d }) => (
-            <div key={t} className="card-premium card-premium-hover flex items-start gap-4 p-5">
-              <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-gradient-brand text-primary-foreground">
+            <article key={t} className="card-premium card-premium-hover group flex items-start gap-4 p-5 sm:p-6">
+              <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-gradient-brand text-primary-foreground shadow-sm transition-transform duration-300 group-hover:scale-105">
                 <Icon className="h-5 w-5" />
               </div>
-              <div>
-                <h4 className="font-display text-base font-semibold text-foreground">{t}</h4>
-                <p className="mt-1 text-sm text-muted-foreground">{d}</p>
+              <div className="min-w-0">
+                <h3 className="font-display text-base font-semibold text-foreground">{t}</h3>
+                <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{d}</p>
               </div>
-              <Check className="ml-auto h-4 w-4 shrink-0 text-primary" />
-            </div>
+              <Check className="ml-auto mt-1 h-4 w-4 shrink-0 text-primary opacity-70 transition-opacity duration-300 group-hover:opacity-100" />
+            </article>
           ))}
+        </div>
+
+        <div className="mt-12 grid gap-4 rounded-3x1 border border-border/70 bg-background/70 p-6 shadow-sm backdrop-blur-sm sm:grid-cols-3 sm:p-8">
+          <div className="text-center">
+            <p className="font-display text-lg font-semibold text-foreground">
+              Atendimento digital
+            </p>
+            <p className="mt-1 text-sm text-muted-foreground">
+              Mais praticidade para a sua rotina
+            </p>
+          </div>
+
+          <div className="border-y border-border/70 py-4 text-center sm:border-x sm:border-y-0 sm:py-0">
+            <p className="font-display text-lg font-semibold text-foreground">
+              Suporte especializado
+            </p>
+            <p className="mt-1 text-sm text-muted-foregorund">
+              Orientação para decisões importantes
+            </p>
+          </div>
+
+          <div className="text-center">
+            <p className="font-display text-lg font-semibold text-foreground">
+              Gestão com segurança
+            </p>
+            <p className="mt-1 text-sm text-muted-foreground">
+              Processos organizados e preventivos
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -332,53 +389,151 @@ function Diferenciais() {
 
 /* ---------------- INDICADORES ---------------- */
 function useCounter(target: number, run: boolean, duration = 1400) {
-  const [val, setVal] = useState(0);
+  const [value, setValue] = useState(0);
   useEffect(() => {
     if (!run) return;
-    let raf = 0;
-    const start = performance.now();
-    const step = (t: number) => {
-      const p = Math.min(1, (t - start) / duration);
-      const eased = 1 - Math.pow(1 - p, 3);
-      setVal(Math.round(target * eased));
-      if (p < 1) raf = requestAnimationFrame(step);
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+    if (reduceMotion) {
+      setValue(target);
+      return;
+    }
+    let animationFrame = 0;
+    const startTime = performance.now();
+    const animate = (currentTime: number) => {
+      const progress = Math.min(
+        1,
+        (currentTime - startTime) / duration
+      );
+      const easedProgress = 1 - Math.pow(1 - progress, 3);
+      setValue(Math.round(target * easedProgress));
+      if (progress < 1) {
+        animationFrame = requestAnimationFrame(animate);
+      }
     };
-    raf = requestAnimationFrame(step);
-    return () => cancelAnimationFrame(raf);
+    animationFrame = requestAnimationFrame(animate);
+    return () => {
+      cancelAnimationFrame(animationFrame);
+    };
   }, [target, run, duration]);
-  return val;
+  return value;
 }
 
 function Indicadores() {
-  const ref = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
   useEffect(() => {
-    if (!ref.current) return;
-    const io = new IntersectionObserver(([e]) => e.isIntersecting && setVisible(true), { threshold: 0.35 });
-    io.observe(ref.current);
-    return () => io.disconnect();
+    const element = sectionRef.current;
+    if (!element) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      {
+        threshold: 0.3,
+      }
+    );
+    observer.observe(element);
+    return () => {
+      observer.disconnect();
+    };
   }, []);
+  const empresas = useCounter(site.stats.empresas, visible);
+  const satisfacao = useCounter(site.stats.satisfacao, visible);
+  const anos = useCounter(site.stats.anos, visible);
+  const respostaHoras = useCounter(site.stats.respostaHoras, visible);
   const stats = [
-    { v: useCounter(site.stats.empresas, visible), p: "+", s: "", l: "Empresas atendidas" },
-    { v: useCounter(site.stats.satisfacao, visible), p: "", s: "%", l: "Clientes satisfeitos" },
-    { v: useCounter(site.stats.anos, visible), p: "", s: "", l: "Anos de experiência" },
-    { v: useCounter(site.stats.respostaHoras, visible), p: "", s: "h", l: "Tempo médio de resposta" },
+    {
+      value: empresas,
+      prefix: "+",
+      suffix: "",
+      label: "Empresas atendidas",
+      descripition: "Negócios que já contaram com nosso suporte.",
+    },
+    {
+      value: satisfacao,
+      prefix: "",
+      suffix: "%",
+      label: "Satisfação dos clientes",
+      descripition: "Relacionamentos construídos com proximidade.",
+    },
+    {
+      value: empresas,
+      prefix: "+",
+      suffix: "",
+      label: "Anos de experiência",
+      descripition: "Conhecimento aplicado à realidade empresarial.",
+    },
+    {
+      value: empresas,
+      prefix: "",
+      suffix: "h",
+      label: "Tempo médio de resposta",
+      descripition: "Comunicação ágil para a rotina da sua Empresa.",
+    },
   ];
+
   return (
-    <section ref={ref} className="py-24">
+    <section ref={sectionRef} className="py-24">
       <div className="container-page">
-        <div className="card-premium relative overflow-hidden rounded-3xl p-10 md:p-16">
+        <div className="card-premium relative overflow-hidden rounded-3xl p-8 sm:p-10 md:p-16">
           <div className="pointer-events-none absolute inset-0 bg-grid-soft opacity-30" />
           <div className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-primary/15 blur-3xl" />
-          <div className="relative grid gap-8 md:grid-cols-4">
-            {stats.map((s) => (
-              <div key={s.l}>
-                <div className="font-display text-5xl font-semibold tracking-tight text-gradient-brand md:text-6xl">
-                  {s.p}{s.v}{s.s}
-                </div>
-                <div className="mt-2 text-sm font-medium text-muted-foreground">{s.l}</div>
-              </div>
-            ))}
+          <div className="pointer-events-none absolute -bottom-24 -left-20 h-64 w-64 rounded-full bg-primary/10 blur-3x1" />
+          <div className="relative">
+            <div className="mx-auto max-w-2x1 text-center">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+                Resutados que geram confiança 
+              </p>
+              <h2 className="mt-3 font-display text-3x1 font-semibold tracking-tight text-foreground md:text-4x1">
+                Experiência, proximidade e agilidade para apoiar sua empresa.
+              </h2>
+              <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm-text-base">
+                Nossa atuação combina conhecimento técnico, processos
+                organizados e atendimento próximo em todas as etapas.
+              </p>
+            </div>
+            <div className="mt-12 grid gap-8 sm:grid-cols-2 md:grid-cols-4">
+              {stats.map((stat, index) => (
+                <article
+                  key={stat.label}
+                  className="relative text-center md:text-left"
+                >
+                  {index > 0 &&(
+                    <div className="absolute -left-4 top-0 hidden h-full w-px bg-border/70 md:block" />
+                  )}
+                  <div className="font-display text-4x1 font-semibold tracking-tight text-gradient-brand sm:text-5x1 md:text-6x1">
+                    {stat.prefix}
+                    {stat.value}
+                    {stat.suffix}
+                  </div>
+                  <h3 className="mt-3 text-sm fontsemibold text-foreground">
+                    {stat.label}
+                  </h3>
+                  <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+                    {stat.descripition}
+                  </p>
+                </article>  
+              ))}
+            </div>
+            <div className="mt-12 flex flex-wrap justify-center gap-x-8 gap-y-3 border-t border-border/70 pt-8 text-sm text-muted-foreground">
+              <span className="inline-flex items-center gap-2">
+                <Check className="h-4 w-4 text-primary" />
+                Atendimento Digital
+              </span>
+              <span className="inline-flex items-center gap-2">
+                <Check className="h-4 w-4 text-primary" />
+                Suporte especializade
+              </span>
+              <span className="inline-flex items-center gap-2">
+                <Check className="h-4 w-4 text-primary" />
+                Processos organizados
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -388,11 +543,11 @@ function Indicadores() {
 
 /* ---------------- COMO TRABALHAMOS ---------------- */
 const passos = [
-  { n: "01", t: "Você entra em contato", d: "Solicite uma conversa por WhatsApp, formulário ou telefone." },
-  { n: "02", t: "Conhecemos sua empresa", d: "Diagnóstico completo do seu negócio, operação e histórico contábil." },
-  { n: "03", t: "Analisamos oportunidades", d: "Estudamos regime tributário, obrigações e pontos de otimização." },
-  { n: "04", t: "Montamos uma estratégia", d: "Plano personalizado com ações, prazos e projeção de resultados." },
-  { n: "05", t: "Assessoria completa", d: "Sua empresa passa a contar com nossa consultoria estratégica no dia a dia." },
+  { n: "01", t: "Você fala com nossa equipe", d: "O primeiro contato pode ser feito pelo WhatsApp, telefone ou formulário do site." },
+  { n: "02", t: "Entendemos sua empresa", d: "Conhecemos sua operação, seu momento atual e as principais necessidades do negócio." },
+  { n: "03", t: "Analisamos o cenário", d: "Avaliamos os aspectos contábeis, fiscais, trabalhistas e tributários relevantes para a sua empresa." },
+  { n: "04", t: "Apresentamos a solução", d: "Definimos o escopo do atendimento, as prioridades e os próximos passos de forma clara." },
+  { n: "05", t: "Acompanhamos su rotina", d: "Sua empresa passa a contar com suporte contínuo, processos organizados e orientação especializada."},
 ];
 
 function ComoTrabalhamos() {
@@ -401,72 +556,118 @@ function ComoTrabalhamos() {
       <div className="container-page">
         <SectionHeader
           eyebrow="Como trabalhamos"
-          title={<>Um processo claro, do <span className="text-gradient-brand">primeiro contato</span> à execução</>}
+          title={<>Um processo simples, transparente e pensado para a{""}<span className="text-gradient-brand">realidade da sua empresa.</span></>}
+          description="Do primeiro contato ao acompanhamento contínuo, cada etapa é conduzida com clareza, organização e proximidade."
         />
-        <div className="mt-14 grid gap-6 md:grid-cols-5">
-          {passos.map((p, i) => (
-            <div key={p.n} className="relative">
-              <div className="card-premium card-premium-hover h-full p-6">
-                <span className="font-display text-xs font-semibold uppercase tracking-[0.14em] text-primary">
-                  Passo {p.n}
-                </span>
-                <h4 className="mt-3 font-display text-lg font-semibold">{p.t}</h4>
-                <p className="mt-2 text-sm text-muted-foreground">{p.d}</p>
-              </div>
-              {i < passos.length - 1 && (
-                <div className="absolute -right-3 top-1/2 hidden h-px w-6 -translate-y-1/2 bg-gradient-to-r from-primary/40 to-transparent md:block" />
-              )}
-            </div>
-          ))}
+        <div className="relative mt-14">
+          <div className="absolute left-6 top-6 hidden h-[calc(100%-3rem)] w-px bg-border/70 sm:block md:left-0 md:top-8 md:h-px md:w-full" />
+          <div className="relative grid gap-6 md:grid-cols-5">
+            {passos.map((passo) => (
+              <article
+                key={passo.n}
+                className="card-premium card-premium-hover group relative h-full p-6"
+              >
+                <div className="absolute left-5 top-6 hidden h-3 w-3 -translate-x-[29px] rounded-full border-2 border-primary bg-background shadow-sm sm-block md:left-1/2 md:top-0 md:-translate-x-1/2 md:-translate-y-[29px]" />
+                <div className="flex items-center justify-between gap-4">
+                  <span className="font-display text-xs font-semibold uppercase tracking-[0.16em] text-primary">
+                    Etapa {passo.n}
+                  </span>
+                  <span className="font-display text-3x1 font-semibold text-primary/10 transition-colors duration-300 group-hover:text-primary/20">
+                    {passo.n}
+                  </span>
+                </div>
+                <h3 className="mt-4 font-display text-lg font-semibold text-foreground">
+                  {passo.t}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  {passo.d}
+                </p>
+              </article>
+            ))}
+          </div>
         </div>
-      </div>
+        <div className="mt-12 flex flex-col items-center justify-between gap-6 rounded-3x1 border border-border/70 bg-muted/30 p-6 text-center sm:p-8 lg:flex-row lg:text-left">
+            <div>
+              <h3 className="font-display text-xl font-semibold text-foreground sm:text-2x1">
+                Quer entender como podemos ajudar sua empresa?
+              </h3>
+              <p className="mt-2 max-w-2x1 text-sm leading-relaxed text-muted-foreground sm:text-base">
+                Coverse com nossa equipe e receba uma orientação inicial sobre o
+                melhor caminho para sua necessidade.
+              </p>
+            </div>
+            <Button 
+              asChild
+              className="shrink-0 rounded-full bg-gradient-brand px-6 text-primary-foreground hover:opacity-95"
+            >
+              <a
+                href={site.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Falar com um especialista
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </a> 
+            </Button>  
+        </div>
+      </div>  
     </section>
   );
 }
 
 /* ---------------- FERRAMENTAS TEASER ---------------- */
 const ferramentas = [
-  { icon: Building2, t: "Abertura de Empresa", d: "Simule regime, custos e tempo estimado." },
-  { icon: TrendingDown, t: "Economia Tributária", d: "Descubra quanto sua empresa pode economizar." },
-  { icon: BarChart3, t: "Comparador Tributário", d: "MEI x Simples x Presumido x Real." },
-  { icon: Calculator, t: "Custos Contábeis", d: "Estimativa de honorários e obrigações." },
-  { icon: Receipt, t: "Calculadora Fiscal", d: "Impostos, calendário fiscal e obrigações." },
-  { icon: Wallet, t: "Simulador Pró-Labore", d: "Pró-labore vs. distribuição de lucros." },
-  { icon: Users, t: "Simulador de Contratação", d: "Custo real do funcionário na sua região." },
-  { icon: Landmark, t: "Simulador MEI", d: "Posso ser MEI? Vale migrar para Simples?" },
+  { icon: Building2, t: "Abertura de Empresa", d: "Faça uma simulação inicial de enquadramento, custos e etapas para abrir sua empresa." },
+  { icon: TrendingDown, t: "Economia Tributária", d: "Simule cenários e identifique possíveis oportunidades de economia trabutária." },
+  { icon: BarChart3, t: "Comparador de Regimes", d: "Compare cenários entre MEI, Simples Nacional, Lucro Presumido e Lucro Real." },
+  { icon: Calculator, t: "Custos Contábeis", d: "Estime custos de serviços contábeis de acordo com o perfil da sua empresa." },
+  { icon: Receipt, t: "Calendário Fiscal", d: "Consulte datas e organize melhor as principais obrigações da sua empresa." },
+  { icon: Wallet, t: "Simulador Pró-Labore", d: "Compare cenários de pró-labore e distribuição de lucros para apoiar seu planejamento." },
+  { icon: Users, t: "Custo de Contratação", d: "Estime os principais custos envolvidos na contratação de um funcionário." },
+  { icon: Landmark, t: "MEI ou Simples Nacional", d: "Avalie seu cenário e entenda quando pode fazer sentido migrar do MEI." },
 ];
 
 function Ferramentas() {
   return (
     <section id="ferramentas" className="relative overflow-hidden bg-surface py-24">
-      <div className="container-page">
+      <div className="pointer-events-none absolute -left-32 top-20 h-80 w-80 rounded-full bg-primary/10 blur-3x1" />
+      <div className="pointer-events-none absolute -right-32 bottom-10 h-80 w-80 rounded-full bg-primary/10 blur-3x1" />
+      <div className="container-page relative">
         <SectionHeader
           eyebrow="Ferramentas inteligentes"
-          title={<>Calculadoras e simuladores <span className="text-gradient-brand">exclusivos</span> para empresários</>}
-          description="Tome decisões com base em dados. Simule impostos, custos e economias em segundos."
+          title={<>Informação para transformar dúvidas em{""} <span className="text-gradient-brand"> decisões mais inteligentes.</span></>}
+          description="Use nossas calculadoras e simuladores para explorar cenários contábeis, tributários e financeiros antes de conversar com um especialista."
         />
         <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {ferramentas.map(({ icon: Icon, t, d }) => (
             <Link
               key={t}
               to="/ferramentas"
-              className="card-premium card-premium-hover group flex h-full flex-col p-6"
+              className="card-premium card-premium-hover group relative flex h-full min-h-[230px] flex-col overflow-hidden p-6"
             >
-              <div className="grid h-11 w-11 place-items-center rounded-xl bg-primary/10 text-primary">
+              <div className="absolute -right-12 -top-12 h-32 w-32 rounded-full bg-primary-5 blur-2x1 transition-all duration-500 group-hover:bg-primary/15" />
+              <div className="relative grid h-11 w-11 place-items-center rounded-xl bg-primary/10 text-primary transition-transform duration-300 group-hover:scale-105">
                 <Icon className="h-5 w-5" />
               </div>
-              <h4 className="mt-4 font-display text-base font-semibold">{t}</h4>
-              <p className="mt-1 text-sm text-muted-foreground">{d}</p>
-              <span className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-primary opacity-0 transition group-hover:opacity-100">
-                Abrir ferramenta <ArrowRight className="h-3.5 w-3.5" />
+
+              <h3 className="relative mt-5 font-display text-base font-semibold text-foreground">{t}</h3>
+              <p className="relative mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">{d}</p>
+              <span className="relative mt-5 inline-flex items-center gap-1.5 text-xs font-semibold text-primary">
+                Simular agora <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
               </span>
             </Link>
           ))}
         </div>
-        <div className="mt-10 text-center">
+
+        <div className="mt-10 flex flex-col items-center gap-4 text-center">
           <Button asChild size="lg" className="rounded-full bg-gradient-brand text-primary-foreground hover:opacity-95">
             <Link to="/ferramentas">Explorar todas as ferramentas <ArrowRight className="ml-1.5 h-4 w-4" /></Link>
           </Button>
+          <p className="max-w-2x1 text-xs leading-relaxed text-muted-foreground">
+            Os resultados apresentados são estimativas para fins informativos e
+            não substituem uma análise contábil, fiscal ou tributária
+            individualizada.
+          </p>
         </div>
       </div>
     </section>
@@ -475,10 +676,10 @@ function Ferramentas() {
 
 /* ---------------- DEPOIMENTOS ---------------- */
 const depos = [
-  { n: "Marina Alves", e: "CEO, Alcance Digital", c: "Reduziram 28% da nossa carga tributária no primeiro ano. Atendimento impecável.", a: "MA" },
-  { n: "Rafael Nogueira", e: "Sócio, Nogueira Indústria", c: "Migramos de contador em 15 dias, sem nenhum problema. Profissionais nível consultoria top-tier.", a: "RN" },
-  { n: "Camila Ferraz", e: "Fundadora, Studio F.", c: "Finalmente uma contabilidade que me ajuda a decidir, não apenas a cumprir obrigações.", a: "CF" },
-  { n: "Diego Prado", e: "Diretor, Prado Comércio", c: "Os dashboards e a agilidade no WhatsApp mudaram minha rotina como empresário.", a: "DP" },
+  { icon: HeartHandshake, t: "Atendimento Próximo", d:"Cada empresa recebe acompanhamento com comunicação clara, suporte acessível e orientação ao longo da rotina."},
+  { icon: Shield, t: "Segurança nas decisões", d: "As informações contábeis são organizadas para reduzir riscos e apoiar escolhas mais conscientes." },
+  { icon: TrendingDown, t: "Visão tributária estratégica", d: "Analisamos cenários e oportunidades legais para tornar a gestão tributária mais eficiente." },
+  { icon: MessageCircle, t: "Comunicação simples", d: "Nada de complicar o que pode ser explicado de forma clara. Nossa equipe facilita o contato e o acompanhamento." },
 ];
 
 function Depoimentos() {
@@ -486,27 +687,46 @@ function Depoimentos() {
     <section className="py-24">
       <div className="container-page">
         <SectionHeader
-          eyebrow="Depoimentos"
-          title={<>O que nossos <span className="text-gradient-brand">clientes</span> dizem</>}
+          eyebrow="Uma relação baseada em confiança"
+          title={<>Contabilidade feita para quem espera{""}<span className="text-gradient-brand"> mais do que cumprir obrigações. </span></>}
+          description="Nosso objetivo é construir uma relação próxima com cada empresa, oferecendo segurança, clareza e suporte para decisões importantes."
         />
-        <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {depos.map((d) => (
-            <figure key={d.n} className="card-premium card-premium-hover flex h-full flex-col p-6">
-              <div className="flex gap-0.5 text-primary">
-                {"★★★★★".split("").map((s, i) => <span key={i}>{s}</span>)}
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {depos.map(({ icon: Icon, t, d}) => (
+            <article
+              key={t}
+              className="card-premium card-premium-hover group flex h-full flex-col p-6">
+              
+              <div className="grid h-11 w-11 place-items-center rounded-x1 bg-primary/10 text-primary transition-transform duration-300 group-hover:scale-105">
+                <Icon className="h-5 w-5" />
               </div>
-              <blockquote className="mt-3 text-sm leading-relaxed text-foreground/85">"{d.c}"</blockquote>
-              <figcaption className="mt-6 flex items-center gap-3">
-                <div className="grid h-10 w-10 place-items-center rounded-full bg-gradient-brand font-display text-sm font-semibold text-primary-foreground">
-                  {d.a}
-                </div>
-                <div>
-                  <div className="text-sm font-semibold text-foreground">{d.n}</div>
-                  <div className="text-xs text-muted-foreground">{d.e}</div>
-                </div>
-              </figcaption>
-            </figure>
+              <h3 className="mt-5 font-display text-lg font-semibold text-foreground">
+                {t}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                {d}
+              </p>
+            </article>
           ))}
+        </div>
+
+        <div className="mt-12 text-center">
+          <p className="text-sm text-muted-foreground">
+            Quer entender como esse atendimento funciona na prática?
+          </p>
+          <Button 
+            asChild 
+            className="mt-4 rounded-full bg-gradient-brand px-6 text-primary-foreground hover:opacity-95"
+          >
+            <a 
+              href={site.whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Conversar com nossa equipe
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </a>  
+          </Button>
         </div>
       </div>
     </section>
@@ -515,38 +735,60 @@ function Depoimentos() {
 
 /* ---------------- FAQ ---------------- */
 const faq = [
-  { q: "Quanto custa a assessoria contábil da RD Solutions?", a: "O investimento depende do porte, regime tributário e complexidade da sua operação. Use nossa calculadora de custos ou solicite uma proposta personalizada em minutos." },
-  { q: "Posso trocar de contador facilmente?", a: "Sim. Cuidamos de todo o processo de transição em até 15 dias úteis, incluindo auditoria de conformidade e recepção de arquivos do contador anterior." },
-  { q: "Vocês atendem em todo o Brasil?", a: "Sim. Somos uma consultoria 100% digital. Atendemos empresas de todos os estados com o mesmo padrão de excelência." },
-  { q: "Como funciona o suporte?", a: "Você tem um contador dedicado, canal exclusivo por WhatsApp, e-mail e reuniões estratégicas mensais. Nosso SLA médio de resposta é de 24 horas úteis." },
-  { q: "Quanto tempo leva para abrir uma empresa?", a: "Em média entre 3 e 10 dias úteis, dependendo do município, atividade e órgãos envolvidos. Nossa ferramenta gratuita simula o prazo exato para o seu caso." },
+  { q: "Quanto custa a assessoria contábil da RD Solutions?", a: "O valor depende de fatores como porte da empresa, regime tributário, quantidade de funcionários, volume de movimentação e serviços contratados. Nossa equipe analisa o seu cenário e apresenta uma proposta personalizada." },
+  { q: "Posso trocar de contador sem interromper minha operação?", a: "Sim. A RD Solutions acompanha o processo de transição, organiza o recebimento das informações do contador anterior e verifica possíveis pendências para que a mudança aconteça de forma estruturada." },
+  { q: "Vocês atendem em todo o Brasil?", a: "Sim. Nosso modelo de atendimento permite acompanhar empresas de diferentes regiões de forma digital, com envio de documentos, suporte e reuniões realizados online." },
+  { q: "Como funciona o atendimento e o suporte?", a: "Nossa equipe acompanha as demandas da sua empresa por canais digitais, incluindo WhatsApp e e-mail. Quando necessário, também realizamos reuniões para orientar decisões e esclarecer questões contábeis, fiscais e tributárias." },
+  { q: "Quanto tempo leva para abrir uma empresa?", a: "O prazo varia conforme a atividade, o município, os órgãos envolvidos e a necessidade de licenças ou autorizações. Nossa equipe acompanha todas as etapas e orienta você durante o processo de abertura." },
+  { q: "Quais documentos preciso enviar para começar?", a:"Os documentos necessários variam de acordo com o serviço contratado e o tipo de empresa. Após o primeiro contato, nossa equipe informa exatamente o que será necessário para dar andamento ao atendimento."},
+  { q: "A RD Solutions também faz planejamento tributário?", a: "Sim. Analisamos o enquadramento e a operação da empresa para identificar oportunidades legais de organização e eficiência tributária, sempre considerando as características de cada negócio."},
+  { q: "Preciso ir presencialmente no escritório?", a: "Na maioria das rotinas, não. Grande parte do atendimento pode ser realizada digitalmente, facilitando o envio de documentos, reuniões e acompanhamento das solicitações."},
 ];
 
 function FaqSection() {
   return (
-    <section id="faq" className="bg-surface py-24">
-      <div className="container-page">
+    <section id="faq" className="relative overflow-hidden bg-surface py-24">
+      <div className="pointer-events-none absolute -left-32 top-20 h-72 w-72 rounded-full bg-primary/5 blur-3x1" />
+
+      <div className="container-page relative">
         <SectionHeader
           eyebrow="Dúvidas frequentes"
-          title={<>Perguntas <span className="text-gradient-brand">respondidas</span> pelos nossos especialistas</>}
+          title={<>Tudo oque você precisa saber antes de{""} <span className="text-gradient-brand"> começar com a RD Solutions.</span></>}
+          description="Reunimos as principais dúvidas de empresários sobre contratação, atendimento e serviços contábeis."
         />
+
         <div className="mx-auto mt-12 max-w-3xl">
           <Accordion type="single" collapsible className="space-y-3">
-            {faq.map((f, i) => (
+            {faq.map((item, index) => (
               <AccordionItem
-                key={i}
-                value={`i-${i}`}
-                className="card-premium overflow-hidden border-0 px-5"
+                key={item.q}
+                value={`faq-${index}`}
+                className="card-premium overflow-hidden border-0 px-5 transition-shadow duration-300 hover:shadow-md sm:px-6"
               >
-                <AccordionTrigger className="text-left font-display text-base font-semibold hover:no-underline">
-                  {f.q}
+                <AccordionTrigger className="py-5 text-left font-display text-base font-semibold text-foreground hover:no-underline sm:text-lg">
+                  {item.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-sm leading-relaxed text-muted-foreground">
-                  {f.a}
+                <AccordionContent className="pb-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
+                  {item.a}
                 </AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
+          <div className="mt-10 text-center">
+            <p className="text-sm text-muted-foreground">
+              Ainda ficou com alhuma dúvida?
+            </p>
+            <Button asChild className="mt-4 rounded-full bg-gradient-brand px-6 text-primary-foreground hover:opacity-95">
+              <a 
+                href={site.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Falar com nossa equipe
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </a>
+            </Button>
+          </div>
         </div>
       </div>
     </section>
@@ -558,30 +800,73 @@ function CtaFinal() {
   return (
     <section className="py-24">
       <div className="container-page">
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-brand p-10 text-primary-foreground shadow-[var(--shadow-glow)] md:p-16">
-          <div className="pointer-events-none absolute inset-0 opacity-20 bg-grid-soft" />
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-brand p-8 text-primary-foreground shadow-[var(--shadow-glow)] sm:p-10 md:p-16">
+          <div className="pointer-events-none absolute inset-0 bg-grid-soft opacity-20" />
           <div className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-white/20 blur-3xl" />
-          <div className="relative grid gap-8 md:grid-cols-[1.4fr_1fr] md:items-center">
+          <div className="pointer-events-none absolute -bottom-24 -left-20 h-64 w-64 rounded-full bg-black/10 blur-3xl" />
+
+          <div className="relative grid gap-10 md:grid-cols-[1.4fr_1fr] md:items-center">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em]">
-                <Sparkles className="h-3.5 w-3.5" /> Pronto para começar?
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em]">
+                <Sparkles className="h-3.5 w-3.5" /> Próximo passo
               </div>
-              <h3 className="mt-4 font-display text-3xl font-semibold leading-tight md:text-5xl">
-                Vamos cuidar da sua contabilidade — enquanto você cuida do crescimento da sua empresa.
-              </h3>
-              <p className="mt-4 max-w-xl text-white/85">
-                Fale com um especialista da RD Solutions e receba uma proposta personalizada em até 24 horas.
+
+              <h2 className="mt-5 max-w-3x1 font-display text-3xl font-semibold leading-tight sm:text-4x1 md:text-5xl">
+                Sua Empresa pode crescer com mais organização, segurança e 
+                estratégia.
+              </h2>
+
+              <p className="mt-5 max-w-2xl text-sm leading-relaxed text-white/85 sm:text-base">
+                Converse com nossa equipe, explique o momento da sua Empresa
+                e receba uma orientação inicial sobre a solução contábil mais
+                adequada.
               </p>
+
+              <div className="mt-6 flex flex-wrap gap-x-6 gap-y-3 text-sm text-white/90">
+                <span className="inline-flex items-center gap-2">
+                  <Check className="h-4 w-4" />
+                  Atendimento personalizado
+                </span>
+                <span className="inline-flex items-center gap-2">
+                  <Check className="h-4 w-4" />
+                  Análise da sua necessidade
+                </span>
+                <span className="inline-flex items-center gap-2">
+                  <Check className="h-4 w-4" />
+                  Sem compromisso
+                </span>
+              </div>
             </div>
-            <div className="flex flex-col gap-3">
-              <Button asChild size="lg" className="rounded-full bg-white text-[color:var(--terracota)] hover:bg-white/90">
-                <a href="#contato">Solicitar orçamento <ArrowRight className="ml-1.5 h-4 w-4" /></a>
+
+            <div className="flex flex-col gap-3 rounded-2x1 border border-white/20 bg-white/10 p-4 backdrop-blur-sm sm:p-5">
+              <Button 
+                asChild 
+                size="lg" 
+                className="rounded-full bg-white text-[color:var(--terracota)] hover:bg-white/90"
+              >
+                <a 
+                  href={site.whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer">
+                    Solicitar diagnóstico gratuito
+                    <ArrowRight className="ml-1.5 h-4 w-4" />
+                  </a>
               </Button>
-              <Button asChild size="lg" variant="outline" className="rounded-full border-white/40 bg-transparent text-white hover:bg-white/10 hover:text-white">
-                <a href={site.whatsappUrl} target="_blank" rel="noreferrer">
-                  <MessageCircle className="mr-1.5 h-4 w-4" /> Falar no WhatsApp
-                </a>
-              </Button>
+
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="w-full rounded-full border-white/40 bg-transparent text-white hover:bg-white/10 hover:text-white">
+                  <a href="/#servicos">
+                    Conhecer nossos serviços
+                  </a>
+                </Button>
+
+                <p className="px-3 pt-1 text-center text-xs leading-relaxed text-white/70">
+                  Você será direcionado ao WhatsApp para falar diretamente com 
+                  nossa equipe.
+                </p>
             </div>
           </div>
         </div>
