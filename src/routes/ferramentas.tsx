@@ -15,13 +15,13 @@ import { LeadCapture } from "@/components/site/lead-capture";
 export const Route = createFileRoute("/ferramentas")({
   head: () => ({
     meta: [
-      { title: "Ferramentas inteligentes — RD Solutions" },
-      { name: "description", content: "Simuladores e calculadoras contábeis: economia tributária, comparador de regimes, custos contábeis, pró-labore, MEI e mais." },
-      { property: "og:title", content: "Ferramentas Inteligentes — RD Solutions" },
-      { property: "og:description", content: "Calculadoras contábeis para tomar decisões inteligentes." },
-      { property: "og:url", content: "/ferramentas" },
+      { title: "Calculadoras e Simuladores Contábeis | RD Solutions" },
+      { name: "description", content: "Use calculadoras e simuladores contábeis para explorar cenários de regime tributário, pró-labore, custos de contratação, MEI, abertura de empresa e planejamento financeiro." },
+      { property: "og:title", content: "Calculadoras e Simuladores Contábeis | RD Solutions" },
+      { property: "og:description", content: "Ferramentas gratuitas para simular cenários contábeis, tributários e financeiros da sua empresa." },
+      { name: "twitter:title", content: "Calculadoras Contábeis | RD Solutions" },
+      { name: "twitter:description", content: "Simule regimes tributários, pró-labore, contratação, MEI e outros cenários empresariais."},
     ],
-    links: [{ rel: "canonical", href: "/ferramentas" }],
   }),
   component: FerramentasPage,
 });

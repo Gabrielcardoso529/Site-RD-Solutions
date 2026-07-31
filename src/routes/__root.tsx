@@ -16,6 +16,7 @@ import { SiteFooter } from "@/components/site/site-footer";
 import { FloatingActions } from "@/components/site/floating-actions";
 import { LgpdBanner } from "@/components/site/lgpd-banner";
 import { Toaster } from "@/components/ui/sonner";
+import { site } from "@/lib/site-config";
 
 function NotFoundComponent() {
   return (
@@ -79,12 +80,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { title: "RD Solutions | Contabilidade Estratégica e Assessoria contábil" },
+      { name: "description", content: "Contábilidade estratégica para empresas. Planejamento tributário, BPO financeiro, abertura de empresas, gestão fiscal, departamento pessoal e consultoria empresarial."},
+      { name: "robots", content: "index, follow"},
       { name: "theme-color", content: "#8A4A36" },
       { name: "author", content: "RD Solutions Assessoria Contábil" },
       { property: "og:site_name", content: "RD Solutions" },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "pt_BR" },
+      { property: "og:title", content: "RD Solutions | Contábilidade estratégica e Assessoria Contábil. "},
+      { property: "og:description", content: "Contabilidade estratégica, planejamento tributário e soluções empresariais para ajudar sua empresa a crescer com segurança."},
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "RD Solutions | Contábilidade Estratégica"},
+      { name: "twitter:description", content: "Soluções contábeis, tributárias e financeiras para empresas que querem crescer com mais segurança e organização."}
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -104,10 +112,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@type": "AccountingService",
           name: "RD Solutions Assessoria Contábil",
           description:
-            "Consultoria contábil estratégica: planejamento tributário, BPO financeiro, abertura de empresas e consultoria empresarial.",
-          areaServed: "BR",
-          priceRange: "$$",
-          telephone: "+55 11 2211-4234",
+            "Assessoria contábil especializada em planejamento tributário, BPO financeiro, abertura de empresas, gestão fiscal e consultoria empresarial.",
+          areaServed: {
+            "@type": "Country",
+            name: "Brasil",
+          },
+          telephone: site.phone,
         }),
       },
     ],

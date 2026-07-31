@@ -42,21 +42,18 @@ import { SectionHeader } from "@/components/site/section";
 import { site } from "@/lib/site-config";
 import hero from "@/assets/hero.jpg";
 import office from "@/assets/office.jpg";
+import { Reveal } from "@/components/ui/reveal";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "RD Solutions — Contabilidade estratégica para empresas que crescem" },
-      {
-        name: "description",
-        content:
-          "Consultoria contábil premium: planejamento tributário, BPO financeiro, abertura de empresas, IR e consultoria empresarial. Atendimento digital em todo o Brasil.",
-      },
-      { property: "og:title", content: "RD Solutions — Contabilidade estratégica" },
-      { property: "og:description", content: "Transformamos números em decisões inteligentes." },
-      { property: "og:url", content: "/" },
+      { title: "RD Solutions | Contabilidade estratégica para Empresas" },
+      { name: "description", content: "Assessoria contábil estratégica para empresas: planejamento tributário, BPO financeiro, abertura de empresas, gestão fiscal e Atendimento digital.", },
+      { property: "og:title", content: "RD Solutions | Contabilidade estratégica para Empresas" },
+      { property: "og:description", content: "Contabilidade, planejamento tributário e soluções empresariais para ajudar sua empresa a crescer com mais segurança e organização." },
+      { name: "twitter:title", content: "RD Solutions | Contábilidade Estratégica" },
+      { name: "twitter:description", content: "Soluções contábeis, tributárias e financeiras para empresas."}
     ],
-    links: [{ rel: "canonical", href: "/" }],
   }),
   component: Home,
 });
@@ -68,23 +65,23 @@ function Hero() {
       <div className="absolute inset-0 bg-grid-soft opacity-[0.35]" aria-hidden />
       <div className="pointer-events-none absolute -left-40 top-10 h-96 w-96 rounded-full bg-primary/15 blur-3xl" />
       <div className="pointer-events-none absolute right-0 top-40 h-[28rem] w-[28rem] rounded-full bg-[color:var(--gold)]/20 blur-3xl" />
-      <div className="container-page relative grid gap-12 pt-10 pb-20 lg:grid-cols-[1.05fr_1fr] lg:pt-16 lg:pb-28">
+      <div className="container-page relative grid gap-10 pb-16 pt-8 sm:pt-10 lg:grid-cols-[1.05fr_1fr] lg:gap-12 lg:pb-28 lg:pt-16">
         <div className="max-w-2xl animate-rd-fade-up">
-          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card/80 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-primary">
-            <Sparkles className="h-3.5 w-3.5" /> Contabilidade estratégica para Empresas
+          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card/80 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-primary sm:text-[11px] sm:tracking-[0.16em]">
+            <Sparkles className="h-3.5 w-3.5 shrink-0" /> Contabilidade estratégica para Empresas
           </div>
-          <h1 className="mt-5 font-display text-4xl font-semibold tracking-tight text-foreground md:text-6xl md:leading-[1.02]">
+          <h1 className="mt-5 font-display text-[2.5rem] font-semibold leading-[1.08] tracking-[-0.03em] text-foreground sm:text-5x1 md:text-6xl md:leading-[1.02]">
             Sua contabilidade deve ajudar sua empresa a <span className="text-gradient-brand">crescer com segurança.</span>.
           </h1>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
             A RD Solutions cuida da contabilidade, do fiscal e da gestão da sua empresa com proximidade, tecnologia e visão estratégica.
             Você ganha mais segurança para tomar decisões, reduzir riscos e identificar oportunidades de economia tributária dentro da lei.
           </p>
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Button
               asChild
               size="lg"
-              className="rounded-full bg-gradient-brand text-primary-foreground hover:opacity-95"
+              className="w-full rounded-full bg-gradient-brand text-primary-foreground hover:opacity-95 sm:w-auto"
             >
               <a href="#contato">
                 Solicitar diagnóstico gratuito
@@ -95,7 +92,7 @@ function Hero() {
               asChild
               size="lg"
               variant="outline"
-              className="rounded-full"
+              className="w-full rounded-full sm:w-auto"
             >
               <a
                 href={site.whatsappUrl}  
@@ -110,25 +107,13 @@ function Hero() {
               asChild
               size="lg"
               variant="ghost"
-              className="rounded-full"
+              className="w-full rounded-full sm:w-auto"
             >
               <a href="#servicos">
                 Conhecer nossos serviços
               </a>
             </Button>  
           </div>
-          <dl className="mt-10 grid max-w-lg grid-cols-3 gap-6 border-t border-border pt-6">
-            {[
-              { k: "+500", v: "empresas atendidas" },
-              { k: "98%", v: "clientes satisfeitos" },
-              { k: "15", v: "anos de experiência" },
-            ].map((s) => (
-              <div key={s.v}>
-                <dt className="font-display text-2xl font-semibold text-foreground">{s.k}</dt>
-                <dd className="mt-1 text-xs uppercase tracking-wider text-muted-foreground">{s.v}</dd>
-              </div>
-            ))}
-          </dl>
         </div>
 
         <div className="relative">
@@ -138,19 +123,20 @@ function Hero() {
               alt="Consultores analisando indicadores financeiros"
               width={1600}
               height={1100}
-              className="h-[420px] w-full object-cover md:h-[560px]"
+              className="h-[340px] w-full object-cover sm:h-[420px] md:h-[560px]"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-transparent" />
           </div>
           {/* Floating dashboard cards */}
           <div className="glass animate-rd-float absolute -left-4 top-8 hidden w-56 rounded-2xl p-4 shadow-[var(--shadow-elevated)] md:block">
             <div className="flex items-center justify-between text-xs text-muted-foreground">
-              <span>Economia tributária</span>
+              <span>Planejamento tributária</span>
               <span className="rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-semibold text-primary">2026</span>
             </div>
-            <div className="mt-2 font-display text-2xl font-semibold text-foreground">R$ 148.320</div>
+            <div className="mt-2 font-display text-2xl font-semibold text-foreground">Análise personalizada</div>
             <div className="mt-1 flex items-center gap-1 text-xs font-medium text-[oklch(0.55_0.13_150)]">
-              <TrendingDown className="h-3.5 w-3.5" /> -32% em impostos
+              <TrendingDown className="h-3.5 w-3.5" /> Oportunidades identificadas
+                                                      dentro da legislação
             </div>
             <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-muted">
               <div className="h-full w-2/3 rounded-full bg-gradient-brand" />
@@ -178,7 +164,7 @@ function Hero() {
 
       {/* Trust bar */}
       <div className="border-y border-border bg-surface/60">
-        <div className="container-page flex flex-wrap items-center justify-between gap-6 py-6 text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+        <div className="container-page grid grid-cols-2 gap-x-6 gap-y-4 py-6 text-center text-[10px] font-semibold uppercase tracking-[0.14em] text-muted-foreground sm:grid-cols-4 sm:text-[11px] lg:flex lg:items-center lg:justify-between lg:text-left lg:tracking-[0.18em]">
           <span>Confiam na RD Solutions</span>
           <span>Indústria</span>
           <span>Varejo</span>
@@ -196,45 +182,77 @@ function Hero() {
 /* ---------------- SOBRE ---------------- */
 function Sobre() {
   return (
-    <section id="sobre" className="py-24">
+    <section id="sobre" className="section-page">
       <div className="container-page grid gap-12 lg:grid-cols-2 lg:items-center">
-        <div className="relative">
-          <div className="card-premium overflow-hidden rounded-3xl">
-            <img src={office} alt="Escritório moderno da RD Solutions" width={1400} height={1000} loading="lazy" className="h-[440px] w-full object-cover" />
-          </div>
-          <div className="glass absolute -bottom-6 -right-4 hidden max-w-[240px] rounded-2xl p-4 shadow-[var(--shadow-elevated)] md:block">
-            <div className="flex items-center gap-2 text-xs font-semibold text-primary">
-              <BadgeCheck className="h-4 w-4" /> Atendimento 100% digital
+        <Reveal>
+          <div className="relative">
+            <div className="card-premium overflow-hidden rounded-3xl">
+              <img
+                src={office}
+                alt="Escritório moderno da RD Solutions"
+                width={1400}
+                height={1000}
+                loading="lazy"
+                className="h-[440px] w-full object-cover"
+              />
             </div>
-            <p className="mt-2 text-[13px] leading-snug text-muted-foreground">
-              Envie documentos online, acompanhe processos em tempo real e tenha suporte sempre que precisar.
-            </p>
+
+            <div className="glass absolute -bottom-6 -right-4 hidden max-w-[240px] rounded-2xl p-4 shadow-[var(--shadow-elevated)] md:block">
+              <div className="flex items-center gap-2 text-xs font-semibold text-primary">
+                <BadgeCheck className="h-4 w-4" />
+                Atendimento 100% digital
+              </div>
+
+              <p className="mt-2 text-[13px] leading-snug text-muted-foreground">
+                Envie documentos online, acompanhe processos e tenha suporte
+                sempre que precisar.
+              </p>
+            </div>
           </div>
-        </div>
-        <div>
-          <SectionHeader
-            align="left"
-            eyebrow="Por que escolher a RD solutions?"
-            title={<>Mais que contabilidade. Uma parceira para o <span className="text-gradient-brand">crescimento do seu negócio.</span></>}
-            description="Na RD solutions, tranformamos a contabilidade em uma ferramenta estratégica para o crescimento da sua Empresa. Cuidamos das obrigações fiscais, tributárias e contábeis com segurança, enquanto você dedica seu tempo ao que realmente importa: fazer o seu negócio crescer."
-          />
-          <ul className="mt-8 grid gap-4 sm:grid-cols-2">
-            {[
-              { icon: Handshake, t: "Atendimento próximo", d: "Você fala diretamente com especialistas que acompanham a realidade da sua Empresa." },
-              { icon: Cpu, t: "Processos digitais", d: "Mais agilidade, menos burocracia e acesso rápido às informações da sua Empresa." },
-              { icon: Shield, t: "Segurança e conformidade", d: "Sua Empresa sempre em conformidade com a legislação, reduzindo riscos e evitando problemas fiscais." },
-              { icon: Rocket, t: "Planejamento tributário", d: "Buscamos oportunidades legais para reduzir a carga tributária e melhorar os resultados do seu negócio." },
-            ].map(({ icon: Icon, t, d }) => (
-              <li key={t} className="card-premium card-premium-hover p-5">
-                <div className="grid h-10 w-10 place-items-center rounded-xl bg-primary/10 text-primary">
-                  <Icon className="h-5 w-5" />
-                </div>
-                <h4 className="mt-3 font-display text-base font-semibold">{t}</h4>
-                <p className="mt-1 text-sm text-muted-foreground">{d}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
+        </Reveal>
+
+        <Reveal delay={120}>
+          <div>
+            <SectionHeader
+              align="left"
+              eyebrow="Por que escolher a RD Solutions?"
+              title={
+                <>
+                  Você cuida da sua empresa.{" "}
+                  <span className="text-gradient-brand">
+                    Nós cuidamos da contabilidade.
+                  </span>
+                </>
+              }
+              description="Na RD Solutions, transformamos a contabilidade em uma ferramenta estratégica para o crescimento da sua empresa. Cuidamos das obrigações fiscais, tributárias e contábeis com segurança, enquanto você dedica seu tempo ao que realmente importa: fazer o seu negócio crescer."
+            />
+            <ul className="mt-8 grid gap-4 sm:grid-cols-2">
+              {[
+                { icon: Handshake, t: "Atendimento próximo", d: "Você fala diretamente com especialistas que acompanham a realidade da sua empresa.", },
+                { icon: Cpu, t: "Processos digitais", d: "Mais agilidade, menos burocracia e acesso rápido às informações da sua empresa.", },
+                { icon: Shield, t: "Segurança e conformidade", d: "Sua empresa sempre em conformidade com a legislação, reduzindo riscos e evitando problemas fiscais.", },
+                { icon: Rocket, t: "Planejamento tributário", d: "Buscamos oportunidades legais para reduzir a carga tributária e melhorar os resultados do seu negócio.", },
+              ].map(({ icon: Icon, t, d }) => (
+                <li
+                  key={t}
+                  className="card-premium card-premium-hover p-5"
+                >
+                  <div className="grid h-10 w-10 place-items-center rounded-xl bg-primary/10 text-primary">
+                    <Icon className="h-5 w-5" />
+                  </div>
+
+                  <h4 className="mt-3 font-display text-base font-semibold">
+                    {t}
+                  </h4>
+
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    {d}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
@@ -261,7 +279,7 @@ const servicos = [
 
 function Servicos() {
   return (
-    <section id="servicos" className="py-24">
+    <section id="servicos" className="section-page">
       <div className="container-page">
         <SectionHeader
           eyebrow="Soluções para sua Empresa"
@@ -330,7 +348,7 @@ const diferenciais = [
 
 function Diferenciais() {
   return (
-    <section id="diferenciais" className="relative overflow-hidden bg-surface py-24">
+    <section id="diferenciais" className="section-page relative overflow-hidden bg-surface">
       <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-primary/5 blur-3x1" />
       <div className="container-page relative">
         <SectionHeader
@@ -452,33 +470,33 @@ function Indicadores() {
       prefix: "+",
       suffix: "",
       label: "Empresas atendidas",
-      descripition: "Negócios que já contaram com nosso suporte.",
+      description: "Negócios que já contaram com nosso suporte.",
     },
     {
       value: satisfacao,
       prefix: "",
       suffix: "%",
       label: "Satisfação dos clientes",
-      descripition: "Relacionamentos construídos com proximidade.",
+      description: "Relacionamentos construídos com proximidade.",
     },
     {
-      value: empresas,
+      value: anos,
       prefix: "+",
       suffix: "",
       label: "Anos de experiência",
-      descripition: "Conhecimento aplicado à realidade empresarial.",
+      description: "Conhecimento aplicado à realidade empresarial.",
     },
     {
-      value: empresas,
+      value: respostaHoras,
       prefix: "",
       suffix: "h",
       label: "Tempo médio de resposta",
-      descripition: "Comunicação ágil para a rotina da sua Empresa.",
+      description: "Comunicação ágil para a rotina da sua Empresa.",
     },
   ];
 
   return (
-    <section ref={sectionRef} className="py-24">
+    <section ref={sectionRef} className="section-page">
       <div className="container-page">
         <div className="card-premium relative overflow-hidden rounded-3xl p-8 sm:p-10 md:p-16">
           <div className="pointer-events-none absolute inset-0 bg-grid-soft opacity-30" />
@@ -487,7 +505,7 @@ function Indicadores() {
           <div className="relative">
             <div className="mx-auto max-w-2x1 text-center">
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
-                Resutados que geram confiança 
+                Resultados que geram confiança 
               </p>
               <h2 className="mt-3 font-display text-3x1 font-semibold tracking-tight text-foreground md:text-4x1">
                 Experiência, proximidade e agilidade para apoiar sua empresa.
@@ -515,7 +533,7 @@ function Indicadores() {
                     {stat.label}
                   </h3>
                   <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
-                    {stat.descripition}
+                    {stat.description}
                   </p>
                 </article>  
               ))}
@@ -552,7 +570,7 @@ const passos = [
 
 function ComoTrabalhamos() {
   return (
-    <section className="py-24">
+    <section className="section-page">
       <div className="container-page">
         <SectionHeader
           eyebrow="Como trabalhamos"
@@ -629,7 +647,7 @@ const ferramentas = [
 
 function Ferramentas() {
   return (
-    <section id="ferramentas" className="relative overflow-hidden bg-surface py-24">
+    <section id="ferramentas" className="section-page relative overflow-hidden bg-surface">
       <div className="pointer-events-none absolute -left-32 top-20 h-80 w-80 rounded-full bg-primary/10 blur-3x1" />
       <div className="pointer-events-none absolute -right-32 bottom-10 h-80 w-80 rounded-full bg-primary/10 blur-3x1" />
       <div className="container-page relative">
@@ -684,7 +702,7 @@ const depos = [
 
 function Depoimentos() {
   return (
-    <section className="py-24">
+    <section className="section-page">
       <div className="container-page">
         <SectionHeader
           eyebrow="Uma relação baseada em confiança"
@@ -747,7 +765,7 @@ const faq = [
 
 function FaqSection() {
   return (
-    <section id="faq" className="relative overflow-hidden bg-surface py-24">
+    <section id="faq" className="section-page relative overflow-hidden bg-surface">
       <div className="pointer-events-none absolute -left-32 top-20 h-72 w-72 rounded-full bg-primary/5 blur-3x1" />
 
       <div className="container-page relative">
@@ -798,7 +816,7 @@ function FaqSection() {
 /* ---------------- CTA FINAL ---------------- */
 function CtaFinal() {
   return (
-    <section className="py-24">
+    <section className="section-page">
       <div className="container-page">
         <div className="relative overflow-hidden rounded-3xl bg-gradient-brand p-8 text-primary-foreground shadow-[var(--shadow-glow)] sm:p-10 md:p-16">
           <div className="pointer-events-none absolute inset-0 bg-grid-soft opacity-20" />
