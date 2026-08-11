@@ -8,14 +8,8 @@ export const site = {
   email: "contato@rdsolutionscontabil.com.br",
   address: "Av. Vila Ema, 3445 — 1º Andar - Vila Ema · São Paulo/SP",
   instagram: "https://www.instagram.com/rdsolutionscontabil/",
-  linkedin: "https://linkedin.com/company/rdsolutions",
+  linkedin: "",
   maps: "https://maps.app.goo.gl/iDYDfif1DvyY5Ung8",
-  stats: {
-    empresas: 500,
-    satisfacao: 98,
-    anos: 15,
-    respostaHoras: 24,
-  },
 } as const;
 
 export const navLinks = [

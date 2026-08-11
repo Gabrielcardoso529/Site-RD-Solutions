@@ -1,4 +1,4 @@
-import { Instagram, Linkedin, MapPin, Mail, Phone, MessageCircle } from "lucide-react";
+import { Instagram, MapPin, Mail, Phone, MessageCircle } from "lucide-react";
 import { Logo } from "./logo";
 import { site } from "@/lib/site-config";
 
@@ -15,24 +15,16 @@ export function SiteFooter() {
             </p>
             <div className="flex gap-2">
               <a
-                href={"https://www.instagram.com/rdsolutionscontabil?igsh=Znd6Zm5naTgxNnZr"}
+                href={site.instagram}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="grid h-9 w-9 place-items-center rounded-full border border-border text-muted-foreground transition hover:border-primary/40 hover:text-primary"
+                aria-label="Instagram da RD Solutions"
               >
                 <Instagram className="h-4 w-4" />
               </a>
-              <a
-                href={site.linkedin}
-                target="_blank"
-                rel="noreferrer"
-                className="grid h-9 w-9 place-items-center rounded-full border border-border text-muted-foreground transition hover:border-primary/40 hover:text-primary"
-              >
-                <Linkedin className="h-4 w-4" />
-              </a>
             </div>
           </div>
-
           <div>
             <h4 className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
               Serviços
@@ -43,7 +35,6 @@ export function SiteFooter() {
               ))}
             </ul>
           </div>
-
           <div>
             <h4 className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
               Empresa
@@ -62,15 +53,15 @@ export function SiteFooter() {
               Contato
             </h4>
             <ul className="mt-4 space-y-2.5 text-sm text-foreground/80">
-              <li className="flex items-start gap-2.5"><MapPin className="mt-0.5 h-4 w-4 text-primary" /> <span>Av. Vila Ema, 3445, 1º Andar</span></li>
-              <li className="flex items-center gap-2.5"><Phone className="h-4 w-4 text-primary" /><a href={`tel:${site.phone}`}>+55 (11) 2211-4234</a></li>
-              <li className="flex items-center gap-2.5"><MessageCircle className="h-4 w-4 text-primary" /> <a href={site.whatsappUrl} target="_blank" rel="noreferrer">WhatsApp direto</a></li>
-              <li className="flex items-center gap-2.5"><Mail className="h-4 w-4 text-primary" /> <a href={`mailto:${site.email}`}>contato@rdsolutionscontabil.com.br</a></li>
+              <li className="flex items-start gap-2.5"><MapPin className="mt-0.5 h-4 w-4 text-primary" /> <span>{site.address}</span></li>
+              <li className="flex items-center gap-2.5"><Phone className="h-4 w-4 text-primary" /><a href={`tel:${site.phone}`}>{site.phone}</a></li>
+              <li className="flex items-center gap-2.5"><MessageCircle className="h-4 w-4 text-primary" /> <a href={site.whatsappUrl} target="_blank" rel="noopener noreferrer">WhatsApp direto</a></li>
+              <li className="flex items-center gap-2.5"><Mail className="h-4 w-4 text-primary" /> <a href={`mailto:${site.email}`}>{site.email}</a></li>
             </ul>
             <a
-              href={"https://maps.app.goo.gl/iDYDfif1DvyY5Ung8"}
+              href={site.maps}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="mt-4 inline-flex items-center gap-1 text-xs font-medium text-primary underline-offset-4 hover:underline"
             >
               Ver no Google Maps →
@@ -81,8 +72,7 @@ export function SiteFooter() {
         <div className="mt-14 flex flex-col items-start justify-between gap-4 border-t border-border pt-6 text-xs text-muted-foreground md:flex-row md:items-center">
           <p>© {new Date().getFullYear()} {site.fullName}. Todos os direitos reservados. CNPJ 11.219.740/0001-30</p>
           <div className="flex gap-4">
-            <a href="/politica-de-privacidade" className="hover:text-foreground">Política de Privacidade</a>
-            <a href="/politica-de-privacidade" className="hover:text-foreground">LGPD</a>
+            <a href="/politica-de-privacidade" className="hover:text-foreground">Política de Privacidade e LGPD</a>
             <a href="/#faq" className="hover:text-foreground">FAQ</a>
           </div>
         </div>

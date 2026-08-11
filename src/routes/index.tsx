@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -70,8 +70,8 @@ function Hero() {
           <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card/80 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-primary sm:text-[11px] sm:tracking-[0.16em]">
             <Sparkles className="h-3.5 w-3.5 shrink-0" /> Contabilidade estratégica para Empresas
           </div>
-          <h1 className="mt-5 font-display text-[2.5rem] font-semibold leading-[1.08] tracking-[-0.03em] text-foreground sm:text-5x1 md:text-6xl md:leading-[1.02]">
-            Sua contabilidade deve ajudar sua empresa a <span className="text-gradient-brand">crescer com segurança.</span>.
+          <h1 className="mt-5 font-display text-[2.5rem] font-semibold leading-[1.08] tracking-[-0.03em] text-foreground sm:text-5xl md:text-6xl md:leading-[1.02]">
+            Sua contabilidade deve ajudar sua empresa a{""}<span className="text-gradient-brand">crescer com segurança.</span>.
           </h1>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
             A RD Solutions cuida da contabilidade, do fiscal e da gestão da sua empresa com proximidade, tecnologia e visão estratégica.
@@ -130,7 +130,7 @@ function Hero() {
           {/* Floating dashboard cards */}
           <div className="glass animate-rd-float absolute -left-4 top-8 hidden w-56 rounded-2xl p-4 shadow-[var(--shadow-elevated)] md:block">
             <div className="flex items-center justify-between text-xs text-muted-foreground">
-              <span>Planejamento tributária</span>
+              <span>Planejamento tributário</span>
               <span className="rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-semibold text-primary">2026</span>
             </div>
             <div className="mt-2 font-display text-2xl font-semibold text-foreground">Análise personalizada</div>
@@ -260,7 +260,7 @@ function Sobre() {
 
 /* ---------------- SERVIÇOS ---------------- */
 const servicos = [
-  { icon: Building2, t: "Abertura de Empresas", d: "Cuidamos do CNPJ, enquadramento tributário, inscrições e licenças para você começar com segurança.." },
+  { icon: Building2, t: "Abertura de Empresas", d: "Cuidamos do CNPJ, enquadramento tributário, inscrições e licenças para você começar com segurança." },
   { icon: Handshake, t: "Troca de Contador", d: "Fazemos uma transição organizada, analisamos pendências e mantemos a continuidade de sua operação." },
   { icon: FileText, t: "Contabilidade Empresarial", d: "Escrituração contábil, demonstrativos e informações confiáveis para apoiar suas decisões." },
   { icon: Receipt, t: "Departamento Fiscal", d: "Apuração de tributos, entrega de obrigações e acompanhamento preventivo da situação fiscal." },
@@ -271,8 +271,8 @@ const servicos = [
   { icon: Wallet, t: "BPO Financeiro", d: "Gestão de contas a pagar e receber, conciliações bancárias e organização da rotina financeira." },
   { icon: ScrollText, t: "IR Pessoa Física", d: "Elaboração e revisão da declaração, análise de documentos e suporte em eventuais pendências." },
   { icon: ScrollText, t: "Obrigações da Pessoa Jurídica", d: "Preparação e transmissão de declarações e escriturações, incluindo ECD e ECF quando aplicáveis." },
-  { icon: Shield, t: "Regularização Fiscal", d: "Identificamos pendências e conduzimos a regularização perante os orgãos competentes." },
-  { icon: PiggyBank, t: "Parcelamentos Tributários", d: "Analisamos débitos e auxiliamos na adesãp às modalidades de parcelamento disponíveis." },
+  { icon: Shield, t: "Regularização Fiscal", d: "Identificamos pendências e conduzimos a regularização perante os órgãos competentes." },
+  { icon: PiggyBank, t: "Parcelamentos Tributários", d: "Analisamos débitos e auxiliamos na adesão às modalidades de parcelamento disponíveis." },
   { icon: KeyRound, t: "Certificado Digital", d: "Orientação e suporte para emissão ou renovação de certificados e-CPF e e-CNPJ." },
   { icon: Stamp, t: "Legalização Empresarial", d: "Alterações contratuais, abertura de filiais, encerramentos, inscrições e licenças empresariais." },
 ];
@@ -302,12 +302,12 @@ function Servicos() {
           ))}
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-6 rounded-3x1 border border-border/70 bg-muted/30 p-6 text-center sm:p-8 lg:flex-row lg:text-left">
+        <div className="mt-12 flex flex-col items-center justify-between gap-6 rounded-3xl border border-border/70 bg-muted/30 p-6 text-center sm:p-8 lg:flex-row lg:text-left">
           <div>
-            <h3 className="font-display text-xl font-semibold text-foreground sm:text-2x1">
+            <h3 className="font-display text-xl font-semibold text-foreground sm:text-2xl">
               Não encontrou o serviço que procura?
             </h3>
-            <p className="mt-2 max-w-2x1 text-sm leading-relaxed text-muted-foreground sm:text-base">
+            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
               Fale com nossa equipe. Vamos entender a realidade da sua Empresa
               e indicar a solução contábil mais adequada.
             </p>
@@ -337,8 +337,8 @@ const diferenciais = [
   { icon: Zap, t: "Contabilidade 100% digital", d: "Envio de documentos, reuniões e acompanhamento da rotina contábil de forma prática e online." },
   { icon: HeartHandshake, t: "Atendimento Próximo", d: "Você fala com especialistas que conhecem a realidade da sua empresa e acompanham suas necessidades." },
   { icon: BadgeCheck, t: "Especialistas atualizados", d: "Acompanhamento constante das mudanças tributárias, fiscais, trabalhistas e societárias." },
-  { icon: Cpu, t: "Processos integrados", d: "Organização das informações contábeis em conjunto com seus sistemas, documentos e rotinas de gestão" },
-  { icon: TrendingDown, t: "Planejamento tributário contínuo", d: "Analises periódicas para identificar oportunidades legais de redução da carga tributária." },
+  { icon: Cpu, t: "Processos integrados", d: "Organização das informações contábeis em conjunto com seus sistemas, documentos e rotinas de gestão." },
+  { icon: TrendingDown, t: "Planejamento tributário contínuo", d: "Análises periódicas para identificar oportunidades legais de redução da carga tributária." },
   { icon: BarChart3, t: "Visão estratégica do negócio", d: "Informações contábeis e financeiras organizadas para apoiar decisões mais seguras." },
   { icon: LineChart, t: "Relatórios claros e objetivos", d: "Indicadores apresentados de forma simples para facilitar o acompanhamento dos resultados." },
   { icon: Clock, t: "Comunicação ágil", d: "Atendimento organizado e retorno rápido para as demandas da rotina empresarial." },
@@ -349,7 +349,7 @@ const diferenciais = [
 function Diferenciais() {
   return (
     <section id="diferenciais" className="section-page relative overflow-hidden bg-surface">
-      <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-primary/5 blur-3x1" />
+      <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-primary/5 blur-3xl" />
       <div className="container-page relative">
         <SectionHeader
           eyebrow="Por que escolher a RD Solutions?"
@@ -372,7 +372,7 @@ function Diferenciais() {
           ))}
         </div>
 
-        <div className="mt-12 grid gap-4 rounded-3x1 border border-border/70 bg-background/70 p-6 shadow-sm backdrop-blur-sm sm:grid-cols-3 sm:p-8">
+        <div className="mt-12 grid gap-4 rounded-3xl border border-border/70 bg-background/70 p-6 shadow-sm backdrop-blur-sm sm:grid-cols-3 sm:p-8">
           <div className="text-center">
             <p className="font-display text-lg font-semibold text-foreground">
               Atendimento digital
@@ -386,7 +386,7 @@ function Diferenciais() {
             <p className="font-display text-lg font-semibold text-foreground">
               Suporte especializado
             </p>
-            <p className="mt-1 text-sm text-muted-foregorund">
+            <p className="mt-1 text-sm text-muted-foreground">
               Orientação para decisões importantes
             </p>
           </div>
@@ -405,159 +405,6 @@ function Diferenciais() {
   );
 }
 
-/* ---------------- INDICADORES ---------------- */
-function useCounter(target: number, run: boolean, duration = 1400) {
-  const [value, setValue] = useState(0);
-  useEffect(() => {
-    if (!run) return;
-    const reduceMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
-    if (reduceMotion) {
-      setValue(target);
-      return;
-    }
-    let animationFrame = 0;
-    const startTime = performance.now();
-    const animate = (currentTime: number) => {
-      const progress = Math.min(
-        1,
-        (currentTime - startTime) / duration
-      );
-      const easedProgress = 1 - Math.pow(1 - progress, 3);
-      setValue(Math.round(target * easedProgress));
-      if (progress < 1) {
-        animationFrame = requestAnimationFrame(animate);
-      }
-    };
-    animationFrame = requestAnimationFrame(animate);
-    return () => {
-      cancelAnimationFrame(animationFrame);
-    };
-  }, [target, run, duration]);
-  return value;
-}
-
-function Indicadores() {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
-  useEffect(() => {
-    const element = sectionRef.current;
-    if (!element) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          observer.disconnect();
-        }
-      },
-      {
-        threshold: 0.3,
-      }
-    );
-    observer.observe(element);
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
-  const empresas = useCounter(site.stats.empresas, visible);
-  const satisfacao = useCounter(site.stats.satisfacao, visible);
-  const anos = useCounter(site.stats.anos, visible);
-  const respostaHoras = useCounter(site.stats.respostaHoras, visible);
-  const stats = [
-    {
-      value: empresas,
-      prefix: "+",
-      suffix: "",
-      label: "Empresas atendidas",
-      description: "Negócios que já contaram com nosso suporte.",
-    },
-    {
-      value: satisfacao,
-      prefix: "",
-      suffix: "%",
-      label: "Satisfação dos clientes",
-      description: "Relacionamentos construídos com proximidade.",
-    },
-    {
-      value: anos,
-      prefix: "+",
-      suffix: "",
-      label: "Anos de experiência",
-      description: "Conhecimento aplicado à realidade empresarial.",
-    },
-    {
-      value: respostaHoras,
-      prefix: "",
-      suffix: "h",
-      label: "Tempo médio de resposta",
-      description: "Comunicação ágil para a rotina da sua Empresa.",
-    },
-  ];
-
-  return (
-    <section ref={sectionRef} className="section-page">
-      <div className="container-page">
-        <div className="card-premium relative overflow-hidden rounded-3xl p-8 sm:p-10 md:p-16">
-          <div className="pointer-events-none absolute inset-0 bg-grid-soft opacity-30" />
-          <div className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-primary/15 blur-3xl" />
-          <div className="pointer-events-none absolute -bottom-24 -left-20 h-64 w-64 rounded-full bg-primary/10 blur-3x1" />
-          <div className="relative">
-            <div className="mx-auto max-w-2x1 text-center">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
-                Resultados que geram confiança 
-              </p>
-              <h2 className="mt-3 font-display text-3x1 font-semibold tracking-tight text-foreground md:text-4x1">
-                Experiência, proximidade e agilidade para apoiar sua empresa.
-              </h2>
-              <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm-text-base">
-                Nossa atuação combina conhecimento técnico, processos
-                organizados e atendimento próximo em todas as etapas.
-              </p>
-            </div>
-            <div className="mt-12 grid gap-8 sm:grid-cols-2 md:grid-cols-4">
-              {stats.map((stat, index) => (
-                <article
-                  key={stat.label}
-                  className="relative text-center md:text-left"
-                >
-                  {index > 0 &&(
-                    <div className="absolute -left-4 top-0 hidden h-full w-px bg-border/70 md:block" />
-                  )}
-                  <div className="font-display text-4x1 font-semibold tracking-tight text-gradient-brand sm:text-5x1 md:text-6x1">
-                    {stat.prefix}
-                    {stat.value}
-                    {stat.suffix}
-                  </div>
-                  <h3 className="mt-3 text-sm fontsemibold text-foreground">
-                    {stat.label}
-                  </h3>
-                  <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
-                    {stat.description}
-                  </p>
-                </article>  
-              ))}
-            </div>
-            <div className="mt-12 flex flex-wrap justify-center gap-x-8 gap-y-3 border-t border-border/70 pt-8 text-sm text-muted-foreground">
-              <span className="inline-flex items-center gap-2">
-                <Check className="h-4 w-4 text-primary" />
-                Atendimento Digital
-              </span>
-              <span className="inline-flex items-center gap-2">
-                <Check className="h-4 w-4 text-primary" />
-                Suporte especializade
-              </span>
-              <span className="inline-flex items-center gap-2">
-                <Check className="h-4 w-4 text-primary" />
-                Processos organizados
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 /* ---------------- COMO TRABALHAMOS ---------------- */
 const passos = [
@@ -565,7 +412,7 @@ const passos = [
   { n: "02", t: "Entendemos sua empresa", d: "Conhecemos sua operação, seu momento atual e as principais necessidades do negócio." },
   { n: "03", t: "Analisamos o cenário", d: "Avaliamos os aspectos contábeis, fiscais, trabalhistas e tributários relevantes para a sua empresa." },
   { n: "04", t: "Apresentamos a solução", d: "Definimos o escopo do atendimento, as prioridades e os próximos passos de forma clara." },
-  { n: "05", t: "Acompanhamos su rotina", d: "Sua empresa passa a contar com suporte contínuo, processos organizados e orientação especializada."},
+  { n: "05", t: "Acompanhamos sua rotina", d: "Sua empresa passa a contar com suporte contínuo, processos organizados e orientação especializada."},
 ];
 
 function ComoTrabalhamos() {
@@ -585,12 +432,12 @@ function ComoTrabalhamos() {
                 key={passo.n}
                 className="card-premium card-premium-hover group relative h-full p-6"
               >
-                <div className="absolute left-5 top-6 hidden h-3 w-3 -translate-x-[29px] rounded-full border-2 border-primary bg-background shadow-sm sm-block md:left-1/2 md:top-0 md:-translate-x-1/2 md:-translate-y-[29px]" />
+                <div className="absolute left-5 top-6 hidden h-3 w-3 -translate-x-[29px] rounded-full border-2 border-primary bg-background shadow-sm sm:block md:left-1/2 md:top-0 md:-translate-x-1/2 md:-translate-y-[29px]" />
                 <div className="flex items-center justify-between gap-4">
                   <span className="font-display text-xs font-semibold uppercase tracking-[0.16em] text-primary">
                     Etapa {passo.n}
                   </span>
-                  <span className="font-display text-3x1 font-semibold text-primary/10 transition-colors duration-300 group-hover:text-primary/20">
+                  <span className="font-display text-3xl font-semibold text-primary/10 transition-colors duration-300 group-hover:text-primary/20">
                     {passo.n}
                   </span>
                 </div>
@@ -604,13 +451,13 @@ function ComoTrabalhamos() {
             ))}
           </div>
         </div>
-        <div className="mt-12 flex flex-col items-center justify-between gap-6 rounded-3x1 border border-border/70 bg-muted/30 p-6 text-center sm:p-8 lg:flex-row lg:text-left">
+        <div className="mt-12 flex flex-col items-center justify-between gap-6 rounded-3xl border border-border/70 bg-muted/30 p-6 text-center sm:p-8 lg:flex-row lg:text-left">
             <div>
-              <h3 className="font-display text-xl font-semibold text-foreground sm:text-2x1">
+              <h3 className="font-display text-xl font-semibold text-foreground sm:text-2xl">
                 Quer entender como podemos ajudar sua empresa?
               </h3>
-              <p className="mt-2 max-w-2x1 text-sm leading-relaxed text-muted-foreground sm:text-base">
-                Coverse com nossa equipe e receba uma orientação inicial sobre o
+              <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
+                Converse com nossa equipe e receba uma orientação inicial sobre o
                 melhor caminho para sua necessidade.
               </p>
             </div>
@@ -636,20 +483,20 @@ function ComoTrabalhamos() {
 /* ---------------- FERRAMENTAS TEASER ---------------- */
 const ferramentas = [
   { icon: Building2, t: "Abertura de Empresa", d: "Faça uma simulação inicial de enquadramento, custos e etapas para abrir sua empresa." },
-  { icon: TrendingDown, t: "Economia Tributária", d: "Simule cenários e identifique possíveis oportunidades de economia trabutária." },
+  { icon: TrendingDown, t: "Economia Tributária", d: "Simule cenários e identifique possíveis oportunidades de economia tributária." },
   { icon: BarChart3, t: "Comparador de Regimes", d: "Compare cenários entre MEI, Simples Nacional, Lucro Presumido e Lucro Real." },
-  { icon: Calculator, t: "Custos Contábeis", d: "Estime custos de serviços contábeis de acordo com o perfil da sua empresa." },
-  { icon: Receipt, t: "Calendário Fiscal", d: "Consulte datas e organize melhor as principais obrigações da sua empresa." },
-  { icon: Wallet, t: "Simulador Pró-Labore", d: "Compare cenários de pró-labore e distribuição de lucros para apoiar seu planejamento." },
+  { icon: Calculator, t: "Check-up Contábil", d: "Estime custos de serviços contábeis de acordo com o perfil da sua empresa." },
+  { icon: Receipt, t: "Assistente Fiscal", d: "Consulte datas e organize melhor as principais obrigações da sua empresa." },
+  { icon: Wallet, t: "Retirada dos Sócios", d: "Compare cenários de pró-labore e distribuição de lucros para apoiar seu planejamento." },
   { icon: Users, t: "Custo de Contratação", d: "Estime os principais custos envolvidos na contratação de um funcionário." },
-  { icon: Landmark, t: "MEI ou Simples Nacional", d: "Avalie seu cenário e entenda quando pode fazer sentido migrar do MEI." },
+  { icon: Landmark, t: "Check-up MEI", d: "Avalie seu cenário e entenda quando pode fazer sentido migrar do MEI." },
 ];
 
 function Ferramentas() {
   return (
     <section id="ferramentas" className="section-page relative overflow-hidden bg-surface">
-      <div className="pointer-events-none absolute -left-32 top-20 h-80 w-80 rounded-full bg-primary/10 blur-3x1" />
-      <div className="pointer-events-none absolute -right-32 bottom-10 h-80 w-80 rounded-full bg-primary/10 blur-3x1" />
+      <div className="pointer-events-none absolute -left-32 top-20 h-80 w-80 rounded-full bg-primary/10 blur-3xl" />
+      <div className="pointer-events-none absolute -right-32 bottom-10 h-80 w-80 rounded-full bg-primary/10 blur-3xl" />
       <div className="container-page relative">
         <SectionHeader
           eyebrow="Ferramentas inteligentes"
@@ -663,7 +510,7 @@ function Ferramentas() {
               to="/ferramentas"
               className="card-premium card-premium-hover group relative flex h-full min-h-[230px] flex-col overflow-hidden p-6"
             >
-              <div className="absolute -right-12 -top-12 h-32 w-32 rounded-full bg-primary-5 blur-2x1 transition-all duration-500 group-hover:bg-primary/15" />
+              <div className="absolute -right-12 -top-12 h-32 w-32 rounded-full bg-primary/5 blur-2xl transition-all duration-500 group-hover:bg-primary/15" />
               <div className="relative grid h-11 w-11 place-items-center rounded-xl bg-primary/10 text-primary transition-transform duration-300 group-hover:scale-105">
                 <Icon className="h-5 w-5" />
               </div>
@@ -681,7 +528,7 @@ function Ferramentas() {
           <Button asChild size="lg" className="rounded-full bg-gradient-brand text-primary-foreground hover:opacity-95">
             <Link to="/ferramentas">Explorar todas as ferramentas <ArrowRight className="ml-1.5 h-4 w-4" /></Link>
           </Button>
-          <p className="max-w-2x1 text-xs leading-relaxed text-muted-foreground">
+          <p className="max-w-2xl text-xs leading-relaxed text-muted-foreground">
             Os resultados apresentados são estimativas para fins informativos e
             não substituem uma análise contábil, fiscal ou tributária
             individualizada.
@@ -715,7 +562,7 @@ function Depoimentos() {
               key={t}
               className="card-premium card-premium-hover group flex h-full flex-col p-6">
               
-              <div className="grid h-11 w-11 place-items-center rounded-x1 bg-primary/10 text-primary transition-transform duration-300 group-hover:scale-105">
+              <div className="grid h-11 w-11 place-items-center rounded-xl bg-primary/10 text-primary transition-transform duration-300 group-hover:scale-105">
                 <Icon className="h-5 w-5" />
               </div>
               <h3 className="mt-5 font-display text-lg font-semibold text-foreground">
@@ -766,12 +613,12 @@ const faq = [
 function FaqSection() {
   return (
     <section id="faq" className="section-page relative overflow-hidden bg-surface">
-      <div className="pointer-events-none absolute -left-32 top-20 h-72 w-72 rounded-full bg-primary/5 blur-3x1" />
+      <div className="pointer-events-none absolute -left-32 top-20 h-72 w-72 rounded-full bg-primary/5 blur-3xl" />
 
       <div className="container-page relative">
         <SectionHeader
           eyebrow="Dúvidas frequentes"
-          title={<>Tudo oque você precisa saber antes de{""} <span className="text-gradient-brand"> começar com a RD Solutions.</span></>}
+          title={<>Tudo o que você precisa saber antes de{""} <span className="text-gradient-brand"> começar com a RD Solutions.</span></>}
           description="Reunimos as principais dúvidas de empresários sobre contratação, atendimento e serviços contábeis."
         />
 
@@ -794,7 +641,7 @@ function FaqSection() {
           </Accordion>
           <div className="mt-10 text-center">
             <p className="text-sm text-muted-foreground">
-              Ainda ficou com alhuma dúvida?
+              Ainda ficou com alguma dúvida?
             </p>
             <Button asChild className="mt-4 rounded-full bg-gradient-brand px-6 text-primary-foreground hover:opacity-95">
               <a 
@@ -816,7 +663,7 @@ function FaqSection() {
 /* ---------------- CTA FINAL ---------------- */
 function CtaFinal() {
   return (
-    <section className="section-page">
+    <section id="contato" className="section-page">
       <div className="container-page">
         <div className="relative overflow-hidden rounded-3xl bg-gradient-brand p-8 text-primary-foreground shadow-[var(--shadow-glow)] sm:p-10 md:p-16">
           <div className="pointer-events-none absolute inset-0 bg-grid-soft opacity-20" />
@@ -829,7 +676,7 @@ function CtaFinal() {
                 <Sparkles className="h-3.5 w-3.5" /> Próximo passo
               </div>
 
-              <h2 className="mt-5 max-w-3x1 font-display text-3xl font-semibold leading-tight sm:text-4x1 md:text-5xl">
+              <h2 className="mt-5 max-w-3xl font-display text-3xl font-semibold leading-tight sm:text-4xl md:text-5xl">
                 Sua Empresa pode crescer com mais organização, segurança e 
                 estratégia.
               </h2>
@@ -856,7 +703,7 @@ function CtaFinal() {
               </div>
             </div>
 
-            <div className="flex flex-col gap-3 rounded-2x1 border border-white/20 bg-white/10 p-4 backdrop-blur-sm sm:p-5">
+            <div className="flex flex-col gap-3 rounded-2xl border border-white/20 bg-white/10 p-4 backdrop-blur-sm sm:p-5">
               <Button 
                 asChild 
                 size="lg" 
@@ -876,7 +723,7 @@ function CtaFinal() {
                 size="lg"
                 variant="outline"
                 className="w-full rounded-full border-white/40 bg-transparent text-white hover:bg-white/10 hover:text-white">
-                  <a href="/#servicos">
+                  <a href="#servicos">
                     Conhecer nossos serviços
                   </a>
                 </Button>
@@ -900,7 +747,6 @@ function Home() {
       <Sobre />
       <Servicos />
       <Diferenciais />
-      <Indicadores />
       <ComoTrabalhamos />
       <Ferramentas />
       <Depoimentos />
