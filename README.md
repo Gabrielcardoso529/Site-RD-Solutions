@@ -1,29 +1,123 @@
-# Welcome to your Lovable project
+# RD Solutions — Site Institucional
 
-This project was built with [Lovable](https://lovable.dev).
+Site institucional da **RD Solutions Assessoria Contábil**, desenvolvido com foco em apresentação profissional dos serviços, geração de contatos e experiência digital para clientes e empresas interessadas em soluções contábeis.
 
-## Build with Lovable
+## Sobre o projeto
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+O projeto foi construído para representar digitalmente a RD Solutions, reunindo informações sobre serviços contábeis, diferenciais, ferramentas interativas, canais de atendimento, política de privacidade e uma área dedicada aos clientes.
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+Além da parte institucional, o site conta com simuladores e ferramentas orientativas para apoiar empresários em decisões relacionadas à rotina contábil e tributária.
 
-## Development
+## Tecnologias utilizadas
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+* React
+* TypeScript
+* TanStack Start
+* TanStack Router
+* TanStack Query
+* Vite
+* Tailwind CSS
+* Radix UI
+* Lucide React
+* Nitro
 
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+## Principais funcionalidades
+
+* Página institucional responsiva
+* Apresentação de serviços contábeis
+* Seção de diferenciais e processo de atendimento
+* Ferramentas e simuladores contábeis
+* Check-up contábil
+* Assistente fiscal
+* Simulador de custo de contratação
+* Planejamento de retirada dos sócios
+* Check-up MEI
+* Integração com WhatsApp
+* Área do Cliente em desenvolvimento
+* Política de Privacidade e LGPD
+* Banner de privacidade
+* Tema claro e escuro
+* Navegação responsiva
+* SEO básico e metadados Open Graph
+
+## Estrutura do projeto
+
+```text
+src/
+├── assets/
+├── components/
+│   ├── site/
+│   └── ui/
+├── lib/
+├── routes/
+└── styles.css
+
+public/
+├── favicon.png
+├── logo-rd.png
+└── robots.txt
+```
+
+## Executando o projeto localmente
+
+Clone o repositório:
+
+```bash
+git clone https://github.com/Gabrielcardoso529/Site-RD-Solutions.git
+```
+
+Entre na pasta do projeto:
+
+```bash
+cd Site-RD-Solutions
+```
+
+Instale as dependências:
+
+```bash
+npm install
+```
+
+Inicie o ambiente de desenvolvimento:
+
+```bash
 npm run dev
 ```
 
-## Built with
+Para gerar a versão de produção:
 
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
+```bash
+npm run build
+```
+
+Para visualizar o build localmente:
+
+```bash
+npm run preview
+```
+
+## Status
+
+O projeto está em desenvolvimento e passando por etapas de refinamento visual, revisão técnica, SEO, performance e preparação para publicação.
+
+## Próximas etapas
+
+* Finalização do SEO técnico
+* Configuração de domínio e hospedagem
+* Sitemap
+* Open Graph completo
+* Otimizações de performance
+* Revisão final de acessibilidade
+* Evolução da Área do Cliente
+* Upload e gerenciamento de documentos
+* Integrações futuras com sistemas contábeis
+
+## Autor
+
+**Gabriel Cardoso**
+
+GitHub: `Gabrielcardoso529`
+
+---
+
+© RD Solutions Assessoria Contábil
