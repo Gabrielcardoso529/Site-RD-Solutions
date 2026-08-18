@@ -14,6 +14,7 @@ export function FloatingActions() {
   return (
     <div className="pointer-events-none fixed bottom-5 right-5 z-40 flex flex-col items-end gap-3">
       <button
+        type="button"
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         aria-label="Voltar ao topo"
         className={cn(
@@ -26,8 +27,8 @@ export function FloatingActions() {
       <a
         href={site.whatsappUrl}
         target="_blank"
-        rel="noreferrer"
-        aria-label="Falar no WhatsApp"
+        rel="noopener noreferrer"
+        aria-label="Falar com a RD Solutions pelo WhatsApp"
         className="pointer-events-auto group flex items-center gap-2 rounded-full bg-[oklch(0.62_0.18_150)] px-4 py-3 text-sm font-medium text-white shadow-[0_20px_50px_-15px_oklch(0.62_0.18_150/0.7)] transition hover:opacity-95"
       >
         <MessageCircle className="h-5 w-5" />
