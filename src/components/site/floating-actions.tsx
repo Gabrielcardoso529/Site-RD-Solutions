@@ -19,7 +19,7 @@ export function FloatingActions() {
         aria-label="Voltar ao topo"
         className={cn(
           "pointer-events-auto grid h-11 w-11 place-items-center rounded-full border border-border bg-card text-foreground shadow-[var(--shadow-soft)] transition-all duration-300 hover:-translate-y-0.5",
-          show ? "opacity-100" : "pointer-events-none opacity-0 translate-y-2"
+          show ? "opacity-100" : "pointer-events-none opacity-0 translate-y-2",
         )}
       >
         <ArrowUp className="h-4 w-4" />

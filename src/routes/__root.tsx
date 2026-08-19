@@ -53,7 +53,10 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
-            onClick={() => { router.invalidate(); reset(); }}
+            onClick={() => {
+              router.invalidate();
+              reset();
+            }}
             className="inline-flex items-center justify-center rounded-full bg-gradient-brand px-5 py-2.5 text-sm font-medium text-primary-foreground hover:opacity-95"
           >
             Tentar novamente
@@ -76,18 +79,33 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "RD Solutions | Contabilidade Estratégica e Assessoria contábil" },
-      { name: "description", content: "Contabilidade estratégica para empresas. Planejamento tributário, BPO financeiro, abertura de empresas, gestão fiscal, departamento pessoal e consultoria empresarial."},
-      { name: "robots", content: "index, follow"},
+      {
+        name: "description",
+        content:
+          "Contabilidade estratégica para empresas. Planejamento tributário, BPO financeiro, abertura de empresas, gestão fiscal, departamento pessoal e consultoria empresarial.",
+      },
+      { name: "robots", content: "index, follow" },
       { name: "theme-color", content: "#8A4A36" },
       { name: "author", content: "RD Solutions Assessoria Contábil" },
       { property: "og:site_name", content: "RD Solutions" },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "pt_BR" },
-      { property: "og:title", content: "RD Solutions | Contabilidade estratégica e Assessoria Contábil. "},
-      { property: "og:description", content: "Contabilidade estratégica, planejamento tributário e soluções empresariais para ajudar sua empresa a crescer com segurança."},
+      {
+        property: "og:title",
+        content: "RD Solutions | Contabilidade estratégica e Assessoria Contábil. ",
+      },
+      {
+        property: "og:description",
+        content:
+          "Contabilidade estratégica, planejamento tributário e soluções empresariais para ajudar sua empresa a crescer com segurança.",
+      },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "RD Solutions | Contabilidade Estratégica"},
-      { name: "twitter:description", content: "Soluções contábeis, tributárias e financeiras para empresas que querem crescer com mais segurança e organização."}
+      { name: "twitter:title", content: "RD Solutions | Contabilidade Estratégica" },
+      {
+        name: "twitter:description",
+        content:
+          "Soluções contábeis, tributárias e financeiras para empresas que querem crescer com mais segurança e organização.",
+      },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

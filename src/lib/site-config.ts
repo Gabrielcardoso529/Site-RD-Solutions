@@ -4,7 +4,8 @@ export const site = {
   tagline: "Contabilidade estratégica para empresas que crescem com inteligência.",
   phone: "+55 (11) 2211-4234",
   whatsappNumber: "5511912428008",
-  whatsappUrl: "https://wa.me/5511912428008?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20a%20RD%20Solutions",
+  whatsappUrl:
+    "https://wa.me/5511912428008?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20a%20RD%20Solutions",
   email: "contato@rdsolutionscontabil.com.br",
   address: "Av. Vila Ema, 3445 — 1º Andar - Vila Ema · São Paulo/SP",
   instagram: "https://www.instagram.com/rdsolutionscontabil/",

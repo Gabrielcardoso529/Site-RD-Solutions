@@ -1,14 +1,29 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useMemo, useState, type ReactNode } from "react";
 import {
-  Building2, TrendingDown, BarChart3, Calculator, Receipt, Wallet, Users, Landmark,
-  Check, X, ArrowRight,
+  Building2,
+  TrendingDown,
+  BarChart3,
+  Calculator,
+  Receipt,
+  Wallet,
+  Users,
+  Landmark,
+  Check,
+  X,
+  ArrowRight,
 } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { SectionHeader } from "@/components/site/section";
 import { LeadCapture } from "@/components/site/lead-capture";
 import { site } from "@/lib/site-config";
@@ -17,11 +32,23 @@ export const Route = createFileRoute("/ferramentas")({
   head: () => ({
     meta: [
       { title: "Calculadoras e Simuladores Contábeis | RD Solutions" },
-      { name: "description", content: "Use calculadoras e simuladores contábeis para explorar cenários de regime tributário, pró-labore, custos de contratação, MEI, abertura de empresa e planejamento financeiro." },
+      {
+        name: "description",
+        content:
+          "Use calculadoras e simuladores contábeis para explorar cenários de regime tributário, pró-labore, custos de contratação, MEI, abertura de empresa e planejamento financeiro.",
+      },
       { property: "og:title", content: "Calculadoras e Simuladores Contábeis | RD Solutions" },
-      { property: "og:description", content: "Ferramentas gratuitas para simular cenários contábeis, tributários e financeiros da sua empresa." },
+      {
+        property: "og:description",
+        content:
+          "Ferramentas gratuitas para simular cenários contábeis, tributários e financeiros da sua empresa.",
+      },
       { name: "twitter:title", content: "Calculadoras Contábeis | RD Solutions" },
-      { name: "twitter:description", content: "Simule regimes tributários, pró-labore, contratação, MEI e outros cenários empresariais."},
+      {
+        name: "twitter:description",
+        content:
+          "Simule regimes tributários, pró-labore, contratação, MEI e outros cenários empresariais.",
+      },
     ],
   }),
   component: FerramentasPage,
@@ -30,7 +57,17 @@ export const Route = createFileRoute("/ferramentas")({
 const BRL = (n: number) =>
   n.toLocaleString("pt-BR", { style: "currency", currency: "BRL", maximumFractionDigits: 0 });
 
-function ToolShell({ title, subtitle, children, aside }: { title: string; subtitle: string; children: ReactNode; aside?: ReactNode }) {
+function ToolShell({
+  title,
+  subtitle,
+  children,
+  aside,
+}: {
+  title: string;
+  subtitle: string;
+  children: ReactNode;
+  aside?: ReactNode;
+}) {
   return (
     <div className="grid gap-8 lg:grid-cols-[1.05fr_1fr]">
       <div className="card-premium p-6 md:p-8">
@@ -46,11 +83,15 @@ function ToolShell({ title, subtitle, children, aside }: { title: string; subtit
 function Result({ items }: { items: { label: string; value: ReactNode; hint?: string }[] }) {
   return (
     <div className="card-premium overflow-hidden p-6 md:p-7">
-      <div className="mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-primary">Resultado</div>
+      <div className="mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-primary">
+        Resultado
+      </div>
       <dl className="grid gap-4 sm:grid-cols-2">
         {items.map((it) => (
           <div key={it.label} className="rounded-2xl border border-border bg-surface/60 p-4">
-            <dt className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">{it.label}</dt>
+            <dt className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+              {it.label}
+            </dt>
             <dd className="mt-1 font-display text-xl font-semibold text-foreground">{it.value}</dd>
             {it.hint && <p className="mt-1 text-[11px] text-muted-foreground">{it.hint}</p>}
           </div>
@@ -77,12 +118,9 @@ function AberturaEmpresa() {
   const atividadePermitidaMei = atividadeMei === "sim";
 
   const meiPossivel =
-    dentroLimiteMei &&
-    semSocios &&
-    limiteFuncionariosMei &&
-    atividadePermitidaMei;
+    dentroLimiteMei && semSocios && limiteFuncionariosMei && atividadePermitidaMei;
 
-  const simplesPodeSerAvaliado = faturamentoAnual <=4800000;
+  const simplesPodeSerAvaliado = faturamentoAnual <= 4800000;
   const situacaoMei =
     atividadeMei === "nao-sei"
       ? "Precisa verificar"
@@ -90,152 +128,150 @@ function AberturaEmpresa() {
         ? "Pode ser avaliado"
         : "Há impedimentos";
 
-  const proximoPasso = 
-    meiPossivel
-      ? "Validar atividade e formalização"
-      : simplesPodeSerAvaliado
-        ? "Analisar natureza jurídica e regime tributário"
-        : "Realizar análise tributária individualizada";
+  const proximoPasso = meiPossivel
+    ? "Validar atividade e formalização"
+    : simplesPodeSerAvaliado
+      ? "Analisar natureza jurídica e regime tributário"
+      : "Realizar análise tributária individualizada";
   return (
-    <ToolShell 
-      title="Simulador de Abertura de Empresa" 
+    <ToolShell
+      title="Simulador de Abertura de Empresa"
       subtitle="Faça uma análise inicial do enquadramento da sua empresa e descubra quais pontos precisam ser avaliados antes da abertura; "
       aside={
-      <>
-        <Result items={[
-          { label: "Faturamento anual estimado", value: BRL(faturamentoAnual), hint: "Projeção baseada no faturamento mensal informado."},
-          { label: "Possibilidade de MEI", value: situacaoMei, 
-            hint: 
-              atividadeMei === "nao-sei"
-                ? "A atividade exercida precisa estar entre as ocupações permitidas."
-                : meiPossivel
-                  ? "Os critérios básicos informados são compatíveis, sujeitos à validação."
-                  : "Um ou mais critérios informados não são compatíveis com o MEI."
-          },
-          { label: "Simples Nacional", 
-            value: simplesPodeSerAvaliado
-              ? "Pode ser avaliado"
-              : "Acima do limite geral",
-            hint: simplesPodeSerAvaliado
-              ? "A opção depende também da atividade, natureza jurídica e demais impedimentos legais."
-              : "O faturamento projetado ultrapassa R$ 4,8 milhões ao ano. "  
-          },
-          { label: "Próximo passo", value: proximoPasso, hint: `${cidade}/${estado} • ${atividade}`},
-        ]}
-      />
-      <div className="rounded-2x1 border border-border/70 bg-surface/60 p-5">
-        <p className="tex-xs font-semibold uppercase tracking-[0.14em] text-primary">
-          Importante
-        </p>
-        <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-          Esta simulação não define automaticamente o melhor regime 
-          tributário. Atividade, natureza jurídica, quadro societário,
-          localização, folha de pagamento e outras características podem
-          alterar o enquadramento.
-        </p>
+        <>
+          <Result
+            items={[
+              {
+                label: "Faturamento anual estimado",
+                value: BRL(faturamentoAnual),
+                hint: "Projeção baseada no faturamento mensal informado.",
+              },
+              {
+                label: "Possibilidade de MEI",
+                value: situacaoMei,
+                hint:
+                  atividadeMei === "nao-sei"
+                    ? "A atividade exercida precisa estar entre as ocupações permitidas."
+                    : meiPossivel
+                      ? "Os critérios básicos informados são compatíveis, sujeitos à validação."
+                      : "Um ou mais critérios informados não são compatíveis com o MEI.",
+              },
+              {
+                label: "Simples Nacional",
+                value: simplesPodeSerAvaliado ? "Pode ser avaliado" : "Acima do limite geral",
+                hint: simplesPodeSerAvaliado
+                  ? "A opção depende também da atividade, natureza jurídica e demais impedimentos legais."
+                  : "O faturamento projetado ultrapassa R$ 4,8 milhões ao ano. ",
+              },
+              {
+                label: "Próximo passo",
+                value: proximoPasso,
+                hint: `${cidade}/${estado} • ${atividade}`,
+              },
+            ]}
+          />
+          <div className="rounded-2x1 border border-border/70 bg-surface/60 p-5">
+            <p className="tex-xs font-semibold uppercase tracking-[0.14em] text-primary">
+              Importante
+            </p>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              Esta simulação não define automaticamente o melhor regime tributário. Atividade,
+              natureza jurídica, quadro societário, localização, folha de pagamento e outras
+              características podem alterar o enquadramento.
+            </p>
+          </div>
+          <Button
+            asChild
+            className="w-full rounded-full bg-gradient-brand text-primary-foreground"
+            size="lg"
+          >
+            <a href={site.whatsappUrl} target="_blank" rel="noopener noreferrer">
+              Solicitar análise para abertura
+              <ArrowRight className="ml-1.5 h-4 w-4" />
+            </a>
+          </Button>
+          <LeadCapture context="Abertura de empresa" />
+        </>
+      }
+    >
+      <div className="grid gap-4 sm:grid-cols-2">
+        <div>
+          <label>Estado</label>
+          <Select value={estado} onValueChange={setEstado}>
+            <SelectTrigger>
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              {["SP", "RJ", "MG", "RS", "PR", "SC", "BA", "DF"].map((uf) => (
+                <SelectItem key={uf} value={uf}>
+                  {uf}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
+        <div>
+          <label>Cidade</label>
+          <Input
+            value={cidade}
+            onChange={(e) => setCidade(e.target.value)}
+            placeholder="Ex.: São Paulo"
+          />
+        </div>
+        <div className="sm:col-span-2">
+          <label>Atividade principal</label>
+          <Input
+            value={atividade}
+            onChange={(e) => setAtividade(e.target.value)}
+            placeholder="Ex. : Comércio de roupas"
+          />
+        </div>
+        <div>
+          <label>Faturamento mensal estimado</label>
+          <Input
+            type="number"
+            min={0}
+            value={fat}
+            onChange={(e) => setFat(Math.max(0, Number(e.target.value) || 0))}
+          />
+        </div>
+        <div>
+          <label>Estrutura pretendida</label>
+          <Select value={estrutura} onValueChange={setEstrutura}>
+            <SelectTrigger>
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="individual">Apenas o titular</SelectItem>
+              <SelectItem value="sociedade">Empresa com sócios</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+        <div>
+          <label>Funcionários previstos</label>
+          <Input
+            type="number"
+            min={0}
+            value={func}
+            onChange={(e) => setFunc(Math.max(0, Number(e.target.value) || 0))}
+          />
+        </div>
+        <div>
+          <label>Sua atividade é permitida no MEI?</label>
+          <Select value={atividadeMei} onValueChange={setAtividadeMei}>
+            <SelectTrigger>
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="sim">Sim</SelectItem>
+              <SelectItem value="nao">Não</SelectItem>
+              <SelectItem value="nao-sei">Não sei</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
       </div>
-      <Button asChild className="w-full rounded-full bg-gradient-brand text-primary-foreground" size="lg">
-        <a 
-          href={site.whatsappUrl}
-          target="_blank"
-          rel="noopener noreferrer">
-            Solicitar análise para abertura 
-            <ArrowRight className="ml-1.5 h-4 w-4" />
-          </a>
-      </Button>
-      <LeadCapture context="Abertura de empresa" />
-    </>  
-  }
->
-  <div className="grid gap-4 sm:grid-cols-2">
-    <div>
-      <label>Estado</label>
-      <Select value={estado} onValueChange={setEstado}>
-        <SelectTrigger>
-          <SelectValue />
-        </SelectTrigger>
-        <SelectContent>
-          {["SP", "RJ", "MG", "RS", "PR", "SC", "BA", "DF"].map(
-            (uf) => (
-              <SelectItem key={uf} value={uf}>
-                {uf}
-              </SelectItem>
-            )
-          )}
-        </SelectContent>
-      </Select>
-    </div>
-    <div>
-      <label>Cidade</label>
-      <Input
-        value={cidade}
-        onChange={(e) => setCidade(e.target.value)}
-        placeholder="Ex.: São Paulo" />
-    </div>
-    <div className="sm:col-span-2">
-      <label>Atividade principal</label>
-      <Input
-        value={atividade}
-        onChange={(e) => setAtividade(e.target.value)}
-        placeholder="Ex. : Comércio de roupas" />
-    </div>
-    <div>
-      <label>Faturamento mensal estimado</label>
-      <Input
-        type="number"
-        min={0}
-        value={fat}
-        onChange={(e) => setFat(Math.max(0, Number(e.target.value) || 0))} />
-    </div>
-    <div>
-      <label>Estrutura pretendida</label>
-      <Select value={estrutura} onValueChange={setEstrutura}>
-        <SelectTrigger>
-          <SelectValue />
-        </SelectTrigger>
-        <SelectContent>
-          <SelectItem value="individual">
-            Apenas o titular
-          </SelectItem>
-          <SelectItem value="sociedade">
-            Empresa com sócios
-          </SelectItem>
-        </SelectContent>
-      </Select>
-    </div>
-    <div>
-      <label>Funcionários previstos</label>
-      <Input
-        type="number"
-        min={0}
-        value={func}
-        onChange={(e) => setFunc(Math.max(0, Number(e.target.value) || 0))} />
-    </div>
-    <div>
-      <label>Sua atividade é permitida no MEI?</label>
-      <Select
-        value={atividadeMei}
-        onValueChange={setAtividadeMei}
-      >
-        <SelectTrigger>
-          <SelectValue />
-        </SelectTrigger>
-        <SelectContent>
-          <SelectItem value="sim">
-            Sim
-          </SelectItem>
-          <SelectItem value="nao">
-            Não
-          </SelectItem>
-          <SelectItem value="nao-sei">
-            Não sei
-          </SelectItem>
-        </SelectContent>
-      </Select>
-    </div>
-  </div>
-  </ToolShell>
-  );              
+    </ToolShell>
+  );
 }
 
 /* ------------- Economia Tributária ------------- */
@@ -250,48 +286,37 @@ function EconomiaTributaria() {
   const receita12Meses = Math.max(0, rbt12);
   const folhaMensal = Math.max(0, folha);
   const folha12Meses = folhaMensal * 12;
-  const fatorR = 
-    receita12Meses > 0
-      ? folha12Meses / receita12Meses
-      : 0;
-  const dentroLimiteSimples = 
-    receita12Meses <= 4800000;
-  const fatorRRelevante = 
-    segmento === "serviços";
-  const fatorRFavoravel =
-    fatorR >= 0.28;
+  const fatorR = receita12Meses > 0 ? folha12Meses / receita12Meses : 0;
+  const dentroLimiteSimples = receita12Meses <= 4800000;
+  const fatorRRelevante = segmento === "serviços";
+  const fatorRFavoravel = fatorR >= 0.28;
   const pontosAnalise: string[] = [];
   if (regime === "simples") {
-    pontosAnalise.push(
-      "Revisar enquadramento, anexo e alíquota efetiva do Simples Nacional."
-    );
+    pontosAnalise.push("Revisar enquadramento, anexo e alíquota efetiva do Simples Nacional.");
     if (fatorRRelevante) {
       pontosAnalise.push(
         fatorRFavoravel
           ? "A relação entre folha e receita pode impactar positivamente o enquadramento de determinadas atividade de serviços."
-          : "A relação entre folha e receita merece análise para atividades sujeitas ao Fator R."
+          : "A relação entre folha e receita merece análise para atividades sujeitas ao Fator R.",
       );
     }
   }
   if (regime === "presumido") {
     pontosAnalise.push(
-      "Comparar os percentuais de presunção aplicáveis à atividade com a margem real da empresa."
+      "Comparar os percentuais de presunção aplicáveis à atividade com a margem real da empresa.",
     );
   }
   if (margem === "baixa") {
     pontosAnalise.push(
-      "Margens reduzidas podem justificar uma comparação mais detalhada entre regimes."
-    );
-  }          
-  if (margem === "alta") {
-    pontosAnalise.push(
-      "Margem ekevada também deve ser considerada na comparação entre regimes de tributação."
+      "Margens reduzidas podem justificar uma comparação mais detalhada entre regimes.",
     );
   }
-  const nivelAnalise =
-    pontosAnalise.length >= 3
-      ? "Análise recomendada"
-      : "Vale revisar";
+  if (margem === "alta") {
+    pontosAnalise.push(
+      "Margem ekevada também deve ser considerada na comparação entre regimes de tributação.",
+    );
+  }
+  const nivelAnalise = pontosAnalise.length >= 3 ? "Análise recomendada" : "Vale revisar";
 
   return (
     <ToolShell
@@ -303,15 +328,15 @@ function EconomiaTributaria() {
             items={[
               { label: "Faturamento mensal informado", value: BRL(faturamentoMensal) },
               { label: "Receita acumulada em 12 meses", value: BRL(receita12Meses) },
-              { label: "Situação do Simples Nacional", 
-                value: dentroLimiteSimples
-                  ? "Dentro do limite geral"
-                  : "Acima do limite geral",
-                hint: "O limite geral de receita bruta anual do Simples Nacional é de 4,8 Milhões."  
+              {
+                label: "Situação do Simples Nacional",
+                value: dentroLimiteSimples ? "Dentro do limite geral" : "Acima do limite geral",
+                hint: "O limite geral de receita bruta anual do Simples Nacional é de 4,8 Milhões.",
               },
-              { label: "Nível de análise", 
+              {
+                label: "Nível de análise",
                 value: nivelAnalise,
-                hint: "O resultado indica necessidade de revisão, não uma economia garantida."
+                hint: "O resultado indica necessidade de revisão, não uma economia garantida.",
               },
             ]}
           />
@@ -320,17 +345,14 @@ function EconomiaTributaria() {
               <div className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">
                 Relação folha x faturamento
               </div>
-              <p className="mt-1 text-xs text-muted-foreground">
-                Fator R do Simples Nacional
-              </p>
+              <p className="mt-1 text-xs text-muted-foreground">Fator R do Simples Nacional</p>
               <div className="mt-2 font-display text-2x1 font-semibold text-foreground">
                 {(fatorR * 100).toFixed(1)}%
               </div>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                Para algumas atividades de serviços no Simples Nacional,
-                a relação entre folha de pagamento e o faturamento pode
-                influenciar a forma de trabutação. Em determinadas situações,
-                atingir 28% ou mais pode levar a uma tributação mais favorável.
+                Para algumas atividades de serviços no Simples Nacional, a relação entre folha de
+                pagamento e o faturamento pode influenciar a forma de trabutação. Em determinadas
+                situações, atingir 28% ou mais pode levar a uma tributação mais favorável.
               </p>
             </div>
           )}
@@ -355,20 +377,19 @@ function EconomiaTributaria() {
               Importante
             </p>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              Esta ferramenta não calcula economia tributária garantida.
-              A comparação entre regimes depende da atividade, receita
-              acumulada, folha de pagamento, margem, créditos tributários 
-              e outras características de operação.
+              Esta ferramenta não calcula economia tributária garantida. A comparação entre regimes
+              depende da atividade, receita acumulada, folha de pagamento, margem, créditos
+              tributários e outras características de operação.
             </p>
           </div>
 
-          <Button asChild className="w-full rounded-full bg-gradient-brand text-primary-foreground" size="lg">
-            <a
-              href={site.whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Solicitar análise tributária 
+          <Button
+            asChild
+            className="w-full rounded-full bg-gradient-brand text-primary-foreground"
+            size="lg"
+          >
+            <a href={site.whatsappUrl} target="_blank" rel="noopener noreferrer">
+              Solicitar análise tributária
               <ArrowRight className="ml-1.5 h-4 w-4" />
             </a>
           </Button>
@@ -379,14 +400,16 @@ function EconomiaTributaria() {
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
           <Label>Faturamento mensal</Label>
-          <Input 
-            type="number" 
-            min={0} value={fat} 
-            onChange={(e)=> 
-              setFat(Math.max(0, Number(+e.target.value) || 0))} />
+          <Input
+            type="number"
+            min={0}
+            value={fat}
+            onChange={(e) => setFat(Math.max(0, Number(+e.target.value) || 0))}
+          />
         </div>
         <div>
-          <Label>Funcionários</Label><Input type="number" defaultValue={5} />
+          <Label>Funcionários</Label>
+          <Input type="number" defaultValue={5} />
         </div>
         <div>
           <Label>Receita acumulada nos últimos 12 meses</Label>
@@ -394,13 +417,15 @@ function EconomiaTributaria() {
             type="number"
             min={0}
             value={rbt12}
-            onChange={(e) =>
-              setRbt12(Math.max(0, Number(e.target.value) || 0))} /> 
+            onChange={(e) => setRbt12(Math.max(0, Number(e.target.value) || 0))}
+          />
         </div>
         <div>
           <Label>Segmento</Label>
           <Select value={segmento} onValueChange={setSegmento}>
-            <SelectTrigger><SelectValue /></SelectTrigger>
+            <SelectTrigger>
+              <SelectValue />
+            </SelectTrigger>
             <SelectContent>
               <SelectItem value="servicos">Serviços</SelectItem>
               <SelectItem value="comercio">Comércio</SelectItem>
@@ -411,7 +436,9 @@ function EconomiaTributaria() {
         <div>
           <Label>Regime tributário atual</Label>
           <Select value={regime} onValueChange={setRegime}>
-            <SelectTrigger><SelectValue /></SelectTrigger>
+            <SelectTrigger>
+              <SelectValue />
+            </SelectTrigger>
             <SelectContent>
               <SelectItem value="simples">Simples Nacional</SelectItem>
               <SelectItem value="presumido">Lucro Presumido</SelectItem>
@@ -425,14 +452,15 @@ function EconomiaTributaria() {
             type="number"
             min={0}
             value={folha}
-            onChange={(e) =>
-              setFolha(Math.max(0, Number(e.target.value) || 0))
-            } />
+            onChange={(e) => setFolha(Math.max(0, Number(e.target.value) || 0))}
+          />
         </div>
         <div>
           <Label>Margem aproximada do negócio</Label>
           <Select value={margem} onValueChange={setMargem}>
-            <SelectTrigger><SelectValue /></SelectTrigger>
+            <SelectTrigger>
+              <SelectValue />
+            </SelectTrigger>
             <SelectContent>
               <SelectItem value="baixa">Baixa</SelectItem>
               <SelectItem value="media">Média</SelectItem>
@@ -470,10 +498,7 @@ function Comparador() {
     funcionariosCompativeisMei &&
     atividadeCompativelMei;
   const dentroLimiteSimples = faturamentoAnual <= 4800000;
-  const relacaoFolhaFaturamento =
-    faturamentoMensal > 0
-      ? folhaMensal / faturamentoMensal
-      : 0;
+  const relacaoFolhaFaturamento = faturamentoMensal > 0 ? folhaMensal / faturamentoMensal : 0;
   const cenarios = [
     {
       nome: "MEI",
@@ -488,7 +513,7 @@ function Comparador() {
         dentroLimiteMei
           ? "Faturamento dentro do limite informado."
           : "Faturamento acima do limite anual do MEI.",
-        estruturaCompativelMei  
+        estruturaCompativelMei
           ? "Estrutura individual compatível."
           : "Empresas com sócios não podem ser enquadradas como MEI.",
         funcionariosCompativeisMei
@@ -499,13 +524,11 @@ function Comparador() {
           : atividadeCompativelMei
             ? "Atividade informada como permitida."
             : "Atividade informada como não permitida.",
-      ],      
+      ],
     },
     {
       nome: "Simples Nacional",
-      status: dentroLimiteSimples
-         ? "Pode ser analisado"
-        : "Acima do limite geral",
+      status: dentroLimiteSimples ? "Pode ser analisado" : "Acima do limite geral",
       destaque: dentroLimiteSimples,
       pontos: [
         dentroLimiteSimples
@@ -514,9 +537,7 @@ function Comparador() {
         segmento === "servicos"
           ? "Atividades de serviços podem exigir análise do anexo e da relação entre folha e faturamento."
           : "A tributação depende da atividade e do anexo aplicável.",
-        `Relação folha x faturamento informada: ${(
-          relacaoFolhaFaturamento * 100
-        ).toFixed(1)}%.`,
+        `Relação folha x faturamento informada: ${(relacaoFolhaFaturamento * 100).toFixed(1)}%.`,
         "É necessário verificar impedimentos, atividade e enquadramento.",
       ],
     },
@@ -546,12 +567,12 @@ function Comparador() {
         "Pode ser obrigatório em determinadas situações previstas na legislação.",
       ],
     },
-  ];      
+  ];
   const cenariosParaAvaliar = cenarios.filter(
     (cenario) =>
       cenario.status === "Pode ser avaliado" ||
       cenario.status === "Pode ser analisado" ||
-      cenario.status === "Requer simulação" 
+      cenario.status === "Requer simulação",
   ).length;
   return (
     <ToolShell
@@ -562,9 +583,17 @@ function Comparador() {
           <Result
             items={[
               { label: "Faturamento mensal", value: BRL(faturamentoMensal) },
-              { label: "Faturamento anual projetado", value: BRL(faturamentoAnual)},
-              { label: "Cenários para avaliação", value: `${cenariosParaAvaliar} regime(s)`, hint: "A quantidade não representa aprovação ou recomendação definitiva." },
-              { label: "Próximo passo", value: "Simulação individualizada", hint: "A comparação final depende dos dados contábeis e operacionais da empresa." },
+              { label: "Faturamento anual projetado", value: BRL(faturamentoAnual) },
+              {
+                label: "Cenários para avaliação",
+                value: `${cenariosParaAvaliar} regime(s)`,
+                hint: "A quantidade não representa aprovação ou recomendação definitiva.",
+              },
+              {
+                label: "Próximo passo",
+                value: "Simulação individualizada",
+                hint: "A comparação final depende dos dados contábeis e operacionais da empresa.",
+              },
             ]}
           />
           <div className="grid gap-4">
@@ -572,9 +601,7 @@ function Comparador() {
               <article
                 key={cenario.nome}
                 className={`card-premium p-5 ${
-                  cenario.destaque
-                    ? "border-primary/40 ring-1 ring-primary/15"
-                    : ""
+                  cenario.destaque ? "border-primary/40 ring-1 ring-primary/15" : ""
                 }`}
               >
                 <div className="flex flex-wrap items-center justify-between gap-3">
@@ -592,45 +619,42 @@ function Comparador() {
                     }`}
                   >
                     {cenario.status}
-                  </span>  
+                  </span>
                 </div>
                 <ul className="mt-4 space-y-2.5">
                   {cenario.pontos.map((ponto) => (
-                    <li 
+                    <li
                       key={ponto}
-                      className="flex items-start gap-2 text-sm leading-relaxed text-muted-foreground">
+                      className="flex items-start gap-2 text-sm leading-relaxed text-muted-foreground"
+                    >
                       <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
                       <span>{ponto}</span>
                     </li>
                   ))}
                 </ul>
-              </article>  
+              </article>
             ))}
-          </div>  
+          </div>
           <div className="rounded-2x1 border border-border/70 bg-surface/60 p-5">
             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">
               Importante
             </p>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              Este comparador apresenta uma triagem inicial. Ele não calcula a
-              carga tributária definitiva nem determina automaticamente o
-              regime mais ecônomico para sua empresa.
+              Este comparador apresenta uma triagem inicial. Ele não calcula a carga tributária
+              definitiva nem determina automaticamente o regime mais ecônomico para sua empresa.
             </p>
           </div>
-          <Button 
+          <Button
             asChild
             size="lg"
-            className="w-full rounded-full bg-gradient-brand text-primary-foreground hover:opacity-95">
-              <a
-                href={site.whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Solicitar comparação tributária
-                <ArrowRight className="ml-1.5 h-4 w-4" />
-                </a>
-            </Button>
-            <LeadCapture context="Comparador tributário" />
+            className="w-full rounded-full bg-gradient-brand text-primary-foreground hover:opacity-95"
+          >
+            <a href={site.whatsappUrl} target="_blank" rel="noopener noreferrer">
+              Solicitar comparação tributária
+              <ArrowRight className="ml-1.5 h-4 w-4" />
+            </a>
+          </Button>
+          <LeadCapture context="Comparador tributário" />
         </>
       }
     >
@@ -641,18 +665,15 @@ function Comparador() {
             type="number"
             min={0}
             value={fat}
-            onChange={(e) => 
-              setFat(Math.max(0, Number(e.target.value) || 0))
-            }
-          />  
+            onChange={(e) => setFat(Math.max(0, Number(e.target.value) || 0))}
+          />
         </div>
         <div>
           <Label>Segmento da empresa</Label>
-          <Select
-            value={segmento}
-            onValueChange={setSegmento}
-          >
-            <SelectTrigger><SelectValue /></SelectTrigger>
+          <Select value={segmento} onValueChange={setSegmento}>
+            <SelectTrigger>
+              <SelectValue />
+            </SelectTrigger>
             <SelectContent>
               <SelectItem value="servicos">Serviços</SelectItem>
             </SelectContent>
@@ -662,20 +683,19 @@ function Comparador() {
             <SelectContent>
               <SelectItem value="industria">Indústria</SelectItem>
             </SelectContent>
-          </Select>  
+          </Select>
         </div>
         <div>
           <Label>Estrutura da empresa</Label>
-          <Select
-            value={estrutura}
-            onValueChange={setEstrutura}
-          >
-            <SelectTrigger><SelectValue/></SelectTrigger>
+          <Select value={estrutura} onValueChange={setEstrutura}>
+            <SelectTrigger>
+              <SelectValue />
+            </SelectTrigger>
             <SelectContent>
               <SelectItem value="individual"> Apenas o titular </SelectItem>
               <SelectItem value="sociedade"> Empresa com sócios </SelectItem>
             </SelectContent>
-          </Select>  
+          </Select>
         </div>
         <div>
           <Label>Funcionários registrados</Label>
@@ -683,12 +703,8 @@ function Comparador() {
             type="number"
             min={0}
             value={funcionarios}
-            onChange={(e) => 
-              setFuncionarios(
-                Math.max(0, Number(e.target.value) || 0)
-              )
-            }
-          />  
+            onChange={(e) => setFuncionarios(Math.max(0, Number(e.target.value) || 0))}
+          />
         </div>
         <div>
           <Label>Folha de pagamento mensal</Label>
@@ -696,42 +712,38 @@ function Comparador() {
             type="number"
             min={0}
             value={folha}
-            onChange={(e) => 
-              setFolha(Math.max(0, Number(e.target.value) || 0))
-            }
-          />  
+            onChange={(e) => setFolha(Math.max(0, Number(e.target.value) || 0))}
+          />
         </div>
         <div>
           <Label>Margem aproximada do negócio</Label>
-          <Select
-            value={margem}
-            onValueChange={setMargem}
-          >
-            <SelectTrigger><SelectValue/></SelectTrigger>
+          <Select value={margem} onValueChange={setMargem}>
+            <SelectTrigger>
+              <SelectValue />
+            </SelectTrigger>
             <SelectContent>
               <SelectItem value="baixa"> Baixa </SelectItem>
               <SelectItem value="media"> Média </SelectItem>
               <SelectItem value="alta"> Alta </SelectItem>
               <SelectItem value="nao-sei"> Não sei</SelectItem>
             </SelectContent>
-          </Select>  
+          </Select>
         </div>
         <div className="sm:col-span-2">
           <Label>Sua atividade é permitida no MEI?</Label>
-          <Select
-            value={atividadeMei}
-            onValueChange={setAtividadeMei}
-          >
-            <SelectTrigger><SelectValue/></SelectTrigger>
+          <Select value={atividadeMei} onValueChange={setAtividadeMei}>
+            <SelectTrigger>
+              <SelectValue />
+            </SelectTrigger>
             <SelectContent>
               <SelectItem value="sim"> Sim </SelectItem>
               <SelectItem value="nao"> Não </SelectItem>
               <SelectItem value="nao-sei"> Não sei </SelectItem>
             </SelectContent>
-          </Select>  
+          </Select>
         </div>
       </div>
-    </ToolShell>  
+    </ToolShell>
   );
 }
 
@@ -759,12 +771,7 @@ function CustosContabeis() {
 
   if (operacaoComplexa === "sim") pontuacao += 2;
 
-  const complexidade =
-    pontuacao <= 2
-      ? "Baixa"
-      : pontuacao <= 5
-        ? "Intermediária"
-        : "Alta";
+  const complexidade = pontuacao <= 2 ? "Baixa" : pontuacao <= 5 ? "Intermediária" : "Alta";
 
   const resultado =
     complexidade === "Baixa"
@@ -775,14 +782,12 @@ function CustosContabeis() {
         }
       : complexidade === "Intermediária"
         ? {
-            titulo:
-              "Sua empresa precisa de acompanhamento contábil periódico.",
+            titulo: "Sua empresa precisa de acompanhamento contábil periódico.",
             descricao:
               "O volume de documentos, funcionários e obrigações exige organização das rotinas fiscais, contábeis e trabalhistas para reduzir riscos e apoiar decisões mais seguras.",
           }
         : {
-            titulo:
-              "Sua empresa exige uma estrutura contábil mais próxima e organizada.",
+            titulo: "Sua empresa exige uma estrutura contábil mais próxima e organizada.",
             descricao:
               "A operação informada apresenta maior volume ou complexidade. Um acompanhamento mais próximo pode ajudar a controlar obrigações, reduzir riscos e gerar informações melhores para a gestão.",
           };
@@ -803,10 +808,7 @@ function CustosContabeis() {
               Resultado da análise
             </div>
             <div className="mt-5 flex items-center gap-3">
-              <span
-                aria-hidden="true"
-                className={`h-3 w-3 shrink-0 rounded-full ${indicador}`}
-              />
+              <span aria-hidden="true" className={`h-3 w-3 shrink-0 rounded-full ${indicador}`} />
               <p className="font-display text-2xl font-semibold text-foreground">
                 Complexidade {complexidade.toLowerCase()}
               </p>
@@ -824,8 +826,8 @@ function CustosContabeis() {
             </p>
 
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              Nossa equipe pode analisar a realidade da sua empresa e indicar
-              um modelo de atendimento adequado às suas necessidades.
+              Nossa equipe pode analisar a realidade da sua empresa e indicar um modelo de
+              atendimento adequado às suas necessidades.
             </p>
           </div>
           <Button
@@ -833,11 +835,7 @@ function CustosContabeis() {
             size="lg"
             className="w-full rounded-full bg-gradient-brand text-primary-foreground hover:opacity-95"
           >
-            <a
-              href={site.whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href={site.whatsappUrl} target="_blank" rel="noopener noreferrer">
               Solicitar diagnóstico gratuito
               <ArrowRight className="ml-1.5 h-4 w-4" />
             </a>
@@ -850,7 +848,9 @@ function CustosContabeis() {
         <div>
           <Label>Regime tributário</Label>
           <Select value={regime} onValueChange={setRegime}>
-            <SelectTrigger><SelectValue /></SelectTrigger>
+            <SelectTrigger>
+              <SelectValue />
+            </SelectTrigger>
             <SelectContent>
               <SelectItem value="mei">MEI</SelectItem>
               <SelectItem value="simples">Simples Nacional</SelectItem>
@@ -865,9 +865,7 @@ function CustosContabeis() {
             type="number"
             min={0}
             value={func}
-            onChange={(e) =>
-              setFunc(Math.max(0, Number(e.target.value) || 0))
-            }
+            onChange={(e) => setFunc(Math.max(0, Number(e.target.value) || 0))}
           />
         </div>
         <div>
@@ -876,15 +874,15 @@ function CustosContabeis() {
             type="number"
             min={0}
             value={notas}
-            onChange={(e) =>
-              setNotas(Math.max(0, Number(e.target.value) || 0))
-            }
+            onChange={(e) => setNotas(Math.max(0, Number(e.target.value) || 0))}
           />
         </div>
         <div>
           <Label>Possui filial ou uma operação mais complexa?</Label>
           <Select value={operacaoComplexa} onValueChange={setOperacaoComplexa}>
-            <SelectTrigger><SelectValue /></SelectTrigger>
+            <SelectTrigger>
+              <SelectValue />
+            </SelectTrigger>
             <SelectContent>
               <SelectItem value="nao">Não</SelectItem>
               <SelectItem value="sim">Sim</SelectItem>
@@ -899,7 +897,7 @@ function CustosContabeis() {
 /* ------------- Calculadora Fiscal ------------- */
 function CalendarioFiscal() {
   const [regime, setRegime] = useState("simples");
-  const [possuiFuncionarios, setPossuiFuncionarios] = useState ("sim");
+  const [possuiFuncionarios, setPossuiFuncionarios] = useState("sim");
   const obrigacoesPorRegime = {
     mei: [
       "Organização das notas fiscais emitidas",
@@ -931,24 +929,24 @@ function CalendarioFiscal() {
     ],
   };
   const obrigacoesTrabalhistas =
-    possuiFuncionarios === "sim" ? [
-      "Processamento da folha de pagamento",
-      "Controle de admissões, férias e desligamentos",
-      "Envio das informações trabalhistas",
-      "Recolhimento dos encargos da folha",
-    ] : [];
-  const regimeLabel = 
-    regime === "mei" 
-      ? "MEI" 
-      : regime === "simples" 
+    possuiFuncionarios === "sim"
+      ? [
+          "Processamento da folha de pagamento",
+          "Controle de admissões, férias e desligamentos",
+          "Envio das informações trabalhistas",
+          "Recolhimento dos encargos da folha",
+        ]
+      : [];
+  const regimeLabel =
+    regime === "mei"
+      ? "MEI"
+      : regime === "simples"
         ? "Simples Nacional"
         : regime === "presumido"
           ? "Lucro Presumido"
           : "Lucro Real";
   const obrigacoes = [
-    ...obrigacoesPorRegime[
-      regime as keyof typeof obrigacoesPorRegime
-    ],
+    ...obrigacoesPorRegime[regime as keyof typeof obrigacoesPorRegime],
     ...obrigacoesTrabalhistas,
   ];
   return (
@@ -965,12 +963,15 @@ function CalendarioFiscal() {
               Empresa no {regimeLabel}
             </h3>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              Com base nas informações preenchidas, estas são algumas das
-              principais rotinas que normalmente precisam ser acompanhadas.
+              Com base nas informações preenchidas, estas são algumas das principais rotinas que
+              normalmente precisam ser acompanhadas.
             </p>
             <ul className="mt-5 space-y-3">
               {obrigacoes.map((obrigacao) => (
-                <li key={obrigacao} className="flex items-start gap-2 text-sm leading-relaxed text-muted-foreground">
+                <li
+                  key={obrigacao}
+                  className="flex items-start gap-2 text-sm leading-relaxed text-muted-foreground"
+                >
                   <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
                   <span>{obrigacao}</span>
                 </li>
@@ -998,18 +999,19 @@ function CalendarioFiscal() {
           </div>
           <div className="rounded-2x1 border border-border/70 bg-surface/60 p-5">
             <p className="text-sm leading-relaxed text-muted-foreground">
-              As obrigações podem variar conforme atividade, localização,
-              porte da empresa e características da operação.
+              As obrigações podem variar conforme atividade, localização, porte da empresa e
+              características da operação.
             </p>
           </div>
           <Button
-            asChild 
+            asChild
             size="lg"
-            className="w-full rounded-full bg-gradient-brand text-primary-foreground hover:opacity-95">
-              <a href={site.whatsappUrl} target="_blank" rel="noopener noreferrer">
-                Falar com um especialista
-                <ArrowRight className="ml-1.5 h-4 w-4" />
-              </a>
+            className="w-full rounded-full bg-gradient-brand text-primary-foreground hover:opacity-95"
+          >
+            <a href={site.whatsappUrl} target="_blank" rel="noopener noreferrer">
+              Falar com um especialista
+              <ArrowRight className="ml-1.5 h-4 w-4" />
+            </a>
           </Button>
           <LeadCapture context="Assistente fiscal" />
         </>
@@ -1019,7 +1021,9 @@ function CalendarioFiscal() {
         <div>
           <Label> Regime tributário </Label>
           <Select value={regime} onValueChange={setRegime}>
-            <SelectTrigger><SelectValue /></SelectTrigger>
+            <SelectTrigger>
+              <SelectValue />
+            </SelectTrigger>
             <SelectContent>
               <SelectItem value="mei"> MEI </SelectItem>
               <SelectItem value="simples"> Simples Nacional </SelectItem>
@@ -1031,7 +1035,9 @@ function CalendarioFiscal() {
         <div>
           <Label> A empresa possui funcionários? </Label>
           <Select value={possuiFuncionarios} onValueChange={setPossuiFuncionarios}>
-            <SelectTrigger><SelectValue /></SelectTrigger>
+            <SelectTrigger>
+              <SelectValue />
+            </SelectTrigger>
             <SelectContent>
               <SelectItem value="nao"> Não </SelectItem>
               <SelectItem value="sim"> Sim </SelectItem>
@@ -1039,10 +1045,9 @@ function CalendarioFiscal() {
           </Select>
         </div>
       </div>
-    </ToolShell>  
-  );           
+    </ToolShell>
+  );
 }
-
 
 /* ------------- Pró-Labore ------------- */
 function ProLabore() {
@@ -1069,18 +1074,28 @@ function ProLabore() {
           <Result
             items={[
               { label: "Retirada total informada", value: BRL(retiradaTotal) },
-              { label: "Pró-labore", value: BRL(proLabore), hint: `${percentualProLabore.toFixed(0)}% da retirada total.` },
-              { label: "Distribuição de lucros planejada", value: BRL(distribuicao), hint: "A distribuição depende da existência de lucro apurado e da situação contábil da empresa." },
-              { label: "Próximo passo", value: "Revisar a estrutura", hint:"A melhor composição depende da realidade da empresa e do sócio." },
+              {
+                label: "Pró-labore",
+                value: BRL(proLabore),
+                hint: `${percentualProLabore.toFixed(0)}% da retirada total.`,
+              },
+              {
+                label: "Distribuição de lucros planejada",
+                value: BRL(distribuicao),
+                hint: "A distribuição depende da existência de lucro apurado e da situação contábil da empresa.",
+              },
+              {
+                label: "Próximo passo",
+                value: "Revisar a estrutura",
+                hint: "A melhor composição depende da realidade da empresa e do sócio.",
+              },
             ]}
           />
           <div className="rounded-2x1 border border-border/70 bg-surface/60 p-5">
             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">
               Leitura inicial
             </p>
-            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              {mensagem}
-            </p>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{mensagem}</p>
           </div>
           {distribuicaoAlta && (
             <div className="rounded-2x1 border border-primary/30 bg-primary/5 p-5">
@@ -1088,33 +1103,29 @@ function ProLabore() {
                 Atenção a tributação de 2026
               </p>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                O valor de lucros informado ultrapassa R$ 50 mil no mês.
-                Dependendo da forma de distribuição, pode haver retenção de 
-                Imposto de Renda retido na fonte e a operação deve ser analisada antes 
-                do pagamento.
+                O valor de lucros informado ultrapassa R$ 50 mil no mês. Dependendo da forma de
+                distribuição, pode haver retenção de Imposto de Renda retido na fonte e a operação
+                deve ser analisada antes do pagamento.
               </p>
             </div>
           )}
           <div className="rounded-2x1 border border-border/70 bg-surface/60 p-5">
             <p className="text-sm leading-relaxed text-muted-foreground">
-              Esta ferramenta não calcula INSS ou Imposto de Renda definitivos.
-              Esses valores dependem de fatores como base de contribuição,
-              outros rendimentos, deduções e regras tributárias aplicáveis.
+              Esta ferramenta não calcula INSS ou Imposto de Renda definitivos. Esses valores
+              dependem de fatores como base de contribuição, outros rendimentos, deduções e regras
+              tributárias aplicáveis.
             </p>
           </div>
           <Button
             asChild
             size="lg"
-            className="w-full rounded-full bg-gradient-brand text-primary-foreground hover:opacity-95">
-              <a
-                href={site.whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Solicitar análise de pró-labore
-                <ArrowRight className="ml-1.5 h-4 w-4" />
-              </a>  
-            </Button>
+            className="w-full rounded-full bg-gradient-brand text-primary-foreground hover:opacity-95"
+          >
+            <a href={site.whatsappUrl} target="_blank" rel="noopener noreferrer">
+              Solicitar análise de pró-labore
+              <ArrowRight className="ml-1.5 h-4 w-4" />
+            </a>
+          </Button>
           <LeadCapture context="Otimização pró-labore" />
         </>
       }
@@ -1122,11 +1133,22 @@ function ProLabore() {
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
           <Label>Retirada total mensal desejada</Label>
-          <Input type="number" min={0} value={total} onChange={(e)=>setTotal(Math.max(+e.target.value) || 0)} />
+          <Input
+            type="number"
+            min={0}
+            value={total}
+            onChange={(e) => setTotal(Math.max(+e.target.value) || 0)}
+          />
         </div>
         <div>
           <Label>Valor planejado de pró-labore</Label>
-          <Input type="number" min={0} max={total} value={pl} onChange={(e)=>setPl(Math.max(0, Number(e.target.value) || 0))} />
+          <Input
+            type="number"
+            min={0}
+            max={total}
+            value={pl}
+            onChange={(e) => setPl(Math.max(0, Number(e.target.value) || 0))}
+          />
         </div>
       </div>
     </ToolShell>
@@ -1142,10 +1164,12 @@ function Contratacao() {
   const fgts = salarioBruto * 0.08;
   const ferias = (salarioBruto * 4) / 36;
   const decimoTerceiro = salarioBruto / 12;
-  const aplicaCpp = regime === "presumido" || regime === "real" || (regime === "simples" && anexoIV === "sim");
+  const aplicaCpp =
+    regime === "presumido" || regime === "real" || (regime === "simples" && anexoIV === "sim");
   const cppEstimativa = aplicaCpp ? salarioBruto * 0.2 : 0;
   const custoBase = salarioBruto + fgts + ferias + decimoTerceiro + cppEstimativa;
-  const percentualAdicional = salarioBruto > 0 ? ((custoBase - salarioBruto) / salarioBruto) * 100 : 0;
+  const percentualAdicional =
+    salarioBruto > 0 ? ((custoBase - salarioBruto) / salarioBruto) * 100 : 0;
   return (
     <ToolShell
       title="Simulador de Custo de Contratação"
@@ -1155,15 +1179,25 @@ function Contratacao() {
           <Result
             items={[
               { label: "Salário bruto", value: BRL(salarioBruto) },
-              { label: "FGTS estimado", value: BRL(fgts), hint: "Referência de 8% para empregado comum." },
+              {
+                label: "FGTS estimado",
+                value: BRL(fgts),
+                hint: "Referência de 8% para empregado comum.",
+              },
               { label: "Provisão de férias + 1/3", value: BRL(ferias) },
               { label: "Provisão de 13º salário", value: BRL(decimoTerceiro) },
-              { label: "Contribuição patronal estimada", 
-                value: aplicaCpp ? BRL(cppEstimativa) : "Não incluída", 
-                hint: aplicaCpp 
+              {
+                label: "Contribuição patronal estimada",
+                value: aplicaCpp ? BRL(cppEstimativa) : "Não incluída",
+                hint: aplicaCpp
                   ? "Estimativa de 20%, sujeita ao enquadramento da empresa."
-                  : "Em muitos casos do Simples Nacional, a CPP já está incluída no DAS." },
-              { label: "Custo mensal estimado", value: BRL(custoBase), hint: `${percentualAdicional.toFixed(0)}% acima do salário bruto nesta simulação,` },
+                  : "Em muitos casos do Simples Nacional, a CPP já está incluída no DAS.",
+              },
+              {
+                label: "Custo mensal estimado",
+                value: BRL(custoBase),
+                hint: `${percentualAdicional.toFixed(0)}% acima do salário bruto nesta simulação,`,
+              },
             ]}
           />
           <div className="rounde-2x1 border border-border/70 bg-surface/60 p-5">
@@ -1171,22 +1205,20 @@ function Contratacao() {
               O que não está incluído
             </p>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              Benefícios, vale-transporte, vale-refeição, adicionais, 
-              convenção coletiva, RAT, contribuções a terceiros e outras 
-              particularidades da contratação podem aumentar o custo final.
+              Benefícios, vale-transporte, vale-refeição, adicionais, convenção coletiva, RAT,
+              contribuções a terceiros e outras particularidades da contratação podem aumentar o
+              custo final.
             </p>
           </div>
           <Button
             asChild
             size="lg"
-            className="w-full rounded-full bg-gradient-brand text-primary-foreground hover:opacity-95">
-              < a
-                href={site.whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer">
-                  Solicitar análise da contratação
-                  <ArrowRight className="ml-1.5 h-4 w-4" />
-              </a>
+            className="w-full rounded-full bg-gradient-brand text-primary-foreground hover:opacity-95"
+          >
+            <a href={site.whatsappUrl} target="_blank" rel="noopener noreferrer">
+              Solicitar análise da contratação
+              <ArrowRight className="ml-1.5 h-4 w-4" />
+            </a>
           </Button>
           <LeadCapture context="Simulação de contratação" />
         </>
@@ -1195,41 +1227,39 @@ function Contratacao() {
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
           <Label>Salário bruto</Label>
-          <Input type="number" min={0} value={salario} onChange={(e)=>setSalario(Math.max(0, Number(e.target.value) || 0))} />
+          <Input
+            type="number"
+            min={0}
+            value={salario}
+            onChange={(e) => setSalario(Math.max(0, Number(e.target.value) || 0))}
+          />
         </div>
         <div>
           <Label>Regime tributário da empresa</Label>
           <Select value={regime} onValueChange={setRegime}>
-            <SelectTrigger><SelectValue /></SelectTrigger>
+            <SelectTrigger>
+              <SelectValue />
+            </SelectTrigger>
             <SelectContent>
-              <SelectItem value="simples">
-                Simples Nacional
-              </SelectItem>
-              <SelectItem value="presumido">
-                Lucro Presumido
-              </SelectItem>
-              <SelectItem value="real">
-                Lucro Real
-              </SelectItem>
+              <SelectItem value="simples">Simples Nacional</SelectItem>
+              <SelectItem value="presumido">Lucro Presumido</SelectItem>
+              <SelectItem value="real">Lucro Real</SelectItem>
             </SelectContent>
           </Select>
         </div>
         {regime === "simples" && (
           <div className="sm:col-span-2">
             <Label> A empresa está enquadrada no Anexo IV? </Label>
-            <Select value={anexoIV} onValueChange={setAnexoIV}
-            >
-              <SelectTrigger><SelectValue /></SelectTrigger>
+            <Select value={anexoIV} onValueChange={setAnexoIV}>
+              <SelectTrigger>
+                <SelectValue />
+              </SelectTrigger>
               <SelectContent>
-                <SelectItem value="nao">
-                  Não
-                </SelectItem>
-                <SelectItem value="sim">
-                  Sim
-                </SelectItem>
+                <SelectItem value="nao">Não</SelectItem>
+                <SelectItem value="sim">Sim</SelectItem>
               </SelectContent>
             </Select>
-          </div>  
+          </div>
         )}
       </div>
     </ToolShell>
@@ -1254,51 +1284,44 @@ function SimuladorMei() {
   const naoParticipaOutraEmpresa = participaOutraEmpresa === "nao";
   const naoPossuiFilial = possuiFilial === "nao";
   const precisaVerificarAtividade = atividadePermitida === "nao-sei";
-  const criteriosCompativeis = dentroLimite && funcionariosOK && atividadeOk && naoParticipaOutraEmpresa && naoPossuiFilial;
+  const criteriosCompativeis =
+    dentroLimite && funcionariosOK && atividadeOk && naoParticipaOutraEmpresa && naoPossuiFilial;
   const pontosAtencao: string[] = [];
 
   if (!dentroLimite) {
-    pontosAtencao.push(
-      "O faturamento projetado ultrapassa o limite anual geral do MEI."
-    );
+    pontosAtencao.push("O faturamento projetado ultrapassa o limite anual geral do MEI.");
   }
   if (!funcionariosOK) {
     pontosAtencao.push(
-      "A quantidade de funcionários informada ultrapassa o limite permitido para o MEI."
+      "A quantidade de funcionários informada ultrapassa o limite permitido para o MEI.",
     );
   }
   if (atividadePermitida === "nao") {
-    pontosAtencao.push(
-      "A atividade informada não é compatível com o MEI."
-    );
+    pontosAtencao.push("A atividade informada não é compatível com o MEI.");
   }
   if (precisaVerificarAtividade) {
     pontosAtencao.push(
-      "É necessário confirmar se a atividade exercida está entre as ocupações permitidas."
+      "É necessário confirmar se a atividade exercida está entre as ocupações permitidas.",
     );
   }
   if (!naoParticipaOutraEmpresa) {
     pontosAtencao.push(
-      "Quem participa de outra empresa como titular, sócio ou administrador não pode permanecer como MEI."
+      "Quem participa de outra empresa como titular, sócio ou administrador não pode permanecer como MEI.",
     );
   }
   if (!naoPossuiFilial) {
-    pontosAtencao.push(
-      "O MEI não pode possuir filial."
-    );
+    pontosAtencao.push("O MEI não pode possuir filial.");
   }
-  const status = 
-    precisaVerificarAtividade 
-      ? "Precisa verificar" 
-      : criteriosCompativeis 
-        ? "Perfil inicialmente compatível" 
-        : "Existem pontos de impedimento";
-  const mensagem = 
-    precisaVerificarAtividade
-      ? "As informações preenchidas ainda não são suficientes para concluir a análise, porque a atividade precisa ser validada."
-      : criteriosCompativeis
-        ? "Com base nas informações preenchidas, seu perfil atende aos principais critérios iniciais do MEI. A atividade e demais condições ainda devem ser confirmadas antes da formalização."
-        : "Um ou mais critérios informados podem impedir o enquadramento ou a permanência como MEI.";
+  const status = precisaVerificarAtividade
+    ? "Precisa verificar"
+    : criteriosCompativeis
+      ? "Perfil inicialmente compatível"
+      : "Existem pontos de impedimento";
+  const mensagem = precisaVerificarAtividade
+    ? "As informações preenchidas ainda não são suficientes para concluir a análise, porque a atividade precisa ser validada."
+    : criteriosCompativeis
+      ? "Com base nas informações preenchidas, seu perfil atende aos principais critérios iniciais do MEI. A atividade e demais condições ainda devem ser confirmadas antes da formalização."
+      : "Um ou mais critérios informados podem impedir o enquadramento ou a permanência como MEI.";
 
   return (
     <ToolShell
@@ -1310,12 +1333,8 @@ function SimuladorMei() {
             <div className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">
               Resultado da análise
             </div>
-            <h3 className="mt-3 font-display text-2x1 font-semibold text-foreground">
-              {status}
-            </h3>
-            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              {mensagem}
-            </p>
+            <h3 className="mt-3 font-display text-2x1 font-semibold text-foreground">{status}</h3>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{mensagem}</p>
             <div className="mt-5 rounded-2x1 border border-border/70 bg-surface/60 p-4">
               <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
                 Faturamento anual projetado
@@ -1338,16 +1357,15 @@ function SimuladorMei() {
                   >
                     <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
                     <span>{ponto}</span>
-                  </li>  
+                  </li>
                 ))}
               </ul>
             </div>
           )}
           <div className="rounded-2x1 border border-border/70 bg-surface/60 p-5">
             <p className="text-sm leading-relaxed text-muted-foreground">
-              O resultado é uma análise inicial. Existem situações específicas 
-              que podem alterar o enquadramento ou exigir o desenquadramento do 
-              MEI.
+              O resultado é uma análise inicial. Existem situações específicas que podem alterar o
+              enquadramento ou exigir o desenquadramento do MEI.
             </p>
           </div>
           <Button
@@ -1355,14 +1373,10 @@ function SimuladorMei() {
             size="lg"
             className="w-full rounded-full bg-gradient-brand text-primary-foreground hover:opacity-95"
           >
-            <a
-              href={site.whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href={site.whatsappUrl} target="_blank" rel="noopener noreferrer">
               Solicitar análise do MEI
               <ArrowRight className="ml-1.5 h-4 w-4" />
-            </a>  
+            </a>
           </Button>
           <LeadCapture context="Check-up MEI" />
         </>
@@ -1371,16 +1385,28 @@ function SimuladorMei() {
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
           <Label>Faturamento mensal médio</Label>
-          <Input type="number" min={0} value={fat} onChange={(e) => setFat(Math.max(0, Number(e.target.value) || 0 ))} />
+          <Input
+            type="number"
+            min={0}
+            value={fat}
+            onChange={(e) => setFat(Math.max(0, Number(e.target.value) || 0))}
+          />
         </div>
         <div>
           <Label>Funcionários registrados</Label>
-          <Input type="number" min={0} value={func} onChange={(e) => setFunc(Math.max(0, Number(e.target.value) || 0 ))} />
+          <Input
+            type="number"
+            min={0}
+            value={func}
+            onChange={(e) => setFunc(Math.max(0, Number(e.target.value) || 0))}
+          />
         </div>
         <div>
           <Label>Sua atividade é permitida no MEI?</Label>
           <Select value={atividadePermitida} onValueChange={setAtividadePermitida}>
-            <SelectTrigger><SelectValue /></SelectTrigger>
+            <SelectTrigger>
+              <SelectValue />
+            </SelectTrigger>
             <SelectContent>
               <SelectItem value="sim"> Sim </SelectItem>
               <SelectItem value="nao"> Não </SelectItem>
@@ -1391,7 +1417,9 @@ function SimuladorMei() {
         <div>
           <Label>Participa de outra empresa?</Label>
           <Select value={participaOutraEmpresa} onValueChange={setParticipaOutraEmpresa}>
-            <SelectTrigger><SelectValue /></SelectTrigger>
+            <SelectTrigger>
+              <SelectValue />
+            </SelectTrigger>
             <SelectContent>
               <SelectItem value="nao"> Não </SelectItem>
               <SelectItem value="sim"> Sim </SelectItem>
@@ -1401,7 +1429,9 @@ function SimuladorMei() {
         <div className="sm:col-span-2">
           <Label>Possui filial?</Label>
           <Select value={possuiFilial} onValueChange={setPossuiFilial}>
-            <SelectTrigger><SelectValue /></SelectTrigger>
+            <SelectTrigger>
+              <SelectValue />
+            </SelectTrigger>
             <SelectContent>
               <SelectItem value="nao"> Não </SelectItem>
               <SelectItem value="sim"> Sim </SelectItem>
@@ -1415,9 +1445,13 @@ function SimuladorMei() {
 
 function StatusIcon({ ok }: { ok: boolean }) {
   return ok ? (
-    <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-[oklch(0.6_0.12_150)]/15 text-[oklch(0.42_0.13_150)]"><Check className="h-3 w-3" /></span>
+    <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-[oklch(0.6_0.12_150)]/15 text-[oklch(0.42_0.13_150)]">
+      <Check className="h-3 w-3" />
+    </span>
   ) : (
-    <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-destructive/15 text-destructive"><X className="h-3 w-3" /></span>
+    <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-destructive/15 text-destructive">
+      <X className="h-3 w-3" />
+    </span>
   );
 }
 
@@ -1442,14 +1476,19 @@ function FerramentasPage() {
         <div className="container-page relative">
           <SectionHeader
             eyebrow="Ferramentas inteligentes"
-            title={<>Simule cenários e tome decisões cpm {" "} <span className="text-gradient-brand"> mais informação. </span></>}
+            title={
+              <>
+                Simule cenários e tome decisões cpm{" "}
+                <span className="text-gradient-brand"> mais informação. </span>
+              </>
+            }
             description="Explore cenários contábeis, tributários e financeiros com estimativas orientativas para apoiar suas decisões."
           />
           <div className="mx-auto mt-6 max-w-3x1 rounded-2x1 border border-border/70 bg-background/70 p-4 text-center">
             <p className="text-xs leading-relaxed text-muted-foreground sm:text-sm">
-              As simulações apresentadas têm caráter informativo e utilizam premissas
-              simplificadas. O resultado não substitui uma análise contábil, fiscal,
-              tributária ou trabalhista individualizada.
+              As simulações apresentadas têm caráter informativo e utilizam premissas simplificadas.
+              O resultado não substitui uma análise contábil, fiscal, tributária ou trabalhista
+              individualizada.
             </p>
           </div>
         </div>

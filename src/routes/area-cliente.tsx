@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { 
+import {
   ArrowRight,
   FileText,
   MessageCircle,
@@ -14,9 +14,17 @@ export const Route = createFileRoute("/area-cliente")({
   head: () => ({
     meta: [
       { title: "Área do Cliente - RD Solutions" },
-      { name: "description", content: "Área do Cliente RD Solutions. Acesse nossos canais de atendimento e acompanhe a evolução do novo portal exclusivo para clientes." },
-      { property: "og:title", content: "Área do Cliente - RD Solutions"},
-      { property: "og:description", content: "Um novo espaço para centralizar documentos, informações e atendimento aos clientes RD Solutions." },
+      {
+        name: "description",
+        content:
+          "Área do Cliente RD Solutions. Acesse nossos canais de atendimento e acompanhe a evolução do novo portal exclusivo para clientes.",
+      },
+      { property: "og:title", content: "Área do Cliente - RD Solutions" },
+      {
+        property: "og:description",
+        content:
+          "Um novo espaço para centralizar documentos, informações e atendimento aos clientes RD Solutions.",
+      },
       { name: "robots", content: "noindex" },
     ],
   }),
@@ -33,12 +41,12 @@ function ClientArea() {
               Área do Cliente
             </div>
             <h1 className="mt-5 font-display text-4xl font-semibold tracking-tight text-foreground md:text-5xl">
-              Um espaço pensado para deixar sua rotina{" "}<span className="text-gradient-brand"> ainda mais simples. </span>
+              Um espaço pensado para deixar sua rotina{" "}
+              <span className="text-gradient-brand"> ainda mais simples. </span>
             </h1>
             <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
-              Estamos preparando uma nova Área do Cliente da RD Solutions, 
-              criada para centralizar documentos, informações e serviços em 
-              um ambiente mais prático e organizado.
+              Estamos preparando uma nova Área do Cliente da RD Solutions, criada para centralizar
+              documentos, informações e serviços em um ambiente mais prático e organizado.
             </p>
           </div>
           <div className="mt-12 grid gap-5 md:grid-cols-3">
@@ -50,8 +58,8 @@ function ClientArea() {
                 Documentos
               </h2>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                Futuramente, você poderá enviar e acessar documentos da sua
-                empresa diretamente pelo site.
+                Futuramente, você poderá enviar e acessar documentos da sua empresa diretamente pelo
+                site.
               </p>
             </div>
             <div className="card-premium p-6 text-center">
@@ -62,8 +70,8 @@ function ClientArea() {
                 Organização
               </h2>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                Informações e solicitações poderão ficar reunidas em um único
-                ambiente para facilitar o acompanhmento da rotina.
+                Informações e solicitações poderão ficar reunidas em um único ambiente para
+                facilitar o acompanhmento da rotina.
               </p>
             </div>
             <div className="card-premium p-6 text-center">
@@ -74,8 +82,8 @@ function ClientArea() {
                 Atendimento
               </h2>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                Enquanto o novo portal está em desenvolvimento, nossa equipe 
-                continua disponível pelos canais atuais de atendimento.
+                Enquanto o novo portal está em desenvolvimento, nossa equipe continua disponível
+                pelos canais atuais de atendimento.
               </p>
             </div>
           </div>
@@ -87,22 +95,18 @@ function ClientArea() {
               Precisa de atendimento agora?
             </h2>
             <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
-              Fale diretamente com a equipe da RD Solutions pelo WhatsApp.
-              Vamos direcionar sua solicitação e ajudar no que for necessário.
+              Fale diretamente com a equipe da RD Solutions pelo WhatsApp. Vamos direcionar sua
+              solicitação e ajudar no que for necessário.
             </p>
-            <Button 
+            <Button
               asChild
               size="lg"
               className="mt-6 rounded-full bg-gradient-brand text-primary-foreground hover:opacity/95"
             >
-              <a 
-                href={site.whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href={site.whatsappUrl} target="_blank" rel="noopener noreferrer">
                 Falar com nossa equipe
                 <ArrowRight className="ml-1.5 h-4 w-4" />
-              </a>  
+              </a>
             </Button>
           </div>
         </div>

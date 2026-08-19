@@ -45,7 +45,9 @@ export function LeadCapture({ context }: { context?: string }) {
             <CheckCircle2 className="h-6 w-6" />
           </div>
           <div>
-            <h4 className="font-display text-lg font-semibold">Obrigado! Sua análise foi solicitada.</h4>
+            <h4 className="font-display text-lg font-semibold">
+              Obrigado! Sua análise foi solicitada.
+            </h4>
             <p className="mt-1 text-sm text-muted-foreground">
               Um especialista da RD Solutions entrará em contato via WhatsApp em até 24 horas úteis.
               Seu resultado da simulação continua disponível acima.
@@ -58,7 +60,10 @@ export function LeadCapture({ context }: { context?: string }) {
 
   return (
     <div className="card-premium relative overflow-hidden p-6 md:p-8">
-      <div className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-primary/10 blur-3xl" aria-hidden />
+      <div
+        className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-primary/10 blur-3xl"
+        aria-hidden
+      />
       <div className="relative">
         <div className="mb-4 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-primary">
           <Sparkles className="h-3.5 w-3.5" /> Análise gratuita
@@ -67,8 +72,8 @@ export function LeadCapture({ context }: { context?: string }) {
           Quer um cálculo exato para sua empresa?
         </h4>
         <p className="mt-2 text-sm text-muted-foreground">
-          Nossa equipe realiza gratuitamente uma análise personalizada e identifica
-          oportunidades reais de economia tributária.
+          Nossa equipe realiza gratuitamente uma análise personalizada e identifica oportunidades
+          reais de economia tributária.
           {context && <span className="text-foreground/80"> Contexto: {context}.</span>}
         </p>
         <form onSubmit={onSubmit} className="mt-5 grid gap-3 md:grid-cols-2">
@@ -78,15 +83,34 @@ export function LeadCapture({ context }: { context?: string }) {
           </div>
           <div>
             <Label htmlFor="empresa">Empresa</Label>
-            <Input id="empresa" name="empresa" required maxLength={120} placeholder="Razão social ou fantasia" />
+            <Input
+              id="empresa"
+              name="empresa"
+              required
+              maxLength={120}
+              placeholder="Razão social ou fantasia"
+            />
           </div>
           <div>
             <Label htmlFor="whatsapp">WhatsApp</Label>
-            <Input id="whatsapp" name="whatsapp" required maxLength={20} placeholder="(11) 90000-0000" />
+            <Input
+              id="whatsapp"
+              name="whatsapp"
+              required
+              maxLength={20}
+              placeholder="(11) 90000-0000"
+            />
           </div>
           <div>
             <Label htmlFor="email">E-mail</Label>
-            <Input id="email" name="email" required type="email" maxLength={180} placeholder="voce@empresa.com" />
+            <Input
+              id="email"
+              name="email"
+              required
+              type="email"
+              maxLength={180}
+              placeholder="voce@empresa.com"
+            />
           </div>
           <div className="md:col-span-2">
             <Button
