@@ -107,7 +107,7 @@ function AberturaEmpresa() {
   const [cidade, setCidade] = useState("São Paulo");
   const [atividade, setAtividade] = useState("Consultoria em tecnologia");
   const [fat, setFat] = useState(20000);
-  const [estrutura, setEstrutura] = useState("Individual");
+  const [estrutura, setEstrutura] = useState("individual");
   const [func, setFunc] = useState(0);
   const [atividadeMei, setAtividadeMei] = useState("nao-sei");
 
@@ -136,7 +136,7 @@ function AberturaEmpresa() {
   return (
     <ToolShell
       title="Simulador de Abertura de Empresa"
-      subtitle="Faça uma análise inicial do enquadramento da sua empresa e descubra quais pontos precisam ser avaliados antes da abertura; "
+      subtitle="Faça uma análise inicial do enquadramento da sua empresa e descubra quais pontos precisam ser avaliados antes da abertura. "
       aside={
         <>
           <Result
@@ -170,7 +170,7 @@ function AberturaEmpresa() {
               },
             ]}
           />
-          <div className="rounded-2x1 border border-border/70 bg-surface/60 p-5">
+          <div className="rounded-2xl border border-border/70 bg-surface/60 p-5">
             <p className="tex-xs font-semibold uppercase tracking-[0.14em] text-primary">
               Importante
             </p>
@@ -223,7 +223,7 @@ function AberturaEmpresa() {
           <Input
             value={atividade}
             onChange={(e) => setAtividade(e.target.value)}
-            placeholder="Ex. : Comércio de roupas"
+            placeholder="Ex.: Comércio de roupas"
           />
         </div>
         <div>
@@ -288,7 +288,7 @@ function EconomiaTributaria() {
   const folha12Meses = folhaMensal * 12;
   const fatorR = receita12Meses > 0 ? folha12Meses / receita12Meses : 0;
   const dentroLimiteSimples = receita12Meses <= 4800000;
-  const fatorRRelevante = segmento === "serviços";
+  const fatorRRelevante = segmento === "servicos";
   const fatorRFavoravel = fatorR >= 0.28;
   const pontosAnalise: string[] = [];
   if (regime === "simples") {
@@ -296,7 +296,7 @@ function EconomiaTributaria() {
     if (fatorRRelevante) {
       pontosAnalise.push(
         fatorRFavoravel
-          ? "A relação entre folha e receita pode impactar positivamente o enquadramento de determinadas atividade de serviços."
+          ? "A relação entre folha e receita pode impactar positivamente o enquadramento de determinadas atividades de serviços."
           : "A relação entre folha e receita merece análise para atividades sujeitas ao Fator R.",
       );
     }
@@ -313,7 +313,7 @@ function EconomiaTributaria() {
   }
   if (margem === "alta") {
     pontosAnalise.push(
-      "Margem ekevada também deve ser considerada na comparação entre regimes de tributação.",
+      "Margem elevada também deve ser considerada na comparação entre regimes de tributação.",
     );
   }
   const nivelAnalise = pontosAnalise.length >= 3 ? "Análise recomendada" : "Vale revisar";
@@ -331,7 +331,7 @@ function EconomiaTributaria() {
               {
                 label: "Situação do Simples Nacional",
                 value: dentroLimiteSimples ? "Dentro do limite geral" : "Acima do limite geral",
-                hint: "O limite geral de receita bruta anual do Simples Nacional é de 4,8 Milhões.",
+                hint: "O limite geral de receita bruta anual do Simples Nacional é de 4,8 milhões.",
               },
               {
                 label: "Nível de análise",
@@ -346,12 +346,12 @@ function EconomiaTributaria() {
                 Relação folha x faturamento
               </div>
               <p className="mt-1 text-xs text-muted-foreground">Fator R do Simples Nacional</p>
-              <div className="mt-2 font-display text-2x1 font-semibold text-foreground">
+              <div className="mt-2 font-display text-2xl font-semibold text-foreground">
                 {(fatorR * 100).toFixed(1)}%
               </div>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                 Para algumas atividades de serviços no Simples Nacional, a relação entre folha de
-                pagamento e o faturamento pode influenciar a forma de trabutação. Em determinadas
+                pagamento e o faturamento pode influenciar a forma de tributação. Em determinadas
                 situações, atingir 28% ou mais pode levar a uma tributação mais favorável.
               </p>
             </div>
@@ -372,7 +372,7 @@ function EconomiaTributaria() {
               ))}
             </ul>
           </div>
-          <div className="rounded-2x1 border border-border/70 bg-surface/60 p-5">
+          <div className="rounded-2xl border border-border/70 bg-surface/60 p-5">
             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">
               Importante
             </p>
@@ -404,12 +404,8 @@ function EconomiaTributaria() {
             type="number"
             min={0}
             value={fat}
-            onChange={(e) => setFat(Math.max(0, Number(+e.target.value) || 0))}
+            onChange={(e) => setFat(Math.max(0, Number(e.target.value) || 0))}
           />
-        </div>
-        <div>
-          <Label>Funcionários</Label>
-          <Input type="number" defaultValue={5} />
         </div>
         <div>
           <Label>Receita acumulada nos últimos 12 meses</Label>
@@ -635,13 +631,13 @@ function Comparador() {
               </article>
             ))}
           </div>
-          <div className="rounded-2x1 border border-border/70 bg-surface/60 p-5">
+          <div className="rounded-2xl border border-border/70 bg-surface/60 p-5">
             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">
               Importante
             </p>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
               Este comparador apresenta uma triagem inicial. Ele não calcula a carga tributária
-              definitiva nem determina automaticamente o regime mais ecônomico para sua empresa.
+              definitiva nem determina automaticamente o regime mais econômico para sua empresa.
             </p>
           </div>
           <Button
@@ -676,11 +672,7 @@ function Comparador() {
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="servicos">Serviços</SelectItem>
-            </SelectContent>
-            <SelectContent>
               <SelectItem value="comercio">Comércio</SelectItem>
-            </SelectContent>
-            <SelectContent>
               <SelectItem value="industria">Indústria</SelectItem>
             </SelectContent>
           </Select>
@@ -959,7 +951,7 @@ function CalendarioFiscal() {
             <div className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">
               Rotina fiscal estimada
             </div>
-            <h3 className="mt-3 font-display text-2x1 font-semibold text-foreground">
+            <h3 className="mt-3 font-display text-2xl font-semibold text-foreground">
               Empresa no {regimeLabel}
             </h3>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
@@ -978,7 +970,7 @@ function CalendarioFiscal() {
               ))}
             </ul>
           </div>
-          <div className="rounded-2x1 border border-border/70 bg/surface/60 p-5">
+          <div className="rounded-2xl border border-border/70 bg-surface/60 p-5">
             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">
               Como a RD Solutions ajuda
             </p>
@@ -997,7 +989,7 @@ function CalendarioFiscal() {
               ))}
             </ul>
           </div>
-          <div className="rounded-2x1 border border-border/70 bg-surface/60 p-5">
+          <div className="rounded-2xl border border-border/70 bg-surface/60 p-5">
             <p className="text-sm leading-relaxed text-muted-foreground">
               As obrigações podem variar conforme atividade, localização, porte da empresa e
               características da operação.
@@ -1064,7 +1056,7 @@ function ProLabore() {
       ? "A parcela destinada ao pró-labore está relativamente baixa em relação à retirada total. Vale revisar a estrutura com um contador."
       : percentualProLabore > 70
         ? "A maior parte da retirada está concentrada em pró-labore. Uma análise pode ajudar a entender se essa estrutura está adequada à realidade da empresa."
-        : "A composição informada merece uma análise conjunta entre pró-labore, lucros disponíveis e situação tributária da empresa,";
+        : "A composição informada merece uma análise conjunta entre pró-labore, lucros disponíveis e situação tributária da empresa.";
   return (
     <ToolShell
       title="Planejador de Retirada dos Sócios"
@@ -1091,14 +1083,14 @@ function ProLabore() {
               },
             ]}
           />
-          <div className="rounded-2x1 border border-border/70 bg-surface/60 p-5">
+          <div className="rounded-2xl border border-border/70 bg-surface/60 p-5">
             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">
               Leitura inicial
             </p>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{mensagem}</p>
           </div>
           {distribuicaoAlta && (
-            <div className="rounded-2x1 border border-primary/30 bg-primary/5 p-5">
+            <div className="rounded-2xl border border-primary/30 bg-primary/5 p-5">
               <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">
                 Atenção a tributação de 2026
               </p>
@@ -1109,7 +1101,7 @@ function ProLabore() {
               </p>
             </div>
           )}
-          <div className="rounded-2x1 border border-border/70 bg-surface/60 p-5">
+          <div className="rounded-2xl border border-border/70 bg-surface/60 p-5">
             <p className="text-sm leading-relaxed text-muted-foreground">
               Esta ferramenta não calcula INSS ou Imposto de Renda definitivos. Esses valores
               dependem de fatores como base de contribuição, outros rendimentos, deduções e regras
@@ -1137,7 +1129,7 @@ function ProLabore() {
             type="number"
             min={0}
             value={total}
-            onChange={(e) => setTotal(Math.max(+e.target.value) || 0)}
+            onChange={(e) => setTotal(Math.max(0, Number(e.target.value) || 0))}
           />
         </div>
         <div>
@@ -1196,11 +1188,11 @@ function Contratacao() {
               {
                 label: "Custo mensal estimado",
                 value: BRL(custoBase),
-                hint: `${percentualAdicional.toFixed(0)}% acima do salário bruto nesta simulação,`,
+                hint: `${percentualAdicional.toFixed(0)}% acima do salário bruto nesta simulação.`,
               },
             ]}
           />
-          <div className="rounde-2x1 border border-border/70 bg-surface/60 p-5">
+          <div className="rounded-2xl border border-border/70 bg-surface/60 p-5">
             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">
               O que não está incluído
             </p>
@@ -1333,13 +1325,13 @@ function SimuladorMei() {
             <div className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">
               Resultado da análise
             </div>
-            <h3 className="mt-3 font-display text-2x1 font-semibold text-foreground">{status}</h3>
+            <h3 className="mt-3 font-display text-2xl font-semibold text-foreground">{status}</h3>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{mensagem}</p>
-            <div className="mt-5 rounded-2x1 border border-border/70 bg-surface/60 p-4">
+            <div className="mt-5 rounded-2xl border border-border/70 bg-surface/60 p-4">
               <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
                 Faturamento anual projetado
               </p>
-              <p className="mt-1 font-display text-x1 font-semibold text-foreground">
+              <p className="mt-1 font-display text-xl font-semibold text-foreground">
                 {BRL(faturamentoAnual)}
               </p>
             </div>
@@ -1362,7 +1354,7 @@ function SimuladorMei() {
               </ul>
             </div>
           )}
-          <div className="rounded-2x1 border border-border/70 bg-surface/60 p-5">
+          <div className="rounded-2xl border border-border/70 bg-surface/60 p-5">
             <p className="text-sm leading-relaxed text-muted-foreground">
               O resultado é uma análise inicial. Existem situações específicas que podem alterar o
               enquadramento ou exigir o desenquadramento do MEI.
@@ -1478,13 +1470,13 @@ function FerramentasPage() {
             eyebrow="Ferramentas inteligentes"
             title={
               <>
-                Simule cenários e tome decisões cpm{" "}
+                Simule cenários e tome decisões com{" "}
                 <span className="text-gradient-brand"> mais informação. </span>
               </>
             }
             description="Explore cenários contábeis, tributários e financeiros com estimativas orientativas para apoiar suas decisões."
           />
-          <div className="mx-auto mt-6 max-w-3x1 rounded-2x1 border border-border/70 bg-background/70 p-4 text-center">
+          <div className="mx-auto mt-6 max-w-3xl rounded-2xl border border-border/70 bg-background/70 p-4 text-center">
             <p className="text-xs leading-relaxed text-muted-foreground sm:text-sm">
               As simulações apresentadas têm caráter informativo e utilizam premissas simplificadas.
               O resultado não substitui uma análise contábil, fiscal, tributária ou trabalhista

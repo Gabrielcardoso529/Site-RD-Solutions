@@ -47,19 +47,19 @@ import { Reveal } from "@/components/ui/reveal";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "RD Solutions | Contabilidade estratégica para Empresas" },
+      { title: "RD Solutions | Contabilidade Estratégica para Empresas" },
       {
         name: "description",
         content:
-          "Assessoria contábil estratégica para empresas: planejamento tributário, BPO financeiro, abertura de empresas, gestão fiscal e Atendimento digital.",
+          "Assessoria contábil estratégica para empresas: planejamento tributário, BPO financeiro, abertura de empresas, gestão fiscal e atendimento digital.",
       },
-      { property: "og:title", content: "RD Solutions | Contabilidade estratégica para Empresas" },
+      { property: "og:title", content: "RD Solutions | Contabilidade Estratégica para Empresas" },
       {
         property: "og:description",
         content:
           "Contabilidade, planejamento tributário e soluções empresariais para ajudar sua empresa a crescer com mais segurança e organização.",
       },
-      { name: "twitter:title", content: "RD Solutions | Contábilidade Estratégica" },
+      { name: "twitter:title", content: "RD Solutions | Contabilidade Estratégica" },
       {
         name: "twitter:description",
         content: "Soluções contábeis, tributárias e financeiras para empresas.",
@@ -79,11 +79,11 @@ function Hero() {
       <div className="container-page relative grid gap-10 pb-16 pt-8 sm:pt-10 lg:grid-cols-[1.05fr_1fr] lg:gap-12 lg:pb-28 lg:pt-16">
         <div className="max-w-2xl animate-rd-fade-up">
           <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card/80 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-primary sm:text-[11px] sm:tracking-[0.16em]">
-            <Sparkles className="h-3.5 w-3.5 shrink-0" /> Contabilidade estratégica para Empresas
+            <Sparkles className="h-3.5 w-3.5 shrink-0" /> Contabilidade estratégica para empresas
           </div>
           <h1 className="mt-5 font-display text-[2.5rem] font-semibold leading-[1.08] tracking-[-0.03em] text-foreground sm:text-5xl md:text-6xl md:leading-[1.02]">
-            Sua contabilidade deve ajudar sua empresa a{""}
-            <span className="text-gradient-brand">crescer com segurança.</span>.
+            Sua contabilidade deve ajudar sua empresa a{" "}
+            <span className="text-gradient-brand">crescer com segurança.</span>
           </h1>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
             A RD Solutions cuida da contabilidade, do fiscal e da gestão da sua empresa com
@@ -353,11 +353,11 @@ function Servicos() {
           eyebrow="Soluções para sua Empresa"
           title={
             <>
-              Tudo o que sua empresa precisa para operar, crescer e {""}{" "}
+              Tudo o que sua empresa precisa para operar, crescer e{" "}
               <span className="text-gradient-brand">tomar decisões com segurança.</span>
             </>
           }
-          description="Da abertura da Empresa à gestão contábil, fiscal, trabalhista e financeira, a RD Solutions oferece suporte completo para cada etapa de seu negócio."
+          description="Da abertura da empresa à gestão contábil, fiscal, trabalhista e financeira, a RD Solutions oferece suporte completo para cada etapa de seu negócio."
         />
         <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {servicos.map(({ icon: Icon, t, d }) => (
@@ -386,7 +386,7 @@ function Servicos() {
               Não encontrou o serviço que procura?
             </h3>
             <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
-              Fale com nossa equipe. Vamos entender a realidade da sua Empresa e indicar a solução
+              Fale com nossa equipe. Vamos entender a realidade da sua empresa e indicar a solução
               contábil mais adequada.
             </p>
           </div>
@@ -415,7 +415,7 @@ const diferenciais = [
   },
   {
     icon: HeartHandshake,
-    t: "Atendimento Próximo",
+    t: "Atendimento próximo",
     d: "Você fala com especialistas que conhecem a realidade da sua empresa e acompanham suas necessidades.",
   },
   {
@@ -469,7 +469,7 @@ function Diferenciais() {
           eyebrow="Por que escolher a RD Solutions?"
           title={
             <>
-              Uma contabilidade preparada para acompanhar o{""}{" "}
+              Uma contabilidade preparada para acompanhar o{" "}
               <span className="text-gradient-brand">crescimento da sua Empresa.</span>
             </>
           }
@@ -562,7 +562,7 @@ function ComoTrabalhamos() {
           eyebrow="Como trabalhamos"
           title={
             <>
-              Um processo simples, transparente e pensado para a{""}
+              Um processo simples, transparente e pensado para a{" "}
               <span className="text-gradient-brand">realidade da sua empresa.</span>
             </>
           }
@@ -638,7 +638,7 @@ const ferramentas = [
   {
     icon: Calculator,
     t: "Check-up Contábil",
-    d: "Estime custos de serviços contábeis de acordo com o perfil da sua empresa.",
+    d: "Avalie o perfil da sua empresa e identifique o nível de acompanhamento contábil que ela pode precisar.",
   },
   {
     icon: Receipt,
@@ -672,8 +672,8 @@ function Ferramentas() {
           eyebrow="Ferramentas inteligentes"
           title={
             <>
-              Informação para transformar dúvidas em{""}{" "}
-              <span className="text-gradient-brand"> decisões mais inteligentes.</span>
+              Informação para transformar dúvidas em{" "}
+              <span className="text-gradient-brand">decisões mais inteligentes.</span>
             </>
           }
           description="Use nossas calculadoras e simuladores para explorar cenários contábeis, tributários e financeiros antes de conversar com um especialista."
@@ -728,7 +728,7 @@ function Ferramentas() {
 const depos = [
   {
     icon: HeartHandshake,
-    t: "Atendimento Próximo",
+    t: "Atendimento próximo",
     d: "Cada empresa recebe acompanhamento com comunicação clara, suporte acessível e orientação ao longo da rotina.",
   },
   {
@@ -756,8 +756,8 @@ function Depoimentos() {
           eyebrow="Uma relação baseada em confiança"
           title={
             <>
-              Contabilidade feita para quem espera{""}
-              <span className="text-gradient-brand"> mais do que cumprir obrigações. </span>
+              Contabilidade feita para quem espera{" "}
+              <span className="text-gradient-brand">mais do que cumprir obrigações.</span>
             </>
           }
           description="Nosso objetivo é construir uma relação próxima com cada empresa, oferecendo segurança, clareza e suporte para decisões importantes."
@@ -842,8 +842,8 @@ function FaqSection() {
           eyebrow="Dúvidas frequentes"
           title={
             <>
-              Tudo o que você precisa saber antes de{""}{" "}
-              <span className="text-gradient-brand"> começar com a RD Solutions.</span>
+              Tudo o que você precisa saber antes de{" "}
+              <span className="text-gradient-brand">começar com a RD Solutions.</span>
             </>
           }
           description="Reunimos as principais dúvidas de empresários sobre contratação, atendimento e serviços contábeis."
@@ -901,11 +901,11 @@ function CtaFinal() {
               </div>
 
               <h2 className="mt-5 max-w-3xl font-display text-3xl font-semibold leading-tight sm:text-4xl md:text-5xl">
-                Sua Empresa pode crescer com mais organização, segurança e estratégia.
+                Sua empresa pode crescer com mais organização, segurança e estratégia.
               </h2>
 
               <p className="mt-5 max-w-2xl text-sm leading-relaxed text-white/85 sm:text-base">
-                Converse com nossa equipe, explique o momento da sua Empresa e receba uma orientação
+                Converse com nossa equipe, explique o momento da sua empresa e receba uma orientação
                 inicial sobre a solução contábil mais adequada.
               </p>
 

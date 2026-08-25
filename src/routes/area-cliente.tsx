@@ -1,12 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import {
-  ArrowRight,
-  FileText,
-  MessageCircle,
-  PlayCircle,
-  ShieldCheck,
-  Sparkles,
-} from "lucide-react";
+import { ArrowRight, FileText, MessageCircle, ShieldCheck, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { site } from "@/lib/site-config";
 
@@ -71,7 +64,7 @@ function ClientArea() {
               </h2>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                 Informações e solicitações poderão ficar reunidas em um único ambiente para
-                facilitar o acompanhmento da rotina.
+                facilitar o acompanhamento da rotina.
               </p>
             </div>
             <div className="card-premium p-6 text-center">
@@ -101,7 +94,7 @@ function ClientArea() {
             <Button
               asChild
               size="lg"
-              className="mt-6 rounded-full bg-gradient-brand text-primary-foreground hover:opacity/95"
+              className="mt-6 rounded-full bg-gradient-brand text-primary-foreground hover:opacity-95"
             >
               <a href={site.whatsappUrl} target="_blank" rel="noopener noreferrer">
                 Falar com nossa equipe

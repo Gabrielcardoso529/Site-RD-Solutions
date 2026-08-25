@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Link } from "@tanstack/react-router";
 import { ArrowRight, Menu, MessageCircle, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { navLinks, site } from "@/lib/site-config";
@@ -59,7 +58,7 @@ export function SiteHeader() {
           type="button"
           aria-label="Voltar ao início da página"
           className={cn(
-            "shrink-0 cursor-pointer transition-tranform duration-300 ease-out hover:scale-[1.02] active:scale-[0.98]",
+            "shrink-0 cursor-pointer transition-transform duration-300 ease-out hover:scale-[1.02] active:scale-[0.98]",
             scrolled ? "scale-[0.94]" : "scale-100",
           )}
           onClick={() => {
@@ -74,7 +73,7 @@ export function SiteHeader() {
           <Logo />
         </button>
 
-        <nav arial-label="Navegação principal" className="hidden items-center gap-1 lg:flex">
+        <nav aria-label="Navegação principal" className="hidden items-center gap-1 lg:flex">
           {navLinks.map((link) => (
             <a
               key={link.to}
@@ -121,7 +120,7 @@ export function SiteHeader() {
             size="icon"
             onClick={() => setOpen((current) => !current)}
             aria-label={open ? "Fechar menu" : "Abrir menu"}
-            aria-expended={open}
+            aria-expanded={open}
             className="rounded-full transition-transform duration-300 active:scale-95"
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -137,14 +136,14 @@ export function SiteHeader() {
             : "pointer-events-none max-h-0 -translate-y-2 opacity-0",
         )}
       >
-        <div className="mt-2 flex flex-col gap-1 rounded-2x1 border border-border/70 bg-background/95 p-3 shadow-xl backdrop-blur-2xl">
+        <div className="mt-2 flex flex-col gap-1 rounded-2xl border border-border/70 bg-background/95 p-3 shadow-xl backdrop-blur-2xl">
           <nav aria-label="Navegação mobile" className="flex flex-col gap-1">
             {navLinks.map((link) => (
               <a
                 key={link.to}
                 href={link.to}
                 onClick={() => setOpen(false)}
-                className="rounded-x1 px-3 py-2.5 text-sm font-medium text-foreground transition-all duration-200 hover:bg-accent"
+                className="rounded-xl px-3 py-2.5 text-sm font-medium text-foreground transition-all duration-200 hover:bg-accent"
               >
                 {link.label}
               </a>

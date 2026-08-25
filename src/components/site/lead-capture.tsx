@@ -49,8 +49,8 @@ export function LeadCapture({ context }: { context?: string }) {
               Obrigado! Sua análise foi solicitada.
             </h4>
             <p className="mt-1 text-sm text-muted-foreground">
-              Um especialista da RD Solutions entrará em contato via WhatsApp em até 24 horas úteis.
-              Seu resultado da simulação continua disponível acima.
+              Nossa equipe dará continuidade ao atendimento pelo WhatsApp. Seu resultado da
+              simulação continua disponível acima.
             </p>
           </div>
         </div>
@@ -72,8 +72,7 @@ export function LeadCapture({ context }: { context?: string }) {
           Quer um cálculo exato para sua empresa?
         </h4>
         <p className="mt-2 text-sm text-muted-foreground">
-          Nossa equipe realiza gratuitamente uma análise personalizada e identifica oportunidades
-          reais de economia tributária.
+          Nossa equipe analisa o cenário informado e orienta você sobre os próximos passos.
           {context && <span className="text-foreground/80"> Contexto: {context}.</span>}
         </p>
         <form onSubmit={onSubmit} className="mt-5 grid gap-3 md:grid-cols-2">
@@ -122,7 +121,7 @@ export function LeadCapture({ context }: { context?: string }) {
               {loading ? "Enviando..." : "Receber análise gratuita"}
             </Button>
             <p className="mt-2 text-[11px] text-muted-foreground">
-              Seus dados são tratados conforme a LGPD e nunca compartilhados.
+              Seus dados são tratados conforme nossa Política de Privacidade e a LGPD.
             </p>
           </div>
         </form>

@@ -31,7 +31,7 @@ export function SiteFooter() {
             </h4>
             <ul className="mt-4 space-y-2.5 text-sm text-foreground/80">
               {[
-                "Contabilidade Mensal",
+                "Contabilidade Empresarial",
                 "Planejamento Tributário",
                 "BPO Financeiro",
                 "Abertura de Empresas",

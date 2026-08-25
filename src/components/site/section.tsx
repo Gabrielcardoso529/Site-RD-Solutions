@@ -32,14 +32,14 @@ export function SectionHeader({
           {eyebrow}
         </div>
       )}
-      <h2 className="mt-4 font-display text-[2rem] font-semibold leading-[1.12] tracking-[-0.025em] text-foreground sm:text-4x1 md:text-[42px] md:leading-[1.08]">
+      <h2 className="mt-4 font-display text-[2rem] font-semibold leading-[1.12] tracking-[-0.025em] text-foreground sm:text-4xl md:text-[42px] md:leading-[1.08]">
         {title}
       </h2>
       {description && (
         <p
           className={cn(
-            "mt-4 text-[15px] leading-7 text-muted-foreground sm-text-base md:text-lg md:leading-8",
-            align === "center" ? "mx-auto max-w-2x1" : "max-w-2x1",
+            "mt-4 text-[15px] leading-7 text-muted-foreground sm:text-base md:text-lg md:leading-8",
+            align === "center" ? "mx-auto max-w-2xl" : "max-w-2xl",
           )}
         >
           {description}

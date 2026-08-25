@@ -24,11 +24,11 @@ function Privacy() {
   return (
     <section className="section-page">
       <div className="container-page">
-        <div className="mx-auto max-w-3x1">
+        <div className="mx-auto max-w-3xl">
           <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">
             Privacidade e proteção de dados
           </p>
-          <h1 className="mt-4 font-display text-4x1 font-semibold tracking-tight text-foreground md:text-5x1">
+          <h1 className="mt-4 font-display text-4xl font-semibold tracking-tight text-foreground md:text-5xl">
             Política de Privacidade e LGPD
           </h1>
           <p className="mt-5 text-base leading-relaxed text-muted-foreground">
@@ -38,7 +38,7 @@ function Privacy() {
           </p>
           <div className="mt-10 space-y-10">
             <section>
-              <h2 className="font-display text-2x1 font-semibold text-foreground">
+              <h2 className="font-display text-2xl font-semibold text-foreground">
                 1. Quais dados podemos coletar
               </h2>
               <p className="mt-3 leading-relaxed text-muted-foreground">
@@ -56,13 +56,13 @@ function Privacy() {
                 </li>
                 <li>
                   {" "}
-                  documentos e informações contábeis, fiscais, societários e trabalhistas
+                  documentos e informações contábeis, fiscais, societárias e trabalhistas
                   necessários à prestação dos serviços contratados.
                 </li>
               </ul>
             </section>
             <section>
-              <h2 className="font-display text-2x1 font-semibold text-foreground">
+              <h2 className="font-display text-2xl font-semibold text-foreground">
                 2. Para que utilizamos os dados
               </h2>
               <p className="mt-3 leading-relaxed text-muted-foreground">
@@ -72,7 +72,7 @@ function Privacy() {
               </p>
             </section>
             <section>
-              <h2 className="font-display text-2x1 font-semibold text-foreground">
+              <h2 className="font-display text-2xl font-semibold text-foreground">
                 3. Compartilhamento de informações
               </h2>
               <p className="mt-3 leading-relaxed text-muted-foreground">
@@ -87,7 +87,7 @@ function Privacy() {
               </p>
             </section>
             <section>
-              <h2 className="font-display text-2x1 font-semibold text-foreground">
+              <h2 className="font-display text-2xl font-semibold text-foreground">
                 4. Armazenamento e segurança
               </h2>
               <p className="mt-3 leading-relaxed text-muted-foreground">
@@ -97,7 +97,7 @@ function Privacy() {
               </p>
             </section>
             <section>
-              <h2 className="font-display text-2x1 font-semibold text-foreground">
+              <h2 className="font-display text-2xl font-semibold text-foreground">
                 5. Conservação dos dados
               </h2>
               <p className="mt-3 leading-relaxed text-muted-foreground">
@@ -111,7 +111,7 @@ function Privacy() {
               </p>
             </section>
             <section>
-              <h2 className="font-display text-2x1 font-semibold text-foreground">
+              <h2 className="font-display text-2xl font-semibold text-foreground">
                 6. Direitos do titular
               </h2>
               <p className="mt-3 leading-relaxed text-muted-foreground">
@@ -136,12 +136,12 @@ function Privacy() {
               </ul>
             </section>
             <section>
-              <h2 className="font-display text-2x1 font-semibold text-foreground">
+              <h2 className="font-display text-2xl font-semibold text-foreground">
                 7. Cookies e tecnologias do site
               </h2>
               <p className="mt-3 leading-relaxed text-muted-foreground">
                 O site poderá utilizar cookies e tecnologias semelhantes necessárias ao seu
-                funcionamento e, futuramente, ferramentas de edição de desempenho e acesso.
+                funcionamento e, futuramente, ferramentas de análise de desempenho e acesso.
               </p>
               <p className="mt-3 leading-relaxed text-muted-foreground">
                 Caso sejam utilizadas tecnologias que dependam de consentimento, o usuário poderá
@@ -149,7 +149,7 @@ function Privacy() {
               </p>
             </section>
             <section>
-              <h2 className="font-display text-2x1 font-semibold text-foreground">
+              <h2 className="font-display text-2xl font-semibold text-foreground">
                 8. Contato sobre privacidade
               </h2>
               <p className="mt-3 leading-relaxed text-muted-foreground">
@@ -164,7 +164,7 @@ function Privacy() {
               </a>
             </section>
             <section>
-              <h2 className="font-display text-2x1 font-semibold text-foreground">
+              <h2 className="font-display text-2xl font-semibold text-foreground">
                 9. Atualizações desta política
               </h2>
               <p className="mt-3 leading-relaxed text-muted-foreground">
