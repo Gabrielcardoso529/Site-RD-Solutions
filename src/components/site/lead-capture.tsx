@@ -5,18 +5,19 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import { z } from "zod";
+import { submitLead } from "@/lib/lead-functions";
 
 const schema = z.object({
   nome: z.string().trim().min(2, "Informe seu nome").max(100),
   empresa: z.string().trim().min(2, "Informe sua empresa").max(120),
-  whatsapp: z.string().trim().min(8, "WhatsApp inválido").max(20),
-  email: z.string().trim().email("E-mail inválido").max(180),
+  whatsapp: z.string().trim().min(10, "WhatsApp inválido").max(20),
+  email: z.string().trim().email("E-mail inválido").max(160),
 });
 
 export function LeadCapture({ context }: { context?: string }) {
   const [done, setDone] = useState(false);
   const [loading, setLoading] = useState(false);
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const fd = new FormData(e.currentTarget);
     const parsed = schema.safeParse({
@@ -30,11 +31,26 @@ export function LeadCapture({ context }: { context?: string }) {
       return;
     }
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
+
+    try {
+      await submitLead({
+        data: {
+          nome: parsed.data.nome,
+          empresa: parsed.data.empresa,
+          whatsapp: parsed.data.whatsapp,
+          email: parsed.data.email,
+          servico_interesse: context ?? "",
+          origem: "lead_capture",
+          observacoes: "",
+        },
+      });
       setDone(true);
       toast.success("Recebemos seu contato! Um especialista responderá em breve.");
-    }, 700);
+    } catch {
+      toast.error("Não foi possível enviar seus dados. Tente novamente.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (done) {
