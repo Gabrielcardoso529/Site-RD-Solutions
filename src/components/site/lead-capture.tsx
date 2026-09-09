@@ -32,6 +32,8 @@ export function LeadCapture({ context }: { context?: string }) {
     }
     setLoading(true);
 
+    const params = new URLSearchParams(window.location.search);
+
     try {
       await submitLead({
         data: {
@@ -41,13 +43,23 @@ export function LeadCapture({ context }: { context?: string }) {
           email: parsed.data.email,
           servico_interesse: context ?? "",
           origem: "lead_capture",
+          pagina_origem: window.location.pathname,
+          utm_source: params.get("utm_source") ?? "",
+          utm_medium: params.get("utm_medium") ?? "",
+          utm_campaign: params.get("utm_campaign") ?? "",
+          utm_content: params.get("utm_content") ?? "",
+          utm_term: params.get("utm_term") ?? "",
           observacoes: "",
         },
       });
       setDone(true);
       toast.success("Recebemos seu contato! Um especialista responderá em breve.");
-    } catch {
-      toast.error("Não foi possível enviar seus dados. Tente novamente.");
+    } catch (error) {
+      const message =
+        error instanceof Error
+          ? error.message
+          : "Não foi possível enviar seus dados. Tente novamente.";
+      toast.error(message);
     } finally {
       setLoading(false);
     }
