@@ -1,44 +1,74 @@
-# RD Solutions — Site Institucional
+# RD Solutions — Site Institucional e Sistema Web
 
-Site institucional da **RD Solutions Assessoria Contábil**, desenvolvido com foco em apresentação profissional dos serviços, geração de contatos e experiência digital para clientes e empresas interessadas em soluções contábeis.
+Este é o projeto que estou desenvolvendo para a **RD Solutions Assessoria Contábil**, empresa onde trabalho. A ideia começou com a criação de um novo site institucional para apresentar melhor o escritório e seus serviços, mas o projeto foi crescendo conforme identifiquei outras necessidades que poderiam ser resolvidas com tecnologia.
+
+Além da parte institucional, fui adicionando ferramentas contábeis, formulários para captação de contatos e uma área administrativa para acompanhar os leads recebidos pelo site.
+
+> **Status:** projeto em desenvolvimento. Algumas funcionalidades ainda estão sendo implementadas e podem mudar até a versão final.
 
 ## Sobre o projeto
 
-O projeto foi construído para representar digitalmente a RD Solutions, reunindo informações sobre serviços contábeis, diferenciais, ferramentas interativas, canais de atendimento, política de privacidade e uma área dedicada aos clientes.
+O objetivo é reunir em uma única aplicação a presença digital da RD Solutions e algumas funcionalidades que apoiem tanto quem acessa o site quanto a rotina interna do escritório.
 
-Além da parte institucional, o site conta com simuladores e ferramentas orientativas para apoiar empresários em decisões relacionadas à rotina contábil e tributária.
+Para os visitantes, o site apresenta os serviços da empresa, canais de atendimento e ferramentas orientativas relacionadas à rotina contábil e tributária. Na parte interna, estou desenvolvendo um fluxo para registrar e organizar os contatos recebidos pelo site.
+
+Esse projeto também tem sido uma oportunidade de aplicar conhecimentos da graduação em um problema real, passando por desenvolvimento front-end e back-end, integração com banco de dados, experiência do usuário e necessidades do negócio.
+
+## O que já foi desenvolvido
+
+- Site institucional responsivo
+- Apresentação dos serviços e diferenciais da RD Solutions
+- Ferramentas e simuladores contábeis
+- Check-up contábil
+- Assistente fiscal
+- Simulador de custo de contratação
+- Planejamento de retirada dos sócios
+- Check-up MEI
+- Formulários para captação de contatos
+- Integração dos leads com banco de dados
+- Login e painel administrativo para acompanhamento dos leads
+- Busca, filtros, status e observações no painel de leads
+- Registro de origem e parâmetros UTM dos contatos
+- Integração com WhatsApp
+- Área do Cliente em desenvolvimento
+- Política de Privacidade e recursos relacionados à LGPD
+- Tema claro e escuro
+- SEO e metadados para compartilhamento
+
+## Fluxo de captação de leads
+
+Uma das evoluções do projeto foi conectar os formulários do site a um fluxo interno de acompanhamento.
+
+```text
+Visitante
+   ↓
+Formulário do site
+   ↓
+Validação dos dados
+   ↓
+Supabase
+   ↓
+Banco de leads
+   ↓
+Painel administrativo
+```
+
+No painel, os contatos podem ser pesquisados e organizados por status, além de manter informações como empresa, serviço de interesse, origem do contato e observações.
 
 ## Tecnologias utilizadas
 
-* React
-* TypeScript
-* TanStack Start
-* TanStack Router
-* TanStack Query
-* Vite
-* Tailwind CSS
-* Radix UI
-* Lucide React
-* Nitro
-
-## Principais funcionalidades
-
-* Página institucional responsiva
-* Apresentação de serviços contábeis
-* Seção de diferenciais e processo de atendimento
-* Ferramentas e simuladores contábeis
-* Check-up contábil
-* Assistente fiscal
-* Simulador de custo de contratação
-* Planejamento de retirada dos sócios
-* Check-up MEI
-* Integração com WhatsApp
-* Área do Cliente em desenvolvimento
-* Política de Privacidade e LGPD
-* Banner de privacidade
-* Tema claro e escuro
-* Navegação responsiva
-* SEO básico e metadados Open Graph
+- React
+- TypeScript
+- Supabase
+- TanStack Start
+- TanStack Router
+- TanStack Query
+- Vite
+- Tailwind CSS
+- Radix UI
+- Lucide React
+- Nitro
+- Zod
 
 ## Estrutura do projeto
 
@@ -66,7 +96,7 @@ Clone o repositório:
 git clone https://github.com/Gabrielcardoso529/Site-RD-Solutions.git
 ```
 
-Entre na pasta do projeto:
+Entre na pasta:
 
 ```bash
 cd Site-RD-Solutions
@@ -96,28 +126,22 @@ Para visualizar o build localmente:
 npm run preview
 ```
 
-## Status
+A aplicação utiliza variáveis de ambiente para serviços externos. Os valores reais dessas configurações não fazem parte do repositório.
 
-O projeto está em desenvolvimento e passando por etapas de refinamento visual, revisão técnica, SEO, performance e preparação para publicação.
+## Status do projeto
 
-## Próximas etapas
+O projeto ainda está em desenvolvimento. Estou evoluindo as funcionalidades, revisando a experiência do usuário e preparando a aplicação para a versão final.
 
-* Finalização do SEO técnico
-* Configuração de domínio e hospedagem
-* Sitemap
-* Open Graph completo
-* Otimizações de performance
-* Revisão final de acessibilidade
-* Evolução da Área do Cliente
-* Upload e gerenciamento de documentos
-* Integrações futuras com sistemas contábeis
+Por isso, a estrutura e algumas funcionalidades apresentadas neste repositório ainda podem passar por alterações.
 
 ## Autor
 
 **Gabriel Cardoso**
 
+Estudante de Engenharia de Software na FIAP.
+
 GitHub: `Gabrielcardoso529`
 
 ---
 
-© RD Solutions Assessoria Contábil
+Projeto desenvolvido para a **RD Solutions Assessoria Contábil**.
