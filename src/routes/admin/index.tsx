@@ -190,19 +190,40 @@ function AdminPage() {
       setSavingObservacoes(false);
     }
   };
+  const handleLogout = async () => {
+    const { error } = await supabaseClient.auth.signOut();
+
+    if (error) {
+      toast.error("Não foi possível encerrar a sessão.");
+      return;
+    }
+    toast.success("Sessão encerrada com sucesso.");
+    window.location.replace("/");
+  };
 
   return (
     <main className="min-h-screen px-4 py-10 md:px-8">
       <div className="mx-auto max-w-7xl">
-        <div className="mb-8">
-          <p className="text-sm font-semibold uppercase tracking-[0.14em] text-primary">
-            RD Solutions
-          </p>
-          <h1 className="mt-2 font-display text-3xl font-semibold md:text-4xl">
-            Painel Administrativo
-          </h1>
-          <p className="mt-2 text-muted-foreground">Gerencie os leads recebidos pelo site.</p>
+        <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-primary">
+              RD Solutions
+            </p>
+            <h1 className="mt-2 font-display text-3xl font-semibold md:text-4xl">
+              Painel Administrativo
+            </h1>
+            <p className="mt-2 text-muted-foreground">Gerencie os leads recebidos pelo site.</p>
+          </div>
+
+          <button
+            type="button"
+            onClick={() => void handleLogout()}
+            className="inline-flex h-10 items-center justify-between self-start rounded-xl border border-border bg-background px-5 text-sm font-medium transition hover:bg-muted"
+          >
+            Sair
+          </button>
         </div>
+
         <div className="mb-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           <div className="rounded-2xl border bg-card p-5 shadow-sm">
             <p className="text-sm text-muted-foreground">Novos</p>
