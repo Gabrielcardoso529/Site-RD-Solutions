@@ -88,6 +88,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "theme-color", content: "#8A4A36" },
       { name: "author", content: "RD Solutions Assessoria Contábil" },
       { property: "og:site_name", content: "RD Solutions" },
+      { property: "og:url", content: "https://rdsolutionsassessoria.com.br/", },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "pt_BR" },
       {
@@ -108,6 +109,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
     ],
     links: [
+      { rel: "canonical", href: "https://rdsolutionsassessoria.com.br/" },
       { rel: "stylesheet", href: appCss },
       { rel: "icon", href: "/favicon.png", type: "image/png" },
       { rel: "apple-touch-icon", href: "/favicon.png" },
