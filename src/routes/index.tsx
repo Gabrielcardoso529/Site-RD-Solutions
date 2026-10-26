@@ -278,6 +278,13 @@ const servicos = [
     icon: Building2,
     t: "Abertura de Empresas",
     d: "Cuidamos do CNPJ, enquadramento tributário, inscrições e licenças para você começar com segurança.",
+    href: "/servicos/abertura-de-empresa",
+  },
+  {
+    icon: Building2,
+    t: "Transformação de MEI para ME",
+    d: "Orientação e acompanhamento para transformar seu MEI em Microempresa, com segurança e regularização das obrigações.",
+    href: "/servicos/transformacao-mei-para-me",
   },
   {
     icon: Handshake,
@@ -348,6 +355,7 @@ const servicos = [
     icon: Stamp,
     t: "Legalização Empresarial",
     d: "Alterações contratuais, abertura de filiais, encerramentos, inscrições e licenças empresariais.",
+    href: "/servicos/alteracao-contratual",
   },
 ];
 
@@ -366,24 +374,42 @@ function Servicos() {
           description="Da abertura da empresa à gestão contábil, fiscal, trabalhista e financeira, a RD Solutions oferece suporte completo para cada etapa de seu negócio."
         />
         <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {servicos.map(({ icon: Icon, t, d }) => (
-            <article
-              key={t}
-              className="card-premium card-premium-hover group relative flex min-h-[220px] flex-col overflow-hidden p-6"
-            >
-              <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-primary/5 blur-2xl transition-all duration-500 group-hover:bg-primary/15" />
-              <div className="relative flex items-start justify-between">
-                <div className="grid h-11 w-11 place-items-center rounded-xl bg-primary/10 text-primary">
-                  <Icon className="h-5 w-5" />
+          {servicos.map(({ icon: Icon, t, d, href }) => {
+            const conteudo = (
+              <>
+                <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-primary/5 blur-2xl transition-all duration-500 group-hover:bg-primary/15" />
+
+                <div className="relative flex items-start justify-between">
+                  <div className="grid h-11 w-11 place-items-center rounded-xl bg-primary/10 text-primary">
+                    <Icon className="h-5 w-5" />
+                  </div>
+
+                  <ArrowUpRight className="h-4 w-4 -translate-x-1 translate-y-1 text-muted-foreground opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100" />
                 </div>
-                <ArrowUpRight className="h-4 w-4 -translate-x-1 translate-y-1 text-muted-foreground opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100" />
-              </div>
-              <h3 className="relative mt-5 font-display text-lg font-semibold text-foreground">
-                {t}
-              </h3>
-              <p className="relative mt-2 text-sm leading-relaxed text-muted-foreground">{d}</p>
-            </article>
-          ))}
+
+                <h3 className="relative mt-5 font-display text-lg font-semibold text-foreground">
+                  {t}
+                </h3>
+
+                <p className="relative mt-2 text-sm leading-relaxed text-muted-foreground">
+                  {d}
+                </p>
+              </>
+            );
+
+            const cardClassName =
+              "card-premium card-premium-hover group relative flex min-h-[220px] flex-col overflow-hidden p-6";
+
+            return href ? (
+              <Link key={t} to={href} className={cardClassName}>
+                {conteudo}
+              </Link>
+            ) : (
+              <article key={t} className={cardClassName}>
+                {conteudo}
+              </article>
+            );
+          })}
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-between gap-6 rounded-3xl border border-border/70 bg-muted/30 p-6 text-center sm:p-8 lg:flex-row lg:text-left">
