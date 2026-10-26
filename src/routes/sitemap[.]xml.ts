@@ -1,7 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 
-const BASE_URL = "";
+const BASE_URL = "https://rdsolutionsassessoria.com.br";
+const servicePages = Object.keys(
+  import.meta.glob("./servicos/*.tsx"),
+)
+  .filter((file) => !file.split("/").pop()?.startsWith("_"))
+  .map((file) =>
+    file
+      .replace("./servicos/", "/servicos/")
+      .replace(/\.tsx$/, ""),
+  );
 
 interface SitemapEntry {
   path: string;
@@ -16,6 +25,13 @@ export const Route = createFileRoute("/sitemap.xml")({
         const entries: SitemapEntry[] = [
           { path: "/", changefreq: "weekly", priority: "1.0" },
           { path: "/ferramentas", changefreq: "weekly", priority: "0.9" },
+
+          // Inclui automaticamente as páginas de serviços
+          ...servicePages.map((path) =>({
+            path,
+            changefreq: "monthly" as const,
+            priority: "0.8",
+          })),
           { path: "/politica-de-privacidade", changefreq: "yearly", priority: "0.3" },
         ];
         const urls = entries

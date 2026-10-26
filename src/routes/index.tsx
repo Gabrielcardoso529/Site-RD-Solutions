@@ -65,6 +65,12 @@ export const Route = createFileRoute("/")({
         content: "Soluções contábeis, tributárias e financeiras para empresas.",
       },
     ],
+    links: [
+      {
+        rel: "canonical",
+        href: "https://rdsolutionsassessoria.com.br/",
+      },
+    ],
   }),
   component: Home,
 });

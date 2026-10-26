@@ -16,7 +16,9 @@ import { Route as PoliticaDePrivacidadeRouteImport } from './routes/politica-de-
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as AdminIndexRouteImport } from './routes/admin/index'
 import { Route as AdminLoginRouteImport } from './routes/admin/login'
+import { Route as ServicosAberturaDeEmpresaRouteImport } from './routes/servicos/abertura-de-empresa'
 import { Route as ServicosAlteracaoContratualRouteImport } from './routes/servicos/alteracao-contratual'
+import { Route as ServicosTransformacaoMeiParaMeRouteImport } from './routes/servicos/transformacao-mei-para-me'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -53,10 +55,22 @@ const AdminLoginRoute = AdminLoginRouteImport.update({
   path: '/admin/login',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicosAberturaDeEmpresaRoute =
+  ServicosAberturaDeEmpresaRouteImport.update({
+    id: '/servicos/abertura-de-empresa',
+    path: '/servicos/abertura-de-empresa',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ServicosAlteracaoContratualRoute =
   ServicosAlteracaoContratualRouteImport.update({
     id: '/servicos/alteracao-contratual',
     path: '/servicos/alteracao-contratual',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServicosTransformacaoMeiParaMeRoute =
+  ServicosTransformacaoMeiParaMeRouteImport.update({
+    id: '/servicos/transformacao-mei-para-me',
+    path: '/servicos/transformacao-mei-para-me',
     getParentRoute: () => rootRouteImport,
   } as any)
 
@@ -67,7 +81,9 @@ export interface FileRoutesByFullPath {
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/admin/login': typeof AdminLoginRoute
+  '/servicos/abertura-de-empresa': typeof ServicosAberturaDeEmpresaRoute
   '/servicos/alteracao-contratual': typeof ServicosAlteracaoContratualRoute
+  '/servicos/transformacao-mei-para-me': typeof ServicosTransformacaoMeiParaMeRoute
   '/admin/': typeof AdminIndexRoute
 }
 export interface FileRoutesByTo {
@@ -77,7 +93,9 @@ export interface FileRoutesByTo {
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/admin/login': typeof AdminLoginRoute
+  '/servicos/abertura-de-empresa': typeof ServicosAberturaDeEmpresaRoute
   '/servicos/alteracao-contratual': typeof ServicosAlteracaoContratualRoute
+  '/servicos/transformacao-mei-para-me': typeof ServicosTransformacaoMeiParaMeRoute
   '/admin': typeof AdminIndexRoute
 }
 export interface FileRoutesById {
@@ -88,7 +106,9 @@ export interface FileRoutesById {
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/admin/login': typeof AdminLoginRoute
+  '/servicos/abertura-de-empresa': typeof ServicosAberturaDeEmpresaRoute
   '/servicos/alteracao-contratual': typeof ServicosAlteracaoContratualRoute
+  '/servicos/transformacao-mei-para-me': typeof ServicosTransformacaoMeiParaMeRoute
   '/admin/': typeof AdminIndexRoute
 }
 export interface FileRouteTypes {
@@ -100,7 +120,9 @@ export interface FileRouteTypes {
     | '/politica-de-privacidade'
     | '/sitemap.xml'
     | '/admin/login'
+    | '/servicos/abertura-de-empresa'
     | '/servicos/alteracao-contratual'
+    | '/servicos/transformacao-mei-para-me'
     | '/admin/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -110,7 +132,9 @@ export interface FileRouteTypes {
     | '/politica-de-privacidade'
     | '/sitemap.xml'
     | '/admin/login'
+    | '/servicos/abertura-de-empresa'
     | '/servicos/alteracao-contratual'
+    | '/servicos/transformacao-mei-para-me'
     | '/admin'
   id:
     | '__root__'
@@ -120,7 +144,9 @@ export interface FileRouteTypes {
     | '/politica-de-privacidade'
     | '/sitemap.xml'
     | '/admin/login'
+    | '/servicos/abertura-de-empresa'
     | '/servicos/alteracao-contratual'
+    | '/servicos/transformacao-mei-para-me'
     | '/admin/'
   fileRoutesById: FileRoutesById
 }
@@ -131,7 +157,9 @@ export interface RootRouteChildren {
   PoliticaDePrivacidadeRoute: typeof PoliticaDePrivacidadeRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   AdminLoginRoute: typeof AdminLoginRoute
+  ServicosAberturaDeEmpresaRoute: typeof ServicosAberturaDeEmpresaRoute
   ServicosAlteracaoContratualRoute: typeof ServicosAlteracaoContratualRoute
+  ServicosTransformacaoMeiParaMeRoute: typeof ServicosTransformacaoMeiParaMeRoute
   AdminIndexRoute: typeof AdminIndexRoute
 }
 
@@ -186,11 +214,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminLoginRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/servicos/abertura-de-empresa': {
+      id: '/servicos/abertura-de-empresa'
+      path: '/servicos/abertura-de-empresa'
+      fullPath: '/servicos/abertura-de-empresa'
+      preLoaderRoute: typeof ServicosAberturaDeEmpresaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/servicos/alteracao-contratual': {
       id: '/servicos/alteracao-contratual'
       path: '/servicos/alteracao-contratual'
       fullPath: '/servicos/alteracao-contratual'
       preLoaderRoute: typeof ServicosAlteracaoContratualRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/servicos/transformacao-mei-para-me': {
+      id: '/servicos/transformacao-mei-para-me'
+      path: '/servicos/transformacao-mei-para-me'
+      fullPath: '/servicos/transformacao-mei-para-me'
+      preLoaderRoute: typeof ServicosTransformacaoMeiParaMeRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -203,7 +245,9 @@ const rootRouteChildren: RootRouteChildren = {
   PoliticaDePrivacidadeRoute: PoliticaDePrivacidadeRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   AdminLoginRoute: AdminLoginRoute,
+  ServicosAberturaDeEmpresaRoute: ServicosAberturaDeEmpresaRoute,
   ServicosAlteracaoContratualRoute: ServicosAlteracaoContratualRoute,
+  ServicosTransformacaoMeiParaMeRoute: ServicosTransformacaoMeiParaMeRoute,
   AdminIndexRoute: AdminIndexRoute,
 }
 export const routeTree = rootRouteImport
