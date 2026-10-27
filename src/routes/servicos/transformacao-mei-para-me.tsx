@@ -9,16 +9,16 @@ export const Route = createFileRoute("/servicos/transformacao-mei-para-me")({
       {
         name: "description",
         content:
-          "Precisa transformar seu MEI em ME? A RD Solutions auxilia no desenquadramento do SIMEI, regularização cadastral e procedimentos na Junta Comercial e Receita Federal.",
+          "MEI para ME em São Paulo: orientação sobre desenquadramento do SIMEI, atualização cadastral e obrigações tributárias. Fale com a RD Solutions.",
       },
       {
         property: "og:title",
-        content: "Transformação de MEI para ME | RD Solutions",
+        content: "Transformação de MEI para ME em São Paulo | RD Solutions",
       },
       {
         property: "og:description",
         content:
-          "Assessoria contábil completa para desenquadramento do MEI e adequação da empresa à condição de Microempresa.",
+          "Assessoria para sair do MEI, avaliar o enquadramento como ME e regularizar as obrigações da empresa.",
       },
     ],
     links: [
@@ -35,7 +35,7 @@ const situacoes = [
   {
     titulo: "Faturamento acima do limite",
     descricao:
-      "Quando o faturamento ultrapassa o limite permitido ao MEI, pode ser necessário realizar o desenquadramento, observando as regras e os prazos aplicáveis.",
+      "Quando o faturamento ultrapassa o limite permitido ao MEI, pode ser necessário realizar o desenquadramento, observando as regras, os prazos e os efeitos tributários aplicáveis.",
   },
   {
     titulo: "Contratação de mais funcionários",
@@ -50,7 +50,7 @@ const situacoes = [
   {
     titulo: "Entrada de sócios",
     descricao:
-      "O MEI não permite a participação de sócios. Para alterar a estrutura societária, é necessário avaliar os procedimentos de desenquadramento e alteração empresarial.",
+      "O MEI não permite a participação de sócios. Para alterar a estrutura societária, é necessário avaliar o desenquadramento e os procedimentos empresariais aplicáveis.",
   },
 ];
 
@@ -65,7 +65,7 @@ const etapas = [
     numero: "02",
     titulo: "Desenquadramento do SIMEI",
     descricao:
-      "Orientamos e realizamos os procedimentos de desenquadramento, considerando o motivo e os efeitos legais da mudança.",
+      "Orientamos e realizamos os procedimentos de desenquadramento, considerando o motivo, os prazos e os efeitos legais da mudança.",
   },
   {
     numero: "03",
@@ -90,17 +90,27 @@ const perguntas = [
   {
     pergunta: "Qual é a diferença entre MEI e ME?",
     resposta:
-      "MEI é uma modalidade simplificada de formalização. ME significa Microempresa e corresponde a um porte empresarial. As regras de tributação, faturamento e obrigações podem ser diferentes.",
+      "O MEI é uma modalidade simplificada de formalização e tributação para quem atende a requisitos específicos. Já ME significa Microempresa e corresponde ao porte empresarial. Uma ME pode ter diferentes regimes tributários, conforme as regras aplicáveis.",
+  },
+  {
+    pergunta: "Sair do MEI significa sair do Simples Nacional?",
+    resposta:
+      "Não necessariamente. O desenquadramento do SIMEI não implica, por si só, a exclusão do Simples Nacional. A permanência nesse regime depende do cumprimento dos requisitos legais.",
+  },
+  {
+    pergunta: "O que acontece se o MEI ultrapassar o limite de faturamento?",
+    resposta:
+      "O excesso de faturamento pode exigir o desenquadramento do SIMEI e gerar efeitos tributários diferentes conforme o percentual excedido e o período em que ocorreu. É importante analisar a situação para identificar as obrigações e os prazos aplicáveis.",
   },
   {
     pergunta: "Quanto custa transformar MEI em ME?",
     resposta:
-      "O custo depende das alterações necessárias, das taxas eventualmente aplicáveis e dos serviços envolvidos. A RD Solutions analisa sua situação e apresenta uma proposta.",
+      "O custo depende das alterações necessárias, das taxas eventualmente aplicáveis e dos serviços envolvidos. A RD Solutions analisa sua situação e apresenta uma proposta de assessoria.",
   },
   {
     pergunta: "Quanto tempo demora o processo?",
     resposta:
-      "O prazo varia conforme o motivo do desenquadramento, os procedimentos necessários e os órgãos envolvidos.",
+      "O prazo varia conforme o motivo do desenquadramento, os procedimentos necessários e os órgãos envolvidos. Algumas etapas também podem depender de análise e processamento pelos órgãos competentes.",
   },
 ];
 
@@ -121,8 +131,9 @@ function TransformacaoMeiPage() {
 
           <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
             Seu negócio cresceu e chegou a hora de deixar de ser MEI?
-            A RD Solutions oferece assessoria contábil para realizar
-            o desenquadramento e orientar sua empresa durante essa transição.
+            A RD Solutions oferece assessoria contábil para orientar
+            o desenquadramento do SIMEI, as adequações cadastrais
+            necessárias e as novas obrigações da sua empresa.
           </p>
 
           <Link
@@ -158,8 +169,17 @@ function TransformacaoMeiPage() {
 
             <p>
               A Microempresa (ME), por sua vez, é uma classificação
-              relacionada ao porte da empresa. A mudança pode envolver
-              procedimentos fiscais e cadastrais, dependendo de cada caso.
+              relacionada ao porte da empresa. Por isso, sair do SIMEI
+              não significa necessariamente alterar a natureza jurídica
+              ou sair do Simples Nacional.
+            </p>
+
+            <p>
+              Em São Paulo, a transição também pode exigir atualizações
+              cadastrais perante a JUCESP, a Receita Federal e outros
+              órgãos competentes, dependendo das mudanças realizadas.
+              A RD Solutions auxilia na análise e na organização
+              desses procedimentos.
             </p>
           </div>
         </div>
@@ -196,8 +216,52 @@ function TransformacaoMeiPage() {
         </div>
       </section>
 
-      {/* COMO FUNCIONA */}
+      {/* DOCUMENTOS NECESSÁRIOS */}
       <section className="px-6 py-20">
+        <div className="mx-auto max-w-4xl">
+          <h2 className="text-3xl font-bold">
+            Quais documentos são necessários para transformar MEI em ME?
+          </h2>
+
+          <p className="mt-5 leading-relaxed text-muted-foreground">
+            A documentação necessária depende do motivo do
+            desenquadramento e das alterações que precisam ser
+            realizadas. Conforme o caso, podem ser solicitados:
+          </p>
+
+          <ul className="mt-6 list-disc space-y-3 pl-6 text-muted-foreground">
+            <li>
+              CNPJ e informações cadastrais atualizadas da empresa;
+            </li>
+            <li>
+              Documentos de identificação do titular;
+            </li>
+            <li>
+              Certificado da Condição de Microempreendedor Individual
+              (CCMEI), quando aplicável;
+            </li>
+            <li>
+              Informações sobre faturamento e atividades econômicas;
+            </li>
+            <li>
+              Documentos relacionados às alterações empresariais
+              que serão realizadas;
+            </li>
+            <li>
+              Outros documentos eventualmente exigidos pelos
+              órgãos competentes.
+            </li>
+          </ul>
+
+          <p className="mt-6 leading-relaxed text-muted-foreground">
+            A RD Solutions avalia a situação do negócio e orienta
+            sobre os documentos necessários para cada etapa.
+          </p>
+        </div>
+      </section>
+
+      {/* COMO FUNCIONA */}
+      <section className="bg-muted/30 px-6 py-20">
         <div className="mx-auto max-w-6xl">
           <h2 className="text-3xl font-bold">
             Como a RD Solutions realiza o processo?
@@ -232,7 +296,7 @@ function TransformacaoMeiPage() {
       </section>
 
       {/* PERGUNTAS FREQUENTES */}
-      <section className="bg-muted/30 px-6 py-20">
+      <section className="px-6 py-20">
         <div className="mx-auto max-w-4xl">
           <h2 className="text-3xl font-bold">
             Perguntas frequentes sobre MEI para ME
@@ -258,16 +322,22 @@ function TransformacaoMeiPage() {
       </section>
 
       {/* CHAMADA FINAL */}
-      <section className="px-6 py-20 text-center">
+      <section className="bg-muted/30 px-6 py-20 text-center">
         <div className="mx-auto max-w-3xl">
           <h2 className="text-3xl font-bold">
             Precisa transformar seu MEI em ME?
           </h2>
 
           <p className="mt-5 text-muted-foreground">
-            Converse com a RD Solutions para analisar sua situação,
-            realizar os procedimentos necessários e receber
-            orientações para essa nova etapa do seu negócio.
+            Conte com a RD Solutions Assessoria Contábil para
+            analisar sua situação, orientar o desenquadramento
+            e organizar os procedimentos necessários para
+            o crescimento da sua empresa.
+          </p>
+
+          <p className="mt-4 text-muted-foreground">
+            Atendimento digital para empresas de São Paulo
+            e de outras regiões do Brasil.
           </p>
 
           <Link
