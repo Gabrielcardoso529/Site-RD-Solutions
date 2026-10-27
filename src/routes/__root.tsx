@@ -16,6 +16,7 @@ import { FloatingActions } from "@/components/site/floating-actions";
 import { LgpdBanner } from "@/components/site/lgpd-banner";
 import { Toaster } from "@/components/ui/sonner";
 import { site } from "@/lib/site-config";
+import { url } from "inspector";
 
 function NotFoundComponent() {
   return (
@@ -125,14 +126,31 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "AccountingService",
+          "@id": "https://rdsolutionsassessoria.com.br/#organization",
           name: "RD Solutions Assessoria Contábil",
+          url: "https://rdsolutionsassessoria.com.br/",
           description:
-            "Assessoria contábil especializada em planejamento tributário, BPO financeiro, abertura de empresas, gestão fiscal e consultoria empresarial.",
-          areaServed: {
-            "@type": "Country",
-            name: "Brasil",
-          },
+            "Escritório de contabilidade em São Paulo especializado em abertura de empresas, alteração contratual, transformação de MEI para ME, planejamento tributário, BPO financeiro e assessoria contábil empresarial.",
           telephone: site.phone,
+          areaServed: [
+            {
+              "@type": "City",
+              name: "São Paulo",
+            },
+            {
+              "@type": "Country",
+              name: "Brasil",
+            },
+          ],
+          knowsAbout: [
+            "Contabilidade empresarial",
+            "Abertura de empresas",
+            "Alteração contratual",
+            "Transformação de MEI para ME",
+            "Planejamento tributário",
+            "BPO financeiro",
+            "Gestão fiscal",
+          ],
         }),
       },
     ],

@@ -2,3 +2,5 @@ User-agent: *
 Allow: /
 
 Disallow: /area-cliente
+
+Sitemap: https://rdsolutionsassessoria.com.br/sitemap.xml
