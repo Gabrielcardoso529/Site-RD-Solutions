@@ -47,11 +47,11 @@ import { Reveal } from "@/components/ui/reveal";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "RD Solutions | Contabilidade Estratégica para Empresas" },
+      { title: "Escritório de Contabilidade em São Paulo | RD Solutions" },
       {
         name: "description",
         content:
-          "Assessoria contábil estratégica para empresas: planejamento tributário, BPO financeiro, abertura de empresas, gestão fiscal e atendimento digital.",
+          "Escritório de contabilidade em São Paulo. A RD Solutions oferece abertura de empresas, planejamento tributário e assessoria contábil com atendimento digital em todo o Brasil.",
       },
       { property: "og:title", content: "RD Solutions | Contabilidade Estratégica para Empresas" },
       {
@@ -92,10 +92,10 @@ function Hero() {
             <span className="text-gradient-brand">crescer com segurança.</span>
           </h1>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
-            A RD Solutions cuida da contabilidade, do fiscal e da gestão da sua empresa com
-            proximidade, tecnologia e visão estratégica. Você ganha mais segurança para tomar
-            decisões, reduzir riscos e identificar oportunidades de economia tributária dentro da
-            lei.
+            A RD Solutions é um escritório de contabilidade em São Paulo, especializado em
+            assessoria contábil, gestão fiscal e planejamento tributário para empresas.
+            Com atendimento digital em todo o Brasil, ajudamos seu negócio a crescer
+            com segurança, organização e inteligência tributária.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Button
@@ -353,8 +353,8 @@ const servicos = [
   },
   {
     icon: Stamp,
-    t: "Legalização Empresarial",
-    d: "Alterações contratuais, abertura de filiais, encerramentos, inscrições e licenças empresariais.",
+    t: "Alteração Contratual",
+    d: "Alterações de endereço, razão social, CNAE, capital social e quadro societário. Assessoria para alterações contratuais em São Paulo.",
     href: "/servicos/alteracao-contratual",
   },
 ];
